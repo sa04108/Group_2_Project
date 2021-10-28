@@ -143,4 +143,6 @@ MonoBehaviour:
     itemType: 1
     itemName: 
     itemImage: {fileID: 0}
-  Image: {fileID: 0}
+    itemModel: {fileID: 0}
+    itemMaterial: {fileID: 0}
+  image: {fileID: 0}

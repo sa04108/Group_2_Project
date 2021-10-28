@@ -8,11 +8,13 @@ public enum ITEM_TYPE {
     RESOURCES,
     CONSUMABLES,
 }
+
 [System.Serializable]
 public class Item 
 {
-  public ITEM_TYPE itemType;
-  public string itemName;
-  public Sprite itemImage;
-
+    public ITEM_TYPE itemType;
+    public string itemName;
+    public Sprite itemImage;
+    public Mesh itemModel;
+    public Material itemMaterial;
 }

@@ -54,6 +54,6 @@ public class InventoryUI : MonoBehaviour
             slots[i].item = inven.items[i];
             slots[i].UpdateSlotUI();
         }
-        }
+    }
   }
 

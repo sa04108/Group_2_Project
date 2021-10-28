@@ -11,6 +11,11 @@ public class DropItem : MonoBehaviour
         item.itemName = _item.itemName;
         item.itemImage = _item.itemImage;
         item.itemType = _item.itemType;
+        item.itemModel = _item.itemModel;
+        item.itemMaterial = _item.itemMaterial;
+
+       // gameObject.GetComponent<MeshRenderer>().
+        gameObject.GetComponent<MeshRenderer>().material=item.itemMaterial;
 
         //image.sprite = item.itemImage;
     }

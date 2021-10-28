@@ -31,12 +31,10 @@ public class Inventory : MonoBehaviour
     }
 
     void Start() {
-        SlotCnt = 4;
+        SlotCnt = 30;
     }
 
     public List<Item> items = new List<Item>();
-    [SerializeField] public int slots;
-
 
     public bool AddItem(Item _item) {
         if(items.Count < SlotCnt) {
@@ -50,7 +48,7 @@ public class Inventory : MonoBehaviour
     }
 
     public bool IsFull() {
-        if(items.Count >= slots) {
+        if(items.Count >= SlotCnt) {
             return true;
         }
         return false;
