@@ -18,3 +18,5 @@ public class Item
     public Mesh itemModel;
     public Material itemMaterial;
 }
+  
+
