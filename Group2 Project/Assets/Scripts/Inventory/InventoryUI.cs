@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
-{
+{ 
+    // 11/6 김연완 55번째 줄 수정. 우현이형 보신다면 확인 후 필요하시다면 처리 부탁드립니다.
     Inventory inven;
 
     public GameObject inventoryPanel;
@@ -52,7 +53,29 @@ public class InventoryUI : MonoBehaviour
         }
             for(int i =0; i<inven.items.Count; i++) {
             slots[i].item = inven.items[i];
-            slots[i].UpdateSlotUI();
+            //slots[i].UpdateSlotUI();      updateslot이 아이템 먹을때 작동하는건지 잘 모르겠습니당.
+        }
+    }
+
+    public void AcqureItem(Item _item, int Count=1)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item.itemName == "")
+            {
+                GameObject SlotText = slots[i].transform.GetChild(1).gameObject;
+                SlotText.SetActive(true);
+                slots[i].UpdateSlotUI(_item);
+                return;
+            }
+        }
+        for (int i=0;i<slots.Length;i++)
+        {
+            if(slots[i].item.itemName == _item.itemName)
+            {
+                slots[i].SlotCount(Count);
+                return;
+            }
         }
     }
   }
