@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 { 
-    // 11/6 김연완 55번째 줄 수정. 우현이형 보신다면 확인 후 필요하시다면 처리 부탁드립니다.
+    
     Inventory inven;
 
     public GameObject inventoryPanel;
@@ -53,7 +53,7 @@ public class InventoryUI : MonoBehaviour
         }
             for(int i =0; i<inven.items.Count; i++) {
             slots[i].item = inven.items[i];
-            //slots[i].UpdateSlotUI();      updateslot이 아이템 먹을때 작동하는건지 잘 모르겠습니당.
+            slots[i].UpdateSlotUI();
         }
     }
 
@@ -65,7 +65,7 @@ public class InventoryUI : MonoBehaviour
             {
                 GameObject SlotText = slots[i].transform.GetChild(1).gameObject;
                 SlotText.SetActive(true);
-                slots[i].UpdateSlotUI(_item);
+                //slots[i].UpdateSlotUI(_item);  11/6 : 만일 사용한다면 이 방법은 어떨까 해서 넣어봤습니다 - 연완
                 return;
             }
         }

@@ -13,11 +13,11 @@ public class InventorySlot : MonoBehaviour
     [SerializeField]
     private Text text_Count;
 
-    public void UpdateSlotUI(Item _item) {
-        itemImage.sprite = _item.itemImage;
+    public void UpdateSlotUI() {
+        itemImage.sprite = item.itemImage;
         itemImage.gameObject.SetActive(true);
     }
-    public void SlotCount(int Count=1)
+    public void SlotCount(int Count=1) // Slot에 들어오는 Item들을 세는 함수.
     {
         itemCount += Count;
         text_Count.text = itemCount.ToString();
