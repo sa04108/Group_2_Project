@@ -139,11 +139,8 @@ MonoBehaviour:
     itemType: 0
     itemName: 
     itemImage: {fileID: 0}
-    itemModel: {fileID: 0}
-    itemMaterial: {fileID: 0}
-    itemCount: 0
   itemImage: {fileID: 6166334822817396381}
-  text_Count: {fileID: 5813760094306184293}
+  itemCount: 0
 --- !u!1 &6166334822817396383
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,4 +294,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 100

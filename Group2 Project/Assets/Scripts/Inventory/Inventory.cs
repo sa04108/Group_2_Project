@@ -31,30 +31,18 @@ public class Inventory : MonoBehaviour
     }
 
     void Start() {
-        SlotCnt = 10;
+        SlotCnt = 30;
     }
 
     public List<Item> items = new List<Item>();
 
     public bool AddItem(Item _item) {
         if(items.Count < SlotCnt) {
-            if (!CheckItemList(_item)) {
-                items.Add(_item);
-            }
+            items.Add(_item);
             if(onChangeItem != null) {
                 onChangeItem.Invoke();
             }
             return true;
-        }
-        return false;
-    }
-
-    public bool CheckItemList(Item _item) {
-        foreach(Item content in items) {
-            if(_item.itemName == content.itemName) {
-                content.itemCount += _item.itemCount;
-                return true;
-            }
         }
         return false;
     }

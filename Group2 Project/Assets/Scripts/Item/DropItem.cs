@@ -13,7 +13,7 @@ public class DropItem : MonoBehaviour
         item.itemType = _item.itemType;
         item.itemModel = _item.itemModel;
         item.itemMaterial = _item.itemMaterial;
-        item.itemCount = _item.itemCount;
+
        // gameObject.GetComponent<MeshRenderer>().
         gameObject.GetComponent<MeshRenderer>().material=item.itemMaterial;
 

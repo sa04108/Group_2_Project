@@ -4,12 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
-{ 
-    
+{
     Inventory inven;
 
     public GameObject inventoryPanel;
-    public Sprite nullImage;
     bool isInventoryActive = false;
 
     public InventorySlot[] slots;
@@ -49,38 +47,13 @@ public class InventoryUI : MonoBehaviour
     }
 
     void RedrawSlotUI() {
-        foreach(InventorySlot slot in slots) {
-            if (slot.item.itemName != "" && slot.item.itemCount == 0) {
-                slot.RemoveSlot();
-                slot.gameObject.transform.SetAsLastSibling();
-            }
+            for(int i = 0; i<slots.Length; i++) {
+            slots[i].RemoveSlot();
         }
-        for(int i =0; i<inven.items.Count; i++) {
+            for(int i =0; i<inven.items.Count; i++) {
             slots[i].item = inven.items[i];
             slots[i].UpdateSlotUI();
         }
     }
-
-   //public void AcqureItem(Item _item, int Count=1)
-   //{
-   //    for (int i = 0; i < slots.Length; i++)
-   //    {
-   //        if (slots[i].item.itemName == "")
-   //        {
-   //            GameObject SlotText = slots[i].transform.GetChild(1).gameObject;
-   //            SlotText.SetActive(true);
-   //            //slots[i].UpdateSlotUI(_item);  11/6 : 만일 사용한다면 이 방법은 어떨까 해서 넣어봤습니다 - 연완
-   //            return;
-   //        }
-   //    }
-   //    for (int i=0;i<slots.Length;i++)
-   //    {
-   //        if(slots[i].item.itemName == _item.itemName)
-   //        {
-   //            slots[i].SlotCount(Count);
-   //            return;
-   //        }
-   //    }
-   //}
   }
 
