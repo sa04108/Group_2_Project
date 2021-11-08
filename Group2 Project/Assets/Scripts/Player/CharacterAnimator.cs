@@ -6,13 +6,14 @@ public class CharacterAnimator : MonoBehaviour
 {
     Animator animator;
     CharacterMove characterMove;
+    InputManager inputManager;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         characterMove = GetComponent<CharacterMove>();
-
+        inputManager = FindObjectOfType<InputManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class CharacterAnimator : MonoBehaviour
 
     void Walk()
     {
+        //WASD중 하나라도 선택되었다면 걷는다.
 
         if (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.S)|| Input.GetKey(KeyCode.D))
         {
@@ -38,6 +40,7 @@ public class CharacterAnimator : MonoBehaviour
     }
     void Run()
     {
+        //걷는 중 leftshift가 눌리면 달린다.
         if (Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetBool("Run", true);
@@ -48,7 +51,8 @@ public class CharacterAnimator : MonoBehaviour
 
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0))
+        //공격모션
+        if (inputManager.Clicked())
         {
             animator.SetBool("Attack", true);
         }
