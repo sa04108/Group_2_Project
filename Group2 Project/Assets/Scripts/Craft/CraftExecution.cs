@@ -11,8 +11,8 @@ public class CraftExecution : MonoBehaviour
     private int RequestCount;// 요구되는 item의 수
     [SerializeField]
     private int EquipmentNum;// 담당할 slot의 숫자
-    [SerializeField]
-    private Sprite EquipmentImage; // 장비창에 들어갈 이미지
+    //[SerializeField]
+    //private Sprite EquipmentImage; // 장비창에 들어갈 이미지
 
     private void Start()
     {

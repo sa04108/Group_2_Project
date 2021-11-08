@@ -18,7 +18,7 @@ public class Item
     public Sprite itemImage;
     public Mesh itemModel;
     public Material itemMaterial;
-    
+    public int itemCount;
 }
   
 

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CraftEquipmentSlot : MonoBehaviour
 {
+    public static CraftEquipmentSlot instance;
+    private void Awake() {
+        instance = this;
+    }
     [SerializeField]
-    private GameObject[] Slot;
+    public Item[] slot;
 }
