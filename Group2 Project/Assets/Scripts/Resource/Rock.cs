@@ -19,9 +19,9 @@ public class Rock : MonoBehaviour
     private GameObject rockItemPrefab;
 
     private int Tool_Tier;
-    public void Mining()
+    public void Mining(int damage)
     {
-        Hp--; // 도구 티어에 따라 Hp -= Tier;
+        Hp -= damage; // 도구 티어에 따라 Hp -= Tier;
 
         if(Hp<=0)
         {

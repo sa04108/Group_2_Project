@@ -238,7 +238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cam: {fileID: 3016674862976298429}
-  offset: {x: 0, y: 4, z: 0}
   rotSpeed: 10
   x: 0
 --- !u!1 &8422892626600285312
@@ -2508,7 +2507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8422892626600249500
 Transform:
   m_ObjectHideFlags: 0

@@ -20,8 +20,8 @@ public class Tool : MonoBehaviour
         Debug.Log(other.tag);
         if(other.CompareTag("fieldResource")) {
             Debug.Log("target: resource");
-            
-            //other.gameObject.GetComponent<Rock>().
+
+            //other.gameObject.GetComponent<Rock>().Mining(gameObject.GetComponent<>);
         }
     }
 }
