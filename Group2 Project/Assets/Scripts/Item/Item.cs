@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public enum ITEM_TYPE {
-    EQUIPMENT,
     RESOURCES,
     CONSUMABLES,
     Used

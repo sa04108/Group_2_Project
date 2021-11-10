@@ -11,6 +11,8 @@ public class ItemData : MonoBehaviour
 
     public List<Item> itemDB = new List<Item>();
 
+    public List<Equipment> equipDB = new List<Equipment>();
+
     public GameObject fieldItemPrefab;
 
     public Vector3[] pos;

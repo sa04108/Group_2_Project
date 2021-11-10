@@ -9,5 +9,5 @@ public class CraftEquipmentSlot : MonoBehaviour
         instance = this;
     }
     [SerializeField]
-    public Item[] slot;
+    public EquipmentSlot[] slot;
 }
