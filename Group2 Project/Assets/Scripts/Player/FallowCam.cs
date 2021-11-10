@@ -6,7 +6,6 @@ public class FallowCam : MonoBehaviour
 {
 
 	public GameObject Cam;
-	public Vector3 offset = Vector3.zero;
 
 	public float rotSpeed = 8;
 	public float x;
@@ -14,14 +13,12 @@ public class FallowCam : MonoBehaviour
 
 	void Start()
 	{
-		//Debug.Log(Cam.transform.eulerAngles);
 	}
 
 	// Update is called once per frame
 	void LateUpdate()
 	{
 
-		//Debug.Log(Cam.transform.localRotation) ;
 
 		x = Input.GetAxis("Mouse Y");
 

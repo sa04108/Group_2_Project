@@ -11,7 +11,6 @@ public class CharacterMove : MonoBehaviour
     public float RotSpeed = 1.0f;   //회전속도
     public float runSpeed = 3.0f;   //달리기 추가속도
 
-    FallowCam fallowCam;
   
     private Vector3 moveDirection;
 
@@ -20,9 +19,9 @@ public class CharacterMove : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        fallowCam = FindObjectOfType<FallowCam>();
+
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked; //커서 위치 고정, 보이지 않게 한다.
     }
 
     void Update()
@@ -35,8 +34,8 @@ public class CharacterMove : MonoBehaviour
             float x = Input.GetAxis("Mouse X");
             transform.Rotate(Vector3.up * x * RotSpeed);
             
-            //앞으로 이동한다.
-            moveDirection = new Vector3(0, 0, Input.GetAxisRaw("Vertical"));
+            //이동한다.
+            moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
         }
 

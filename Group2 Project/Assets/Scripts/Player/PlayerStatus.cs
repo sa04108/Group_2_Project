@@ -19,5 +19,13 @@ public class PlayerStatus : MonoBehaviour
         
     }
 
+    public bool GameOver()
+    {
+        if (PlayerHP <= 0)
+            return true;
+        else
+            return false;
+    }
+    
 
 }
