@@ -47,7 +47,11 @@ public class StoneController : MonoBehaviour
 
     Animator animator;
     Rigidbody rb;
+    [SerializeField]
+    private GameObject rockItemDrop;
+
     
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -128,12 +132,18 @@ public class StoneController : MonoBehaviour
             {
                 animator.SetTrigger("Dead");
                 isAlive = false;
+                Invoke("StoneDrop", 1.7f);
                 transform.root.gameObject.gameObject.GetComponent<ErasePatrol>().EraseThis();
+
             }
         }
 
     }
 
+    void StoneDrop()
+    {
+        Instantiate(rockItemDrop, transform.position, Quaternion.identity);
+    }
     void OnTriggerEnter(Collider coll)
     {
         if(coll.tag == "PatrolPoint")

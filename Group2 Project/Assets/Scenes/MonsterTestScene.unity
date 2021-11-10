@@ -284,6 +284,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2094346761}
+    - target: {fileID: 1311724701077126526, guid: 2347bb1a9ec91f3479d9bc74c61a4d28, type: 3}
+      propertyPath: rockItemDrop
+      value: 
+      objectReference: {fileID: 1452224826318035292, guid: 19530e5254b24da4286d1a0d7e5f456e, type: 3}
     - target: {fileID: 4420711358325598281, guid: 2347bb1a9ec91f3479d9bc74c61a4d28, type: 3}
       propertyPath: m_Name
       value: StoneMonsterAndRegen
