@@ -20,8 +20,8 @@ public class CharacterMove : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
 
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked; //커서 위치 고정, 보이지 않게 한다.
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked; //커서 위치 고정, 보이지 않게 한다.
     }
 
     void Update()
