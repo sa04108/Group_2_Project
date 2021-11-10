@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cam: {fileID: 3016674862976298429}
-  rotSpeed: 10
+  rotSpeed: 3
   x: 0
 --- !u!1 &8422892626600285312
 GameObject:
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 100
   speed: 5
-  RotSpeed: 7
+  RotSpeed: 4
   runSpeed: 3
 --- !u!114 &676599011
 MonoBehaviour:
