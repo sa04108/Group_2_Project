@@ -22,11 +22,16 @@ public class FallowCam : MonoBehaviour
 
 		x = Input.GetAxis("Mouse Y");
 
-		if (Cam.transform.localRotation.x > 0.3&&x<0)
+		if (Cam.transform.localRotation.x > 0.3 && x < 0)
+        {
 			x = 0;
+		}
+			
 
-		if (Cam.transform.localRotation.x < -0.3&&x>0)
+		if (Cam.transform.localRotation.x < -0.3 && x > 0) {
 			x = 0;
+		}
+			
 
 		transform.Rotate(Vector3.left * x * rotSpeed);
 		x = Input.GetAxis("Mouse Y");
