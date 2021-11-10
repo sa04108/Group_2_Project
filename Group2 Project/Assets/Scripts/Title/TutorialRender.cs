@@ -28,7 +28,7 @@ public class TutorialRender : MonoBehaviour
     void UpdateUI()
     {
         previousButton.interactable = currentPage > 0;
-        nextButton.interactable = currentPage < Data.Count - 1;
+        nextButton.interactable = currentPage < Data.Count;
 
         UpdateContent();
     }
@@ -50,8 +50,11 @@ public class TutorialRender : MonoBehaviour
 
     public void OnclickNextButton()
     {
-        Debug.Log("11");
         currentPage++;
+        if (currentPage == Data.Count)
+        {
+            this.gameObject.SetActive(false);
+        }
         UpdateUI();
     }
 }

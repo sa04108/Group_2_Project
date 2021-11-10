@@ -519,7 +519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &112646605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -608,12 +608,25 @@ MonoBehaviour:
       WASD\uD0A4\uB97C \uC774\uC6A9\uD558\uC5EC \uC774\uB3D9\uD558\uACE0 \uB9C8\uC6B0\uC2A4\uB97C
       \uC774\uC6A9\uD558\uC5EC \uC2DC\uC810 \uBCC0\uD658 \uBC0F \uB9C8\uC6B0\uC2A4
       \uD074\uB9AD\uC73C\uB85C \uC801\uC744 \uACF5\uACA9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
-  - sprite: {fileID: 0}
-    spritetwo: {fileID: 0}
-    descirotion: 
-  - sprite: {fileID: 0}
-    spritetwo: {fileID: 0}
-    descirotion: 
+  - sprite: {fileID: 21300000, guid: 9e56b30a00d860243b18819882483549, type: 3}
+    spritetwo: {fileID: 21300000, guid: dc6184b94c13ea44189fa3c4a8993053, type: 3}
+    descirotion: "\uD50C\uB808\uC774\uC5B4\uB97C \uC774\uB3D9\uC2DC\uCF1C \uD574\uBCC0\uAC00\uC5D0
+      \uB5A8\uC5B4\uC9C4 \uC790\uC6D0\uB4E4\uC744 \uAC01 5\uAC1C\uC529 \uCC44\uC9D1\uD569\uC2DC\uB2E4.
+      \uC790\uC6D0\uC5D0 \uAC00\uAE4C\uC774 \uB2E4\uAC00\uAC04\uB2E4\uBA74 \uC790\uB3D9\uC73C\uB85C
+      \uC2B5\uB4DD \uB429\uB2C8\uB2E4. \uC778\uBCA4\uD1A0\uB9AC\uB294 I\uD0A4\uB97C
+      \uB20C\uB7EC \uC5F4 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  - sprite: {fileID: 21300000, guid: ede95d237c2e1ec4982848a8dd87b02e, type: 3}
+    spritetwo: {fileID: 21300000, guid: e3822dad03db5ac4a9e3028ec1b8cd0b, type: 3}
+    descirotion: "\uCC44\uC9D1\uC774 \uC644\uB8CC \uB418\uC5C8\uB2E4\uBA74 \uB9F5
+      \uC0C1\uC5D0 \uC874\uC7AC\uD558\uB294 \uD150\uD2B8\uB85C \uC774\uB3D9\uD558\uC5EC
+      \uC7AC\uB8CC\uB97C \uAC00\uACF5 \uD569\uB2C8\uB2E4. \uD150\uD2B8\uC5D0 \uAC00\uAE4C\uC774
+      \uAC04\uB2E4\uBA74 \uC790\uB3D9\uC73C\uB85C \uC9C4\uC785\uD569\uB2C8\uB2E4."
+  - sprite: {fileID: 21300000, guid: 07fbc6e66b698f747afb8b93095e5725, type: 3}
+    spritetwo: {fileID: 21300000, guid: 67810640db12075448eeed86be96cc48, type: 3}
+    descirotion: "\uC81C\uC791\uC744 \uD1B5\uD558\uC5EC \uCE7C\uC744 \uB9CC\uB4E4\uC5C8\uB2E4\uBA74
+      \uB9F5 \uC0C1\uC5D0 \uB3CC\uC544\uB2E4\uB2C8\uB294 \uBAAC\uC2A4\uD130\uB97C
+      \uB9C8\uC6B0\uC2A4 \uC67C\uCABD \uD074\uB9AD\uC73C\uB85C \uACF5\uACA9\uD558\uC5EC
+      \uBB34\uCC0C\uB97C \uC218 \uC788\uC2B5\uB2C8\uB2E4. "
 --- !u!1 &144504966
 GameObject:
   m_ObjectHideFlags: 0
