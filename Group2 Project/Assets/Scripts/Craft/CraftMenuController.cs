@@ -5,47 +5,61 @@ using UnityEngine.UI;
 public class CraftMenuController : MonoBehaviour
 {
     Inventory inven;
-    CraftEquipmentSlot equipSlot;
+    ItemData itemData;
+    EquipmentUI equipSlot;
+
     [SerializeField]
+    public Button SwordCraftButton;
     public Button HammerCraftButton;
     public Button AxeCraftButton;
     public Button PickAxeCraftButton;
 
     private void Start() {
         inven = Inventory.instance;
-        equipSlot = CraftEquipmentSlot.instance;
+        itemData = ItemData.instance;
+        equipSlot = EquipmentUI.instance;
+
+        SwordCraftButton.onClick.AddListener(() => {
+            CraftSword();
+        });
         HammerCraftButton.onClick.AddListener(() => {
             CraftHammer();
         });
         AxeCraftButton.onClick.AddListener(() => {
             CraftAxe();
         });
-        HammerCraftButton.onClick.AddListener(() => {
+        PickAxeCraftButton.onClick.AddListener(() => {
             CraftPickAxe();
         });
     }
 
+    public void CraftSword() {
+
+    }
     public void CraftHammer() {
         List<Recipes> recipes = HammerCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if(CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
         }
-        //equipSlot.slot[equipSlot.slot.Length] = ;
+        Item hammer = itemData.itemDB[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX];
+        equipSlot.slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].UpdateSlotUI(hammer);
     }
-
     public void CraftAxe() {
         List<Recipes> recipes = AxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
         }
+        Item axe = itemData.itemDB[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX];
+        equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].UpdateSlotUI(axe);
     }
     public void CraftPickAxe() {
         List<Recipes> recipes = PickAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
         }
+        Item pickAxe = itemData.itemDB[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX];
+        equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].UpdateSlotUI(pickAxe);
     }
-
     public bool CheckResource(List<Recipes> recipes, List<Item> items) {
         int nameCheck = 0;
         int quantityCheck = 0;
