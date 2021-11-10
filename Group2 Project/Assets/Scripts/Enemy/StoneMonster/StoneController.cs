@@ -162,7 +162,7 @@ public class StoneController : MonoBehaviour
         
         if(coll.tag == "basicWeapon")
         {
-            Debug.Log("데미지입음");
+            
             if(GameObject.Find("Player").GetComponent<CharacterAnimator>().isAttack == true)
             {
                 HP = HP - coll.gameObject.GetComponent<WeaponHitBox>().AttackPower;
