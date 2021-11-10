@@ -17,12 +17,12 @@ public class ItemData : MonoBehaviour
 
     private void Start() {
          GameObject go = Instantiate(fieldItemPrefab, new Vector3 (61.01f, 5f,39.04f), Quaternion.identity);
-         go.GetComponent<DropItem>().SetItem(itemDB[6]);
+         go.GetComponent<DropItem>().SetItem(itemDB[Random.Range(0, 0)]);
         GameObject go2 = Instantiate(fieldItemPrefab, new Vector3(61.01f, 10f, 39.04f), Quaternion.identity);
-        go2.GetComponent<DropItem>().SetItem(itemDB[7]);
+        go2.GetComponent<DropItem>().SetItem(itemDB[Random.Range(1, 1)]);
         GameObject go3 = Instantiate(fieldItemPrefab, new Vector3(61.01f, 15f, 39.04f), Quaternion.identity);
-        go3.GetComponent<DropItem>().SetItem(itemDB[8]);
+        go3.GetComponent<DropItem>().SetItem(itemDB[Random.Range(2, 2)]);
         GameObject go4 = Instantiate(fieldItemPrefab, new Vector3(61.01f, 20f, 39.04f), Quaternion.identity);
-        go4.GetComponent<DropItem>().SetItem(itemDB[9]);
+        go4.GetComponent<DropItem>().SetItem(itemDB[Random.Range(3, 3)]);
     }
 }
