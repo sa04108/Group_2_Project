@@ -54,6 +54,9 @@ public class TutorialRender : MonoBehaviour
         if (currentPage == Data.Count)
         {
             this.gameObject.SetActive(false);
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked; //커서 위치 고정, 보이지 않게 한다.
         }
         UpdateUI();
     }
