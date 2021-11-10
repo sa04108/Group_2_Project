@@ -2,28 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rock : MonoBehaviour
+public class Gathering : MonoBehaviour
 {
     [SerializeField]
     private int Hp;
     [SerializeField]
     private float DestroyTime;
     [SerializeField]
-    private SphereCollider col;
+    private Collider col;
 
     [SerializeField]
-    private GameObject rock;
+    private GameObject gather;
     [SerializeField]
-    private GameObject rock_debris;
+    private GameObject gather_debris;
     [SerializeField]
-    private GameObject rockItemPrefab;
+    private GameObject gatherItemPrefab;
 
     private int Tool_Tier;
     public void Mining(int damage)
     {
         Hp -= damage; // 도구 티어에 따라 Hp -= Tier;
 
-        if(Hp<=0)
+        if (Hp <= 0)
         {
             Destruction();
         }
@@ -34,12 +34,12 @@ public class Rock : MonoBehaviour
         col.enabled = false;
         for (int i = 0; i < 5; i++)
         {
-            Instantiate(rockItemPrefab, rock.transform.position, Quaternion.identity);
+            Instantiate(gatherItemPrefab, gather.transform.position, Quaternion.identity);
         }// 나중에 Tool_Tier를 이용하여 얻을 수 있는 자원의 수 변경.
 
-        Destroy(rock);
+        Destroy(gather);
 
-        rock_debris.SetActive(true);
-        Destroy(rock_debris, DestroyTime);
+        gather_debris.SetActive(true);
+        Destroy(gather_debris, DestroyTime);
     }
 }
