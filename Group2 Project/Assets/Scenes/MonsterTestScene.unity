@@ -435,14 +435,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1070982354620552469, guid: 2891108138e2e504abd8509fa3edc5ef, type: 3}
+      propertyPath: m_Center.z
+      value: -0.001218548
+      objectReference: {fileID: 0}
     - target: {fileID: 1709770352740654253, guid: 2891108138e2e504abd8509fa3edc5ef, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 87636996}
-    - target: {fileID: 1709770352740654253, guid: 2891108138e2e504abd8509fa3edc5ef, type: 3}
-      propertyPath: rockItemDrop
-      value: 
-      objectReference: {fileID: 909603332184790777, guid: 8c72b7af9059753458b13137449423e1, type: 3}
     - target: {fileID: 2877214365428866744, guid: 2891108138e2e504abd8509fa3edc5ef, type: 3}
       propertyPath: m_Name
       value: ChickenAndRegen

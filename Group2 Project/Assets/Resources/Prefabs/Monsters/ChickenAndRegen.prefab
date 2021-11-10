@@ -122,7 +122,7 @@ MonoBehaviour:
   nextIdx: 1
   speed: 3
   damping: 3.5
-  rockItemDrop: {fileID: 0}
+  rockItemDrop: {fileID: 909603332184790777, guid: 8c72b7af9059753458b13137449423e1, type: 3}
 --- !u!54 &4612744922544721892
 Rigidbody:
   m_ObjectHideFlags: 0
