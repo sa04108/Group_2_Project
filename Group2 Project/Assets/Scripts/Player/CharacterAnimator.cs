@@ -52,7 +52,7 @@ public class CharacterAnimator : MonoBehaviour
     void Attack()
     {
         //공격모션
-        if (inputManager.Clicked())
+        if (Input.GetButtonUp("Fire1"))
         {
             animator.SetBool("Attack", true);
         }
