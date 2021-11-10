@@ -21,11 +21,14 @@ public class CharacterMove : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         fallowCam = FindObjectOfType<FallowCam>();
-
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
+        
+
         if (characterController.isGrounded)
         {
             //ÁÂ¿ì·Î ¹æÇâÀ» ¹Ù²Û´Ù.
