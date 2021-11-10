@@ -22,7 +22,9 @@ public class CharacterEquip : MonoBehaviour
                 Destroy(currentEquipObject);
             }
             currentEquipment = CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX;
-            currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+            if (equipments.slot[currentEquipment]) {
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+            }
         }
         //2¹ø½½·Ô È°
         if (Input.GetKeyDown(KeyCode.Alpha2) && currentEquipment != CommonDefine.EQUIPMENT_BOW_SLOT_INDEX) {
@@ -33,8 +35,12 @@ public class CharacterEquip : MonoBehaviour
             if (currentEquipObject != null) {
                 Destroy(currentEquipObject);
             }
+
             currentEquipment = CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX;
-            currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+
+            if (equipments.slot[currentEquipment]) {
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+            }
         }
         //4¹ø½½·Ô µµ³¢
         if (Input.GetKeyDown(KeyCode.Alpha4) && currentEquipment != CommonDefine.EQUIPMENT_AXE_SLOT_INDEX) {
@@ -42,7 +48,9 @@ public class CharacterEquip : MonoBehaviour
                 Destroy(currentEquipObject);
             }
             currentEquipment = CommonDefine.EQUIPMENT_AXE_SLOT_INDEX;
-            currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+            if (equipments.slot[currentEquipment]) {
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+            }
         }
         //5¹ø½½·Ô °î±ªÀÌ
         if (Input.GetKeyDown(KeyCode.Alpha5) && currentEquipment != CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX) {
@@ -50,7 +58,9 @@ public class CharacterEquip : MonoBehaviour
                 Destroy(currentEquipObject);
             }
             currentEquipment = CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX;
-            currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+            if (equipments.slot[currentEquipment]) {
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+            }
         }
         //6¹ø½½·Ô ÆøÅº
         if (Input.GetKeyDown(KeyCode.Alpha6) && currentEquipment != CommonDefine.EQUIPMENT_BOMB_SLOT_INDEX) {
