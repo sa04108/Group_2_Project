@@ -35,8 +35,8 @@ public class CharacterAnimator : MonoBehaviour
 
     void GetHit()
     {
-        Debug.Log(playerHP);
-        Debug.Log(playerStatus.PlayerHP);
+        // Debug.Log(playerHP);
+        // Debug.Log(playerStatus.PlayerHP);
         //맞으면 실행
         if (playerHP != playerStatus.PlayerHP)
             animator.SetBool("GetHit", true);
