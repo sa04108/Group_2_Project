@@ -34,7 +34,12 @@ public class CraftMenuController : MonoBehaviour
     }
 
     public void CraftSword() {
-
+        List<Recipes> recipes = SwordCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
+        if(CheckResource(recipes, inven.items)) {
+            CraftObject(recipes, inven.items);
+        }
+        Item sword = itemData.itemDB[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX];
+        equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].UpdateSlotUI(sword);
     }
     public void CraftHammer() {
         List<Recipes> recipes = HammerCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
