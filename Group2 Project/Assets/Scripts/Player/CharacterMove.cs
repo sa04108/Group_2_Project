@@ -20,8 +20,6 @@ public class CharacterMove : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
 
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked; //커서 위치 고정, 보이지 않게 한다.
     }
 
     void Update()
@@ -36,7 +34,6 @@ public class CharacterMove : MonoBehaviour
             
             //이동한다.
             moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-
         }
 
         Run(); //달리기 확인

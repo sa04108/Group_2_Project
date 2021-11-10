@@ -36,6 +36,13 @@ public class FallowCam : MonoBehaviour
 		transform.Rotate(Vector3.left * x * rotSpeed);
 		x = Input.GetAxis("Mouse Y");
 
-
+		if(x>90)
+        {
+			x = 90;
+        }
+		if(x<-90)
+        {
+			x = -90;
+        }
 	}
 }
