@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2065860022189568141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2065860022189568143}
+  - component: {fileID: 2065860022189568142}
+  m_Layer: 0
+  m_Name: ItemDataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2065860022189568143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065860022189568141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 976.9283, y: 709.5687, z: 220.19324}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2065860022189568142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065860022189568141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746e3d03981736047a9c978bb86f6fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDB:
+  - itemType: 1
+    itemName: "\uB098\uBB47\uAC00\uC9C0"
+    itemImage: {fileID: 21300000, guid: 3f6de3e24bddcbe478a03dc2f6a6a5a9, type: 3}
+    itemModel: {fileID: 852798479006970287, guid: 268a14e7ef45f1542a7d335b0a20d200, type: 3}
+    itemMaterial: {fileID: 2100000, guid: 3922c043c1c52cb47a7b1bfed562a4b6, type: 2}
+    itemCount: 10
+  - itemType: 1
+    itemName: "\uBAA9\uC7AC"
+    itemImage: {fileID: 21300000, guid: 99cbe4c342b8e204c9dc28821f66fb0b, type: 3}
+    itemModel: {fileID: 4651790976113752566, guid: e9a01d2a3de15954eb2cccf4df7f3d5b, type: 3}
+    itemMaterial: {fileID: 2100000, guid: 3922c043c1c52cb47a7b1bfed562a4b6, type: 2}
+    itemCount: 10
+  - itemType: 1
+    itemName: "\uB3CC\uB369\uC774"
+    itemImage: {fileID: 21300000, guid: 37760a1440b23d74f8c0bcfd2686b047, type: 3}
+    itemModel: {fileID: 4300000, guid: 26fb55e8ae34728499f6f45cd0527c73, type: 3}
+    itemMaterial: {fileID: 2100000, guid: 37524ae4594222f4f8acd7b76234f79a, type: 2}
+    itemCount: 10
+  - itemType: 1
+    itemName: "\uC11D\uC7AC"
+    itemImage: {fileID: 21300000, guid: ac596e80b142aa04b9f1ebb995a80e05, type: 3}
+    itemModel: {fileID: 6630216216432505935, guid: a9129ae83f8faf646961b70c4b103833, type: 3}
+    itemMaterial: {fileID: 2100000, guid: 93415edde47040648869ae6638d33ced, type: 2}
+    itemCount: 10
+  equipDB:
+  - equipType: 0
+    equipName: "\uB3CC \uAC80"
+    equipPrefab: {fileID: 3049961847687692922, guid: f1ba9d878edcb7c4090c9bfe8b8a002e, type: 3}
+    equipImage: {fileID: 21300000, guid: 6f37379b61db42744832e151ec5171e3, type: 3}
+    equipTier: 1
+    damage: 5
+    loggingPower: 0
+    miningPower: 0
+  - equipType: 1
+    equipName: "\uD65C"
+    equipPrefab: {fileID: 0}
+    equipImage: {fileID: 21300000, guid: 0f9c43cec8b602a4fbdb2f1ee84f555e, type: 3}
+    equipTier: 0
+    damage: 0
+    loggingPower: 0
+    miningPower: 0
+  - equipType: 2
+    equipName: "\uB3CC \uB9DD\uCE58"
+    equipPrefab: {fileID: 603216900152774235, guid: c43183d0af3fed842b810ec13e79b2b0, type: 3}
+    equipImage: {fileID: 21300000, guid: e4f8d0aba8c6aed47a265d8764495f4c, type: 3}
+    equipTier: 1
+    damage: 1
+    loggingPower: 1
+    miningPower: 1
+  - equipType: 3
+    equipName: "\uB3CC \uB3C4\uB07C"
+    equipPrefab: {fileID: 6375668711436595517, guid: d77da9c093d2e8348b18673d0f31e41d, type: 3}
+    equipImage: {fileID: 21300000, guid: 7ae870cce7936eb45b95b28f0d9c9644, type: 3}
+    equipTier: 1
+    damage: 1
+    loggingPower: 5
+    miningPower: 1
+  - equipType: 4
+    equipName: "\uB3CC \uACE1\uAD2D\uC774"
+    equipPrefab: {fileID: 5409580506501253632, guid: c4b0d687e132c8145aa2fc3002c7fca3, type: 3}
+    equipImage: {fileID: 21300000, guid: 1d5a81172da762e4686c7fe53ec82f9c, type: 3}
+    equipTier: 1
+    damage: 1
+    loggingPower: 1
+    miningPower: 5
+  - equipType: 5
+    equipName: "\uD3ED\uD0C4"
+    equipPrefab: {fileID: 0}
+    equipImage: {fileID: 0}
+    equipTier: 1
+    damage: 20
+    loggingPower: 20
+    miningPower: 20
+  fieldItemPrefab: {fileID: 7436326173788290965, guid: a2a9d15eb75b4694aafc8573479324e3, type: 3}
+  pos:
+  - {x: 61.01, y: 5, z: 39.04}
+  - {x: 61.01, y: 5, z: 39.04}
+  - {x: 61.01, y: 5, z: 39.04}
+  - {x: 61.01, y: 5, z: 39.04}
+  - {x: 61.01, y: 5, z: 39.04}
+  - {x: 61.01, y: 5, z: 39.04}
+  - {x: 61.01, y: 5, z: 39.04}

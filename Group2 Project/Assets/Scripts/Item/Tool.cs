@@ -17,10 +17,11 @@ public class Tool : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.tag == "fieldResource") {
+        Debug.Log(other.tag);
+        if(other.CompareTag("fieldResource")) {
             Debug.Log("target: resource");
-
-            //other.gameObject.GetComponent<>
+            
+            //other.gameObject.GetComponent<Rock>().
         }
     }
 }
