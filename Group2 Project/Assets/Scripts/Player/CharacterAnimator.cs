@@ -7,13 +7,14 @@ public class CharacterAnimator : MonoBehaviour
     Animator animator;
     CharacterMove characterMove;
     InputManager inputManager;
-
+    public bool isAttack;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         characterMove = GetComponent<CharacterMove>();
         inputManager = FindObjectOfType<InputManager>();
+        isAttack = false;
     }
 
     // Update is called once per frame
@@ -55,6 +56,7 @@ public class CharacterAnimator : MonoBehaviour
         if (Input.GetButtonUp("Fire1"))
         {
             animator.SetBool("Attack", true);
+            isAttack = true;
         }
         else
             animator.SetBool("Attack", false);

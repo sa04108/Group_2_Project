@@ -14,14 +14,14 @@ public class FallowCam : MonoBehaviour
 
 	void Start()
 	{
-		Debug.Log(Cam.transform.eulerAngles);
+		//Debug.Log(Cam.transform.eulerAngles);
 	}
 
 	// Update is called once per frame
 	void LateUpdate()
 	{
 
-		Debug.Log(Cam.transform.localRotation) ;
+		//Debug.Log(Cam.transform.localRotation) ;
 
 		x = Input.GetAxis("Mouse Y");
 
