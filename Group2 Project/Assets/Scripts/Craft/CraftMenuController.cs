@@ -36,7 +36,9 @@ public class CraftMenuController : MonoBehaviour
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
             Equipment sword = itemDB.equipDB[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX];
-            equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].UpdateSlotUI(sword);
+            equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].equip = sword;
+            equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].UpdateSlotUI();
+            inven.AddEquip(sword);
         }
     }
 
@@ -45,7 +47,9 @@ public class CraftMenuController : MonoBehaviour
         if(CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
             Equipment hammer = itemDB.equipDB[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX];
-            equipSlot.slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].UpdateSlotUI(hammer);
+            equipSlot.slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].equip = hammer;
+            equipSlot.slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].UpdateSlotUI();
+            inven.AddEquip(hammer);
         }
 
     }
@@ -55,7 +59,9 @@ public class CraftMenuController : MonoBehaviour
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
             Equipment axe = itemDB.equipDB[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX];
-            equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].UpdateSlotUI(axe);
+            equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].equip = axe;
+            equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].UpdateSlotUI();
+            inven.AddEquip(axe);
         }
     }
     public void CraftPickAxe() {
@@ -63,7 +69,9 @@ public class CraftMenuController : MonoBehaviour
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
             Equipment pickAxe = itemDB.equipDB[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX];
-            equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].UpdateSlotUI(pickAxe);
+            equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].equip = pickAxe;
+            equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].UpdateSlotUI();
+            inven.AddEquip(pickAxe);
         }
     }
 
@@ -94,7 +102,7 @@ public class CraftMenuController : MonoBehaviour
             foreach (Item item in items) {
                 if (recipe.resourceName == item.itemName) {
                     item.itemCount -= recipe.resourceCount;
-                    inven.onChangeItem.Invoke();
+                    //inven.onChangeItem.Invoke();
                     break;
                 }
             }

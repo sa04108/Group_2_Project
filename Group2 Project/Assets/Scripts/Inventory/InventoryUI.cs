@@ -14,32 +14,33 @@ public class InventoryUI : MonoBehaviour
 
     public InventorySlot[] slots;
     public Transform slotHolder;
-
     void Start()
     {
         inven = Inventory.instance;
         slots = slotHolder.GetComponentsInChildren<InventorySlot>();
-        inven.onSlotCountChange += SlotChange;
+        //inven.onSlotCountChange += SlotChange;
         inven.onChangeItem += RedrawSlotUI;
         inventoryPanel.SetActive(isInventoryActive);
+
+        RedrawSlotUI();
     }
 
-    private void SlotChange(int val) {
-        for(int i=0; i<slots.Length; i++) {
-            if (i < inven.SlotCnt) {
-                slots[i].GetComponent<Button>().interactable = true;
-            }
-            else {
-                slots[i].GetComponent<Button>().interactable = false;
-            }
-        }
-    }
+   //private void SlotChange(int val) {
+   //    for(int i=0; i<slots.Length; i++) {
+   //        if (i < inven.SlotCnt) {
+   //            slots[i].GetComponent<Button>().interactable = true;
+   //        }
+   //        else {
+   //            slots[i].GetComponent<Button>().interactable = false;
+   //        }
+   //    }
+   //}
     public void AddSlot() {
         inven.SlotCnt++;
     }
     void Update()
     {
-
+        RedrawSlotUI();
         if (Input.GetKeyDown(KeyCode.I)) {
 
             isInventoryActive = !isInventoryActive;

@@ -142,7 +142,9 @@ public class StoneController : MonoBehaviour
 
     void StoneDrop()
     {
-        Instantiate(rockItemDrop, transform.position, Quaternion.identity);
+        GameObject dropItem = Instantiate(rockItemDrop, transform.position, Quaternion.identity);
+        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[2]);
+        //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
     }
     void OnTriggerEnter(Collider coll)
     {
@@ -170,8 +172,6 @@ public class StoneController : MonoBehaviour
 
             }
         }
-
-
 
     }
     /*

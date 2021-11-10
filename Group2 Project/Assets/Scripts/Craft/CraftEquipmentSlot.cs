@@ -8,6 +8,30 @@ public class CraftEquipmentSlot : MonoBehaviour
     private void Awake() {
         instance = this;
     }
+
+    private void Update() {
+        RedrawUI();
+    }
+
+    void RedrawUI() {
+        Inventory inven = Inventory.instance;
+
+        foreach(Equipment _equip in inven.equipments) {
+            if(_equip.equipType == EQUIP_TYPE.SWORD) {
+                slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].equip = _equip;
+            }
+            else if(_equip.equipType == EQUIP_TYPE.HAMMER) {
+                slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].equip = _equip;
+            }
+            else if(_equip.equipType == EQUIP_TYPE.AXE) {
+                slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].equip = _equip;
+            }
+            else if (_equip.equipType == EQUIP_TYPE.PICKAXE) {
+                slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].equip = _equip;
+            }
+        }
+    }
+
     [SerializeField]
     public EquipmentSlot[] slot;
 }

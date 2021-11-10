@@ -29,6 +29,13 @@ public class PlayerStatus : MonoBehaviour
         else
             return false;
     }
-    
 
+    private void OnTriggerEnter(Collider other) {
+        if (other.tag == "dropItem") {
+            DropItem dropItems = other.GetComponent<DropItem>();
+            if (Inventory.instance.AddItem(dropItems.GetItem())) {
+                dropItems.DestroyItem();
+            }
+        }
+    }
 }

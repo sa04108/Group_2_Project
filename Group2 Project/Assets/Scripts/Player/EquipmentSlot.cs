@@ -12,10 +12,12 @@ public class EquipmentSlot : MonoBehaviour
     private void Start() {
         isActive = false;
     }
+    private void Update() {
+        UpdateSlotUI();
+    }
 
-    public void UpdateSlotUI(Equipment _equip) {
-        equip = _equip;
-        gameObject.GetComponent<Image>().sprite = _equip.equipImage;
+    public void UpdateSlotUI() {
+        gameObject.GetComponent<Image>().sprite = equip.equipImage;
         isActive = true;
     }
 }

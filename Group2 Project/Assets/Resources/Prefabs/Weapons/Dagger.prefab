@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3049961847686529300}
   - component: {fileID: 3049961847685448382}
   - component: {fileID: 7872818721733657785}
+  - component: {fileID: -3686963447717278047}
   m_Layer: 0
   m_Name: Dagger
-  m_TagString: Untagged
+  m_TagString: basicWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,3 +97,16 @@ CapsuleCollider:
   m_Height: 2.6700554
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.8065853}
+--- !u!114 &-3686963447717278047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3049961847687692922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1664a7ebca5514480a917fb27a01de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackPower: 5
