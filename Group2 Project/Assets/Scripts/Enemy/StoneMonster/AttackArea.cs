@@ -27,11 +27,21 @@ public class AttackArea : MonoBehaviour
         {
             if (isAttack == true)
             {
+                Debug.Log("attackTrue");
                 PlayerStatus playerStatus = GameObject.Find("Player").GetComponent<PlayerStatus>();
                 playerStatus.PlayerHP -= AttackPower;
             }
 
         }
 
+    }
+
+    public void Attaking()
+    {
+        isAttack = true;
+    }
+    public void StopAttaking()
+    {
+        isAttack = false;
     }
 }

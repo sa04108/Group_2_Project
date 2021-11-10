@@ -9,6 +9,7 @@ TagManager:
   - dragon
   - basicWeapon
   - fieldResource
+  - ChickenLeg
   layers:
   - Default
   - TransparentFX

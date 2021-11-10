@@ -30,12 +30,27 @@ public class PlayerStatus : MonoBehaviour
             return false;
     }
 
+    
+
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "dropItem") {
+        if (other.tag == "dropItem") 
+        {
             DropItem dropItems = other.GetComponent<DropItem>();
-            if (Inventory.instance.AddItem(dropItems.GetItem())) {
+
+            if (Inventory.instance.AddItem(dropItems.GetItem())) 
+            {
                 dropItems.DestroyItem();
             }
+        }
+
+        if (other.tag == "ChickenLeg")
+        {
+            PlayerHP = PlayerHP + 30;
+            if (PlayerHP >= 100)
+            {
+                PlayerHP = 100;
+            }
+            Destroy(other.gameObject, 0.01f);
         }
     }
 }

@@ -30,8 +30,8 @@ public class ChicController : MonoBehaviour
     public int HP = 15;
     public int AttackPower = 2;
     public bool isAttack = false;
-    GameObject AttackHead;
-    GameObject ChicAni;
+    public GameObject AttackHead;
+    public GameObject ChicAni;
     bool isAlive = true;
 
     [Header("Patrol and Regen Point")]
@@ -64,8 +64,11 @@ public class ChicController : MonoBehaviour
         isFindPlayer = false;
         //AttackHead = transform.GetChild(0).GetCompontnt<AttackArea>();
         //AttackHead = transform.GetChild(0).GetComponentInChilderen<AttackArea>();
-        AttackHead = transform.GetChild(0).gameObject;
-        ChicAni = transform.GetChild(1).gameObject;
+
+        //transform.find 는 자식만 찾는다
+
+        AttackHead = GameObject.Find("Body");
+        ChicAni = GameObject.Find("Chicken");
     }
     void Awake()
     {
@@ -87,7 +90,7 @@ public class ChicController : MonoBehaviour
                 //animator.SetInteger("Walk", 1);
                 ChicAni.GetComponent<ChicAnimation>().Walking();
                 //공격상태 false유지
-                AttackHead.GetComponent<AttackArea>().isAttack = false;
+                AttackHead.GetComponent<AttackArea>().StopAttaking();
                 ChicAni.GetComponent<ChicAnimation>().Walking();
             }
             else if (distance < 2.5f)
@@ -98,7 +101,7 @@ public class ChicController : MonoBehaviour
                 ChicAni.GetComponent<ChicAnimation>().Attack();
 
 
-                AttackHead.GetComponent<AttackArea>().isAttack = true;
+                AttackHead.GetComponent<AttackArea>().Attaking();
 
             }
             else if (distance > 10.0f && isFindPlayer == true)
@@ -113,7 +116,7 @@ public class ChicController : MonoBehaviour
                 //플레이어 못찾음
                 isFindPlayer = false;
                 //공격상태 false유지
-                AttackHead.GetComponent<AttackArea>().isAttack = false;
+                AttackHead.GetComponent<AttackArea>().StopAttaking();
 
             }
 
@@ -135,12 +138,13 @@ public class ChicController : MonoBehaviour
         {
             if(isAlive == true)
             {
+                Invoke("StoneDrop", 1.7f);
                 Debug.Log("Dead");
                 transform.root.gameObject.GetComponent<ErasePatrol>().EraseThis();
                 //animator.SetTrigger("Dead");
                 ChicAni.GetComponent<ChicAnimation>().Dead();
                 isAlive = false;
-                Invoke("StoneDrop", 1.7f);
+                
 
             }
         }

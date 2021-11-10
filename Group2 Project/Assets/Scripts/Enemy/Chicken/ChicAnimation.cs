@@ -11,7 +11,7 @@ public class ChicAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Walking();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,21 +24,21 @@ public class ChicAnimation : MonoBehaviour
 
     public void Walking()
     {
-        animator.SetInteger("Walk", 1);
         status = 1;
-        Debug.Log("walk");
+        animator.SetInteger("Walk", 1);
+        
     }
     public void WalkingStop()
     {
-        animator.SetInteger("Walk", 0);
         status = 2;
-        Debug.Log("no walk");
+        animator.SetInteger("Walk", 0);
+        
     }
     public void Attack()
     {
-        animator.SetTrigger("Attack");
         status = 3;
-        Debug.Log("at");
+        animator.SetTrigger("Attack");
+        
     }
     public void idle()
     {
@@ -49,7 +49,6 @@ public class ChicAnimation : MonoBehaviour
     {
         status = 4;
         animator.SetTrigger("jump");
-        Debug.Log("jump");
 
     }
 
@@ -57,7 +56,6 @@ public class ChicAnimation : MonoBehaviour
     {
         status = 5;
         animator.SetTrigger("Dead");
-        Debug.Log("Dead");
     }
 
 
