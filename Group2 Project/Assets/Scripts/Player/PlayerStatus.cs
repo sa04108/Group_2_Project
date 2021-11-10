@@ -13,7 +13,7 @@ public class PlayerStatus : MonoBehaviour
     void Start()
     {
         if (lastPlayerPos != Vector3.zero)
-            transform.position = lastPlayerPos + Vector3.back * 3;
+            transform.position = lastPlayerPos + Vector3.back * 5;
     }
 
     // Update is called once per frame
