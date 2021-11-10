@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TutorialRender : MonoBehaviour
 {
+    private static bool isFirstLoad = true;
+
     [System.Serializable]
     public class DataProperty
     {
@@ -20,6 +22,15 @@ public class TutorialRender : MonoBehaviour
     public List<DataProperty> Data;
 
     int currentPage;
+
+    private void Awake()
+    {
+        if (isFirstLoad)
+            isFirstLoad = false;
+        else
+            Destroy(gameObject);
+    }
+
     void Start()
     {
         UpdateUI();
