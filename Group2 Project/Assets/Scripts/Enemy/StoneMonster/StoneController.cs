@@ -47,7 +47,11 @@ public class StoneController : MonoBehaviour
 
     Animator animator;
     Rigidbody rb;
+    [SerializeField]
+    private GameObject rockItemDrop;
+
     
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -128,12 +132,20 @@ public class StoneController : MonoBehaviour
             {
                 animator.SetTrigger("Dead");
                 isAlive = false;
+                Invoke("StoneDrop", 1.7f);
                 transform.root.gameObject.gameObject.GetComponent<ErasePatrol>().EraseThis();
+
             }
         }
 
     }
 
+    void StoneDrop()
+    {
+        GameObject dropItem = Instantiate(rockItemDrop, transform.position, Quaternion.identity);
+        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[2]);
+        //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
+    }
     void OnTriggerEnter(Collider coll)
     {
         if(coll.tag == "PatrolPoint")
@@ -152,7 +164,7 @@ public class StoneController : MonoBehaviour
         
         if(coll.tag == "basicWeapon")
         {
-            Debug.Log("데미지입음");
+            
             if(GameObject.Find("Player").GetComponent<CharacterAnimator>().isAttack == true)
             {
                 HP = HP - coll.gameObject.GetComponent<WeaponHitBox>().AttackPower;
@@ -160,8 +172,6 @@ public class StoneController : MonoBehaviour
 
             }
         }
-
-
 
     }
     /*

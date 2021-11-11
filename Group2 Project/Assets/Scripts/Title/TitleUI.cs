@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleUI : MonoBehaviour
 {
-    public GameObject optionPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +21,5 @@ public class TitleUI : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Scene");
-    }
-
-    public void OnOffOptionPanel()
-    {
-        optionPanel.SetActive(!optionPanel.activeSelf);
     }
 }

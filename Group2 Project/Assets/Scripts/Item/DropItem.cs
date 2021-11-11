@@ -14,7 +14,7 @@ public class DropItem : MonoBehaviour
         item.itemModel = _item.itemModel;
         item.itemMaterial = _item.itemMaterial;
         item.itemCount = _item.itemCount;
-       // gameObject.GetComponent<MeshRenderer>().
+        gameObject.GetComponent<MeshFilter>().mesh = item.itemModel;
         gameObject.GetComponent<MeshRenderer>().material=item.itemMaterial;
 
         //image.sprite = item.itemImage;

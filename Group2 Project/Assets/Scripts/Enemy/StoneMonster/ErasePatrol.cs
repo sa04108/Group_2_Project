@@ -19,6 +19,5 @@ public class ErasePatrol : MonoBehaviour
     public void EraseThis()
     {
         Destroy(this.gameObject, 1.7f);
-        Debug.Log("몬스터 삭제");
     }
 }

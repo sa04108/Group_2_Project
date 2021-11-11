@@ -8,6 +8,8 @@ TagManager:
   - PatrolPoint
   - dragon
   - basicWeapon
+  - fieldResource
+  - ChickenLeg
   layers:
   - Default
   - TransparentFX
