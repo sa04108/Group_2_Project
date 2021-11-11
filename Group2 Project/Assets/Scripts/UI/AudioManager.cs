@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    public bool isAlwaysShowCursor;
+    private static bool isAlwaysShowCursor = true;
 
     GameObject optionPanel;
     bool isOptionOn;
@@ -61,5 +61,10 @@ public class AudioManager : MonoBehaviour
         {
             audio.volume = vol / 2; // max 0.5
         }
+    }
+
+    public void SetAlwaysShowCursor(bool val)
+    {
+        isAlwaysShowCursor = val;
     }
 }

@@ -68,7 +68,7 @@ public class TutorialRender : MonoBehaviour
 
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked; //커서 위치 고정, 보이지 않게 한다.
-            AudioManager.instance.isAlwaysShowCursor = false;
+            AudioManager.instance.SetAlwaysShowCursor(false);
             return;
         }
         UpdateUI();

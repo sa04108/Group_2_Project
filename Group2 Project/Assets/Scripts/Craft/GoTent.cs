@@ -23,6 +23,7 @@ public class GoTent : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            AudioManager.instance.SetAlwaysShowCursor(true);
             SceneManager.LoadScene("Tent");
         }
     }

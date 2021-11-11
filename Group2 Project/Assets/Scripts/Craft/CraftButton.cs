@@ -32,6 +32,7 @@ public class CraftButton : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked; //커서 위치 고정, 보이지 않게 한다.
+        AudioManager.instance.SetAlwaysShowCursor(false);
         SceneManager.LoadScene("Scene");
     }
 }
