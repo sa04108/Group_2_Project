@@ -7,6 +7,7 @@ public class PlayerStatus : MonoBehaviour
     [Header("Player's Stats")]
     public float PlayerHP = 100f;
     public int AttackPower = 5;
+    GameObject obj;
 
     public static Vector3 lastPlayerPos;
     // Start is called before the first frame update
@@ -52,5 +53,14 @@ public class PlayerStatus : MonoBehaviour
             }
             Destroy(other.gameObject, 0.01f);
         }
+        //Esder 태그의 아이탬 습득시 데미지 15
+        if (other.tag == "Esder")
+        {
+            obj = GameObject.Find("Sword");
+            obj.GetComponent<WeaponHitBox>().AttackPower = 15;
+            Destroy(other.gameObject, 0.01f);
+        }
+
     }
+
 }

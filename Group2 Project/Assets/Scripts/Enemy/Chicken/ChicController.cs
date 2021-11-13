@@ -178,7 +178,7 @@ public class ChicController : MonoBehaviour
             
             if(GameObject.Find("Player").GetComponent<CharacterAnimator>().isAttack == true)
             {
-                HP = HP - coll.gameObject.GetComponent<WeaponHitBox>().AttackPower;
+                HP = HP - (coll.gameObject.GetComponent<WeaponHitBox>().AttackPower - 10 );
                 GameObject.Find("Player").GetComponent<CharacterAnimator>().isAttack = false;
 
             }

@@ -10,6 +10,7 @@ TagManager:
   - basicWeapon
   - fieldResource
   - ChickenLeg
+  - Esder
   layers:
   - Default
   - TransparentFX
