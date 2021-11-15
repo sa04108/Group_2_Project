@@ -2680,6 +2680,8 @@ GameObject:
   m_Component:
   - component: {fileID: 925771834564127236}
   - component: {fileID: 925771834573752196}
+  - component: {fileID: 346377247}
+  - component: {fileID: 346377246}
   m_Layer: 0
   m_Name: Red
   m_TagString: dragon
@@ -2722,6 +2724,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &346377247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925771834564338528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86b577c76c4c22439e125d0e4e7ba65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &346377246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925771834564338528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a3c54569f97f042a0bfac004d7c1e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
+  life: 0
+  speed: 0
 --- !u!1 &925771834564338536
 GameObject:
   m_ObjectHideFlags: 0
