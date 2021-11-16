@@ -4785,6 +4785,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6476095201600948078}
   - component: {fileID: 6476095201585692588}
+  - component: {fileID: 4260262036647367241}
+  - component: {fileID: 2905681567164885193}
   m_Layer: 0
   m_Name: AfterMeteorExplosion
   m_TagString: Untagged
@@ -4801,7 +4803,7 @@ Transform:
   m_GameObject: {fileID: 6476095201601138916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 76.851776, y: -0.0000009536743, z: 87.46851}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 6476095201600899210}
   - {fileID: 6476095201600935546}
@@ -9528,6 +9530,31 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &4260262036647367241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6476095201601138916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c543a8b2c990ad49a0720f026624e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &2905681567164885193
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6476095201601138916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6476095201601156824
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,11 +8,12 @@ public class PlayerStatus : MonoBehaviour
     public float PlayerHP = 100f;
     public int AttackPower = 5;
     GameObject obj;
-
+    bool isBurning;
     public static Vector3 lastPlayerPos;
     // Start is called before the first frame update
     void Start()
     {
+        isBurning = false;
         if (lastPlayerPos != Vector3.zero)
             transform.position = lastPlayerPos + Vector3.back * 5;
     }
@@ -62,5 +63,24 @@ public class PlayerStatus : MonoBehaviour
         }
 
     }
+    
+    public void Burning()
+    {
+        if(isBurning == false)
+        {
+            isBurning = true;
+            InvokeRepeating("BurningDamage", 0.5f, 0.5f);
+            Invoke("BurningEnd", 4f);
 
+        }
+    }
+    void BurningEnd()
+    {
+        CancelInvoke("BurningDamage");
+        isBurning = false;
+    }
+    void BurningDamage()
+    {
+        PlayerHP = PlayerHP - 5;
+    }
 }

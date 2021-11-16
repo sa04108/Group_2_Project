@@ -11,6 +11,7 @@ TagManager:
   - fieldResource
   - ChickenLeg
   - Esder
+  - Ground
   layers:
   - Default
   - TransparentFX
