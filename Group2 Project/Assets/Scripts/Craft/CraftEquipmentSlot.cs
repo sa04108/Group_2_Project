@@ -20,6 +20,9 @@ public class CraftEquipmentSlot : MonoBehaviour
             if(_equip.equipType == EQUIP_TYPE.SWORD) {
                 slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].equip = _equip;
             }
+            else if(_equip.equipType == EQUIP_TYPE.BOW) {
+                slot[CommonDefine.EQUIPMENT_BOW_SLOT_INDEX].equip = _equip;
+            }
             else if(_equip.equipType == EQUIP_TYPE.HAMMER) {
                 slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].equip = _equip;
             }
@@ -28,6 +31,9 @@ public class CraftEquipmentSlot : MonoBehaviour
             }
             else if (_equip.equipType == EQUIP_TYPE.PICKAXE) {
                 slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].equip = _equip;
+            }
+            else if (_equip.equipType == EQUIP_TYPE.BOMB) {
+                slot[CommonDefine.EQUIPMENT_BOMB_SLOT_INDEX].equip = _equip;
             }
         }
     }

@@ -40,6 +40,13 @@ public class Inventory : MonoBehaviour
     public List<Equipment> equipments = new List<Equipment>();
 
     public void AddEquip(Equipment _equip) {
+        foreach(Equipment content in equipments) {
+            if(_equip.equipType == content.equipType) {
+                equipments.Remove(content);
+                equipments.Add(_equip);
+                return;
+            }
+        }
         equipments.Add(_equip);
     }
     public bool AddItem(Item _item) {

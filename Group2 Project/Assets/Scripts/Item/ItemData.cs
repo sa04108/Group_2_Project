@@ -31,5 +31,7 @@ public class ItemData : MonoBehaviour
         go5.GetComponent<DropItem>().SetItem(itemDB[4]);
         GameObject go6 = Instantiate(fieldItemPrefab, new Vector3(245f, 21f, 70f), Quaternion.identity);
         go6.GetComponent<DropItem>().SetItem(itemDB[5]);
+        GameObject go7 = Instantiate(fieldItemPrefab, new Vector3(245f, 25f, 70f), Quaternion.identity);
+        go7.GetComponent<DropItem>().SetItem(itemDB[6]);
     }
 }

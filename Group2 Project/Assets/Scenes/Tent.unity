@@ -189,6 +189,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &176492951 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6481182836315641782, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+  m_PrefabInstance: {fileID: 529251960}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &529251960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -440,6 +451,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3553883058405469724, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: IronPickAxeCraftButton
+      value: 
+      objectReference: {fileID: 176492951}
+    - target: {fileID: 3553883058405469724, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: RockPickAxeCraftButton
+      value: 
+      objectReference: {fileID: 918846234}
     - target: {fileID: 3553883058405469794, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -660,6 +679,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemDataManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2065860022189568142, guid: 87e54c071e877484e9ae14249dc5e8fb, type: 3}
+      propertyPath: equipDB.Array.data[8].equipImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d5a81172da762e4686c7fe53ec82f9c, type: 3}
+    - target: {fileID: 2065860022189568142, guid: 87e54c071e877484e9ae14249dc5e8fb, type: 3}
+      propertyPath: equipDB.Array.data[11].equipImage
+      value: 
+      objectReference: {fileID: 21300060, guid: 36bbf91eb47491242b75b7e2df16947f, type: 3}
+    - target: {fileID: 2065860022189568142, guid: 87e54c071e877484e9ae14249dc5e8fb, type: 3}
+      propertyPath: equipDB.Array.data[8].equipPrefab
+      value: 
+      objectReference: {fileID: 5409580506501253632, guid: c4b0d687e132c8145aa2fc3002c7fca3, type: 3}
     - target: {fileID: 2065860022189568143, guid: 87e54c071e877484e9ae14249dc5e8fb, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -706,6 +737,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87e54c071e877484e9ae14249dc5e8fb, type: 3}
+--- !u!114 &918846234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8763911080726671943, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+  m_PrefabInstance: {fileID: 529251960}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &998654128 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3553883057813619424, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
@@ -881,6 +923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  equipments: []
 --- !u!1001 &1702887506
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -28,7 +28,13 @@ public class CharacterEquip : MonoBehaviour
         }
         //2¹ø½½·Ô È°
         if (Input.GetKeyDown(KeyCode.Alpha2) && currentEquipment != CommonDefine.EQUIPMENT_BOW_SLOT_INDEX) {
-
+            if(currentEquipObject != null) {
+                Destroy(currentEquipObject);
+            }
+            currentEquipment = CommonDefine.EQUIPMENT_BOW_SLOT_INDEX;
+            if (equipments.slot[currentEquipment]) {
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+            }
         }
         //3¹ø½½·Ô ÇØ¸Ó
         if (Input.GetKeyDown(KeyCode.Alpha3) && currentEquipment != CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX) {
@@ -64,7 +70,13 @@ public class CharacterEquip : MonoBehaviour
         }
         //6¹ø½½·Ô ÆøÅº
         if (Input.GetKeyDown(KeyCode.Alpha6) && currentEquipment != CommonDefine.EQUIPMENT_BOMB_SLOT_INDEX) {
-
+            if(currentEquipObject != null) {
+                Destroy(currentEquipObject);
+            }
+            currentEquipment = CommonDefine.EQUIPMENT_BOMB_SLOT_INDEX;
+            if (equipments.slot[currentEquipment]) {
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+            }
         }
     }
 }
