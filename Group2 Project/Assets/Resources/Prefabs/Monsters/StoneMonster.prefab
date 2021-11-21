@@ -272,14 +272,14 @@ MonoBehaviour:
   canJump: 0
   isFindPlayer: 0
   target: {fileID: 0}
-  HP: 100
+  HP: 15
   AttackPower: 5
   isAttack: 0
   points: []
   nextIdx: 1
   speed: 3
   damping: 3.5
-  rockItemDrop: {fileID: 0}
+  rockItemDrop: {fileID: 7436326173788290965, guid: a2a9d15eb75b4694aafc8573479324e3, type: 3}
 --- !u!54 &6693308976774638464
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 33716004335135182}
   - component: {fileID: 23969500253089624}
   - component: {fileID: 7068751962971926515}
+  - component: {fileID: 1466249351218490323}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -389,11 +390,25 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855729412434242}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.004
-  m_Center: {x: 0, y: 0.014, z: 0}
+  m_Center: {x: 0.001, y: 0.014, z: 0}
+--- !u!114 &1466249351218490323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855729412434242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871e113c8f8fdbd4082995c8225cd589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttack: 0
+  AttackPower: 5
 --- !u!1001 &1920377484144764567
 PrefabInstance:
   m_ObjectHideFlags: 0

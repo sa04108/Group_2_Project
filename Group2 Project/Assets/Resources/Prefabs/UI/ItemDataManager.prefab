@@ -44,30 +44,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDB:
-  - itemType: 1
+  - itemType: 0
     itemName: "\uB098\uBB47\uAC00\uC9C0"
     itemImage: {fileID: 21300000, guid: 3f6de3e24bddcbe478a03dc2f6a6a5a9, type: 3}
     itemModel: {fileID: 852798479006970287, guid: 268a14e7ef45f1542a7d335b0a20d200, type: 3}
     itemMaterial: {fileID: 2100000, guid: 3922c043c1c52cb47a7b1bfed562a4b6, type: 2}
     itemCount: 10
-  - itemType: 1
+  - itemType: 0
     itemName: "\uBAA9\uC7AC"
-    itemImage: {fileID: 21300000, guid: 99cbe4c342b8e204c9dc28821f66fb0b, type: 3}
+    itemImage: {fileID: 21300000, guid: 7cb8be4db15b0c34682408cc902dd991, type: 3}
     itemModel: {fileID: 4651790976113752566, guid: e9a01d2a3de15954eb2cccf4df7f3d5b, type: 3}
     itemMaterial: {fileID: 2100000, guid: 3922c043c1c52cb47a7b1bfed562a4b6, type: 2}
     itemCount: 10
-  - itemType: 1
+  - itemType: 0
     itemName: "\uB3CC\uB369\uC774"
-    itemImage: {fileID: 21300000, guid: 37760a1440b23d74f8c0bcfd2686b047, type: 3}
+    itemImage: {fileID: 21300008, guid: e919f8b19e6260d44b25ce176dd8ee66, type: 3}
     itemModel: {fileID: 4300000, guid: 26fb55e8ae34728499f6f45cd0527c73, type: 3}
     itemMaterial: {fileID: 2100000, guid: 37524ae4594222f4f8acd7b76234f79a, type: 2}
     itemCount: 10
-  - itemType: 1
+  - itemType: 0
     itemName: "\uC11D\uC7AC"
-    itemImage: {fileID: 21300000, guid: ac596e80b142aa04b9f1ebb995a80e05, type: 3}
-    itemModel: {fileID: 6630216216432505935, guid: a9129ae83f8faf646961b70c4b103833, type: 3}
+    itemImage: {fileID: 21300000, guid: 44b5d55df7a49564486c024950a82eb1, type: 3}
+    itemModel: {fileID: -3282209725294213285, guid: f226223b3a11d2d4b980aaa520301583, type: 3}
     itemMaterial: {fileID: 2100000, guid: 93415edde47040648869ae6638d33ced, type: 2}
     itemCount: 10
+  - itemType: 0
+    itemName: "\uAC15\uD654\uC11D"
+    itemImage: {fileID: 21300000, guid: 44b5d55df7a49564486c024950a82eb1, type: 3}
+    itemModel: {fileID: 3034718079717092458, guid: e0fe1b80592a0144babd1bf297ad32ad, type: 3}
+    itemMaterial: {fileID: 2100000, guid: 93415edde47040648869ae6638d33ced, type: 2}
+    itemCount: 1
+  - itemType: 0
+    itemName: "\uBD88\uC548\uC815\uD55C \uD575"
+    itemImage: {fileID: 21300000, guid: 44b5d55df7a49564486c024950a82eb1, type: 3}
+    itemModel: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    itemMaterial: {fileID: 2100000, guid: 35a80721181006b41a9a1f03dd6ac05f, type: 2}
+    itemCount: 1
   equipDB:
   - equipType: 0
     equipName: "\uB3CC \uAC80"

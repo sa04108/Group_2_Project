@@ -1258,17 +1258,13 @@ PrefabInstance:
       value: ItemDataManager
       objectReference: {fileID: 0}
     - target: {fileID: 2065860022189568142, guid: 87e54c071e877484e9ae14249dc5e8fb, type: 3}
-      propertyPath: itemDB.Array.data[1].itemImage
+      propertyPath: itemDB.Array.data[4].itemImage
       value: 
-      objectReference: {fileID: 21300000, guid: 7cb8be4db15b0c34682408cc902dd991, type: 3}
+      objectReference: {fileID: 21300000, guid: e8cb76eda613d7842bf146ca324d16c4, type: 3}
     - target: {fileID: 2065860022189568142, guid: 87e54c071e877484e9ae14249dc5e8fb, type: 3}
-      propertyPath: itemDB.Array.data[2].itemImage
+      propertyPath: itemDB.Array.data[5].itemImage
       value: 
-      objectReference: {fileID: 21300008, guid: e919f8b19e6260d44b25ce176dd8ee66, type: 3}
-    - target: {fileID: 2065860022189568142, guid: 87e54c071e877484e9ae14249dc5e8fb, type: 3}
-      propertyPath: itemDB.Array.data[3].itemImage
-      value: 
-      objectReference: {fileID: 21300000, guid: 44b5d55df7a49564486c024950a82eb1, type: 3}
+      objectReference: {fileID: 21300000, guid: 5a92045f2e5f77b479fd6bc6baa3b066, type: 3}
     - target: {fileID: 2065860022189568143, guid: 87e54c071e877484e9ae14249dc5e8fb, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1544,10 +1540,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 676599012}
-    - target: {fileID: 1311724701077126526, guid: 2347bb1a9ec91f3479d9bc74c61a4d28, type: 3}
-      propertyPath: rockItemDrop
-      value: 
-      objectReference: {fileID: 7436326173788290965, guid: a2a9d15eb75b4694aafc8573479324e3, type: 3}
     - target: {fileID: 4420711358325598281, guid: 2347bb1a9ec91f3479d9bc74c61a4d28, type: 3}
       propertyPath: m_Name
       value: StoneMonsterAndRegen
