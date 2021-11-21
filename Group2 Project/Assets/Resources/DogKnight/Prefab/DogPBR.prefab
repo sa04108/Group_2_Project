@@ -250,7 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440652dc01fb6764a88a15f67a180b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cam: {fileID: 3016674862976298429}
   rotSpeed: 3
   x: 0
 --- !u!1 &8422892626600285312

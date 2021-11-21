@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class FallowCam : MonoBehaviour
 {
-
-	public GameObject Cam;
-
 	public float rotSpeed = 8;
 	public float x;
 
@@ -22,13 +19,13 @@ public class FallowCam : MonoBehaviour
 
 		x = Input.GetAxis("Mouse Y");
 
-		if (Cam.transform.localRotation.x > 0.3 && x < 0)
+		if (Camera.main.transform.localRotation.x > 0.3 && x < 0)
         {
 			x = 0;
 		}
 			
 
-		if (Cam.transform.localRotation.x < -0.3 && x > 0) {
+		if (Camera.main.transform.localRotation.x < -0.3 && x > 0) {
 			x = 0;
 		}
 			
