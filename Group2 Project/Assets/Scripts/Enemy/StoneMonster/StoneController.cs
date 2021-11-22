@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class StoneController : MonoBehaviour
 {
 
-    [SerializeField] float movementSpeed = 4f;
     //네비매쉬 쓸거라 점프해도 안올라감. 애니메이션으로 대체
     //[SerializeField] float jumpForce = 15f;
     [SerializeField] float timeBeforeNextJump = 1.2f;
