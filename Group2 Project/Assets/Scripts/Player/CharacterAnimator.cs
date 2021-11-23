@@ -71,16 +71,41 @@ public class CharacterAnimator : MonoBehaviour
             animator.SetBool("Run", false);
     }
 
+    //void Attack()
+    //{
+    //    //공격모션
+    //    if (Input.GetButtonUp("Fire1"))
+    //    {
+    //        animator.SetBool("Attack", true);
+    //        isAttack = true;
+    //    }
+    //    else
+    //        animator.SetBool("Attack", false);
+    //}
+
+                //  11/24 *수요일 회의 전 김연완 제안, isAttack을 이용하여 무기들 Collider 해제
     void Attack()
     {
         //공격모션
         if (Input.GetButtonUp("Fire1"))
         {
-            animator.SetBool("Attack", true);
-            isAttack = true;
+            if (!isAttack)
+            {
+                StartCoroutine("Swing");
+            }
         }
-        else
-            animator.SetBool("Attack", false);
+    }
+
+    IEnumerator Swing()
+    {
+        animator.SetBool("Attack", true);
+        isAttack = true;
+
+        yield return new WaitForSeconds(0.35f);
+
+        animator.SetBool("Attack", false);
+        isAttack = false;
+
     }
     void Dead()
     {

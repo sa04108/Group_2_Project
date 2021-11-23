@@ -91,8 +91,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2657693041315978152}
   - component: {fileID: 7113464285344574681}
-  - component: {fileID: 890117030528604040}
-  - component: {fileID: -5224566423693385652}
   m_Layer: 0
   m_Name: Tree_Image
   m_TagString: Untagged
@@ -144,37 +142,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 9027579183527343684}
   m_Enabled: 1
---- !u!65 &890117030528604040
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3434510463782273298}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1641998, y: 2.7494936, z: 1}
-  m_Center: {x: -0.082099915, y: 0.8747468, z: 0}
---- !u!114 &-5224566423693385652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3434510463782273298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89b6cd39ce920b04f99c0c306eb93576, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hp: 3
-  DestroyTime: 2
-  col: {fileID: 890117030528604040}
-  gather: {fileID: 3434510463782273298}
-  gather_debris: {fileID: 7745751647690216580, guid: 5d7fa61f718a607479b1640965be6c8c, type: 3}
-  gatherItemPrefab: {fileID: 7436326173788290965, guid: a2a9d15eb75b4694aafc8573479324e3, type: 3}
 --- !u!1 &4818800816403925683
 GameObject:
   m_ObjectHideFlags: 0

@@ -1582,9 +1582,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 100
-  speed: 5
+  speed: 10
   RotSpeed: 3
-  runSpeed: 3
+  runSpeed: 8
 --- !u!114 &676599011
 MonoBehaviour:
   m_ObjectHideFlags: 0

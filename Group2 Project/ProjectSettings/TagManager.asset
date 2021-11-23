@@ -12,6 +12,8 @@ TagManager:
   - ChickenLeg
   - Esder
   - Ground
+  - Rock
+  - Wood
   layers:
   - Default
   - TransparentFX

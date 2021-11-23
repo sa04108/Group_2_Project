@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6343852472535262247}
   - component: {fileID: 6354347030379869149}
   - component: {fileID: 4045118313753261858}
+  - component: {fileID: 7409828924027447918}
+  - component: {fileID: -5970335283076909204}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -96,3 +98,32 @@ CapsuleCollider:
   m_Height: 1.1154001
   m_Direction: 1
   m_Center: {x: 0.012062073, y: 0.29400003, z: 0.00020000339}
+--- !u!114 &7409828924027447918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6375668711436595517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d73f7a3ff2754f44bfad69deeb65e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tier: 1
+--- !u!54 &-5970335283076909204
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6375668711436595517}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
