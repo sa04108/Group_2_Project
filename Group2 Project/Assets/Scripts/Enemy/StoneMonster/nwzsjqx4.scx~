@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChicController : MonoBehaviour
+public class StoneController : MonoBehaviour
 {
 
     //네비매쉬 쓸거라 점프해도 안올라감. 애니메이션으로 대체
@@ -11,7 +11,7 @@ public class ChicController : MonoBehaviour
     [SerializeField] float timeBeforeNextJump = 1.2f;
     [SerializeField] Vector3 pos;
     [SerializeField] float distance;
-    [SerializeField] bool isDie = false;
+    //[SerializeField] bool isDie = false;
 
 
     [SerializeField] float canJump = 0f;
@@ -25,16 +25,14 @@ public class ChicController : MonoBehaviour
 
 
 
+
     [Header("Monster Stats")]
     //public int HP = 15;
     //public int AttackPower = 2;
     //public bool isAttack = false;
-    //public GameObject AttackHead;
-    
-    bool isAlive;
+    //GameObject AttackHead;
+    bool isAlive = true;
     GameObject AttackHead;
-
-    public GameObject ChicAni;
 
     [Header("Patrol and Regen Point")]
     //패트롤 포인트 저장
@@ -47,7 +45,7 @@ public class ChicController : MonoBehaviour
 
     private Transform tr;
 
-    //Animator animator;
+    Animator animator;
     Rigidbody rb;
     [SerializeField]
     private GameObject rockItemDrop;
@@ -57,8 +55,8 @@ public class ChicController : MonoBehaviour
     void Start()
     {
         AttackHead = GetComponent<MonsterStats>().AttackHead;
-        isAlive = GetComponent<MonsterStats>().isAlive;
-        //animator = GetComponent<Animator>();
+
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         //패트롤 포인트 들고오기
         tr = GetComponent<Transform>();
@@ -68,11 +66,7 @@ public class ChicController : MonoBehaviour
         isFindPlayer = false;
         //AttackHead = transform.GetChild(0).GetCompontnt<AttackArea>();
         //AttackHead = transform.GetChild(0).GetComponentInChilderen<AttackArea>();
-
-        //transform.find 는 자식만 찾는다
-
-        AttackHead = GameObject.Find("Body");
-        ChicAni = GameObject.Find("Chicken");
+        AttackHead = transform.GetChild(0).gameObject;
     }
     void Awake()
     {
@@ -91,21 +85,18 @@ public class ChicController : MonoBehaviour
                 isFindPlayer = true;
                 nav.isStopped = false;
                 nav.SetDestination(target.position);
-                //animator.SetInteger("Walk", 1);
-                ChicAni.GetComponent<ChicAnimation>().Walking();
+                animator.SetInteger("Walk", 1);
                 //공격상태 false유지
-                AttackHead.GetComponent<AttackArea>().StopAttaking();
-                ChicAni.GetComponent<ChicAnimation>().Walking();
+                AttackHead.GetComponent<AttackArea>().isAttack = false;
             }
             else if (distance < 2.5f)
             {
                 nav.isStopped = true;
                 rb.velocity = Vector3.zero;
-                //animator.SetTrigger("Attack");
-                ChicAni.GetComponent<ChicAnimation>().Attack();
+                animator.SetTrigger("Attack");
 
 
-                AttackHead.GetComponent<AttackArea>().Attaking();
+                AttackHead.GetComponent<AttackArea>().isAttack = true;
 
             }
             else if (distance > 10.0f && isFindPlayer == true)
@@ -113,14 +104,13 @@ public class ChicController : MonoBehaviour
                 //추적 중지
                 nav.Stop();
                 //애니메이션 걷기 중지
-                //animator.SetInteger("Walk", 0);
-                ChicAni.GetComponent<ChicAnimation>().WalkingStop();
+                animator.SetInteger("Walk", 0);
                 //관성제거
                 rb.velocity = Vector3.zero;
                 //플레이어 못찾음
                 isFindPlayer = false;
                 //공격상태 false유지
-                AttackHead.GetComponent<AttackArea>().StopAttaking();
+                AttackHead.GetComponent<AttackArea>().isAttack = false;
 
             }
 
@@ -143,13 +133,10 @@ public class ChicController : MonoBehaviour
         {
             if(isAlive == true)
             {
-                Invoke("StoneDrop", 1.7f);
-                Debug.Log("Dead");
-                transform.root.gameObject.GetComponent<ErasePatrol>().EraseThis();
-                //animator.SetTrigger("Dead");
-                ChicAni.GetComponent<ChicAnimation>().Dead();
+                animator.SetTrigger("Dead");
                 isAlive = false;
-                
+                Invoke("StoneDrop", 1.7f);
+                transform.root.gameObject.gameObject.GetComponent<ErasePatrol>().EraseThis();
 
             }
         }
@@ -158,7 +145,9 @@ public class ChicController : MonoBehaviour
 
     void StoneDrop()
     {
-        Instantiate(rockItemDrop, transform.position, Quaternion.identity);
+        GameObject dropItem = Instantiate(rockItemDrop, transform.position, Quaternion.identity);
+        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[2]);
+        //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
     }
     void OnTriggerEnter(Collider coll)
     {
@@ -167,14 +156,12 @@ public class ChicController : MonoBehaviour
             if (isWalk == false)
             {
                 isWalk = true;
-                //animator.SetInteger("Walk", 1);
-                ChicAni.GetComponent<ChicAnimation>().Walking();
+                animator.SetInteger("Walk", 1);
             }
             //패트롤포인트 증가시키다가 끝이면 첫번쨰로
             nextIdx = (++nextIdx >= points.Length) ? 1 : nextIdx;
             canJump = Time.time + timeBeforeNextJump;
-            //animator.SetTrigger("jump");
-            ChicAni.GetComponent<ChicAnimation>().jump();
+            animator.SetTrigger("jump");
 
         }
         /*
@@ -183,14 +170,12 @@ public class ChicController : MonoBehaviour
             
             if(GameObject.Find("Player").GetComponent<CharacterAnimator>().isAttack == true)
             {
-                HP = HP - (coll.gameObject.GetComponent<WeaponHitBox>().AttackPower - 10 );
+                HP = HP - coll.gameObject.GetComponent<WeaponHitBox>().AttackPower;
                 GameObject.Find("Player").GetComponent<CharacterAnimator>().isAttack = false;
 
             }
         }
         */
-
-
     }
     /*
     void Update()

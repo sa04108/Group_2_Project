@@ -27,11 +27,12 @@ public class StoneController : MonoBehaviour
 
 
     [Header("Monster Stats")]
-    public int HP = 15;
-    public int AttackPower = 2;
-    public bool isAttack = false;
+    //public int HP = 15;
+    //public int AttackPower = 2;
+    //public bool isAttack = false;
+    //GameObject AttackHead;
+    bool isAlive;
     GameObject AttackHead;
-    bool isAlive = true;
 
     [Header("Patrol and Regen Point")]
     //패트롤 포인트 저장
@@ -53,6 +54,8 @@ public class StoneController : MonoBehaviour
 
     void Start()
     {
+        AttackHead = GetComponent<MonsterStats>().AttackHead;
+        isAlive = GetComponent<MonsterStats>().isAlive;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         //패트롤 포인트 들고오기
@@ -125,6 +128,7 @@ public class StoneController : MonoBehaviour
         }
 
         //사망시
+        /*
         if (HP <= 0)
         {
             if(isAlive == true)
@@ -136,7 +140,7 @@ public class StoneController : MonoBehaviour
 
             }
         }
-
+        */
     }
 
     void StoneDrop()
@@ -160,7 +164,8 @@ public class StoneController : MonoBehaviour
             animator.SetTrigger("jump");
 
         }
-        
+
+        /*
         if(coll.tag == "basicWeapon")
         {
             
@@ -171,7 +176,7 @@ public class StoneController : MonoBehaviour
 
             }
         }
-
+        */
     }
     /*
     void Update()

@@ -28,12 +28,15 @@ public class BoarCtrl : MonoBehaviour
 
 
     [Header("Monster Stats")]
-    public int HP = 30;
-    public int AttackPower = 10;
-    public bool isAttack = false;
+    //public int HP = 30;
+    //public int AttackPower = 10;
+    //public bool isAttack = false;
+    //GameObject AttackHead;
+    bool isAlive;
     GameObject AttackHead;
-    bool isAlive = true;
     bool isRun = false;
+
+
 
     [Header("Patrol and Regen Point")]
     //패트롤 포인트 저장
@@ -55,6 +58,8 @@ public class BoarCtrl : MonoBehaviour
 
     void Start()
     {
+        AttackHead = GetComponent<MonsterStats>().AttackHead;
+        isAlive = GetComponent<MonsterStats>().isAlive;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         //패트롤 포인트 들고오기
@@ -144,6 +149,7 @@ public class BoarCtrl : MonoBehaviour
         }
 
         //사망시
+        /*
         if (HP <= 0)
         {
             if (isAlive == true)
@@ -155,7 +161,7 @@ public class BoarCtrl : MonoBehaviour
 
             }
         }
-
+        */
     }
 
     void StoneDrop()
@@ -178,7 +184,7 @@ public class BoarCtrl : MonoBehaviour
             canJump = Time.time + timeBeforeNextJump;
 
         }
-
+        /*
         if (coll.tag == "basicWeapon")
         {
 
@@ -189,7 +195,7 @@ public class BoarCtrl : MonoBehaviour
 
             }
         }
-
+        */
     }
     /*
     void Update()

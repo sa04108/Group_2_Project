@@ -443,6 +443,10 @@ PrefabInstance:
       propertyPath: rockItemDrop
       value: 
       objectReference: {fileID: 1452224826318035292, guid: 19530e5254b24da4286d1a0d7e5f456e, type: 3}
+    - target: {fileID: 3211882108696885048, guid: 2347bb1a9ec91f3479d9bc74c61a4d28, type: 3}
+      propertyPath: AttackHead
+      value: 
+      objectReference: {fileID: 1582397070}
     - target: {fileID: 4420711358325598281, guid: 2347bb1a9ec91f3479d9bc74c61a4d28, type: 3}
       propertyPath: m_Name
       value: StoneMonsterAndRegen
@@ -493,6 +497,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2347bb1a9ec91f3479d9bc74c61a4d28, type: 3}
+--- !u!1 &1582397070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4422273461188090360, guid: 2347bb1a9ec91f3479d9bc74c61a4d28, type: 3}
+  m_PrefabInstance: {fileID: 1582397069}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2877214365781991152
 PrefabInstance:
   m_ObjectHideFlags: 0
