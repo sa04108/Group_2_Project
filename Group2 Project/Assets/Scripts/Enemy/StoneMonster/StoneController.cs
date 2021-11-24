@@ -146,7 +146,7 @@ public class StoneController : MonoBehaviour
     void StoneDrop()
     {
         GameObject dropItem = Instantiate(rockItemDrop, transform.position, Quaternion.identity);
-        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[2]);
+        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_STONE]);
         //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
     }
     void OnTriggerEnter(Collider coll)

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5845975444572414578}
   - component: {fileID: 8746797864022816513}
   - component: {fileID: 4445281673015207868}
+  - component: {fileID: 1324881024761665748}
   m_Layer: 0
   m_Name: Portion
   m_TagString: Portion
@@ -122,3 +123,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513c113a7e53f514fb0dec6ee96ad882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1324881024761665748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4809852554143681421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11073f3fd888f4e468c812b556430192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    itemType: 0
+    itemName: 
+    itemImage: {fileID: 0}
+    itemModel: {fileID: 0}
+    itemMaterial: {fileID: 0}
+    itemCount: 0
+  image: {fileID: 0}
