@@ -502,7 +502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1974430783890649164
 RectTransform:
   m_ObjectHideFlags: 0
@@ -766,7 +766,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBC29\uD328"
+  m_Text: "\uCCA0\uC7AC"
 --- !u!1 &381829352346483247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,7 +1643,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD544\uC694\uD55C \uC790\uC6D0 : \uBAA9\uC7AC X 1 \uC11D\uC7AC X 1"
+  m_Text: "\uD544\uC694\uD55C \uC790\uC6D0 : \uB3CC X 1"
 --- !u!1 &948317475722066140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +1722,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD544\uC694\uD55C \uC790\uC6D0 : \uBAA9\uC7AC X 1 \uCCA0\uC7AC X 1"
+  m_Text: "\uD544\uC694\uD55C \uC790\uC6D0 : \uCCA0\uAD11\uC11D X 1"
 --- !u!1 &953163422007745660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +1948,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: db4908f3a5e042048b596ca719c6ef9b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44b5d55df7a49564486c024950a82eb1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2434,7 +2434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD544\uC694\uD55C \uC790\uC6D0 : \uBAA9\uC7AC x 1 \uCCA0\uC7AC x 1"
+  m_Text: "\uD544\uC694\uD55C \uC790\uC6D0 : \uB098\uBB47\uAC00\uC9C0 X 1"
 --- !u!1 &2423072779911983599
 GameObject:
   m_ObjectHideFlags: 0
@@ -7694,7 +7694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3553883058071458500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9563,7 +9563,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uAC80"
+  m_Text: "\uBAA9\uC7AC"
 --- !u!1 &4292510644706433585
 GameObject:
   m_ObjectHideFlags: 0
@@ -10745,7 +10745,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCCA0\uC744 \uC7AC\uB8CC\uB85C \uC81C\uB828\uD55C \uAC80\uC774\uB2E4."
+  m_Text: "\uB098\uBB47\uAC00\uC9C0\uB97C \uBAA9\uC7AC\uB85C \uAC00\uACF5\uD55C\uB2E4."
 --- !u!1 &6285927771519063053
 GameObject:
   m_ObjectHideFlags: 0
@@ -11140,8 +11140,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD654\uC0B4\uC744 \uBC1C\uC0AC\uD560 \uC218 \uC788\uB294 \uC11D\uAD81\uC774\uB2E4.
-    \uC6D0\uAC70\uB9AC\uC758 \uC801\uC744 \uACF5\uACA9\uD560 \uC218 \uC788\uB2E4."
+  m_Text: "\uB3CC\uC744 \uC11D\uC7AC\uB85C \uAC00\uACF5\uD55C\uB2E4."
 --- !u!1 &7308441063792149984
 GameObject:
   m_ObjectHideFlags: 0
@@ -11449,8 +11448,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC801\uC758 \uACF5\uACA9\uC744 \uBC29\uC5B4\uD560 \uC218 \uC788\uB294
-    \uBC29\uD328\uB2E4. \uCC29\uC6A9\uC2DC \uBC29\uC5B4\uB825\uC774 \uC0C1\uC2B9\uD55C\uB2E4."
+  m_Text: "\uCCA0\uAD11\uC11D\uC744 \uCCA0\uC7AC\uB85C \uAC00\uACF5\uD55C\uB2E4."
 --- !u!1 &7865470852370362106
 GameObject:
   m_ObjectHideFlags: 0
@@ -11927,7 +11925,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC11D\uAD81"
+  m_Text: "\uC11D\uC7AC"
 --- !u!1 &8564534095697312641
 GameObject:
   m_ObjectHideFlags: 0
@@ -12074,7 +12072,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6f37379b61db42744832e151ec5171e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7cb8be4db15b0c34682408cc902dd991, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12465,7 +12463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0a744130dcabdc54fb4230d6f62ff85d, type: 3}
+  m_Sprite: {fileID: 21300034, guid: fd0b7189c26761e4c833b6c9734d6cd4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
