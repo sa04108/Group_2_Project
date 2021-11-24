@@ -170,8 +170,7 @@ public class BoarCtrl : MonoBehaviour
         GameObject dropItem = Instantiate(ItemDrop1, transform.position, Quaternion.identity);
         dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_UNSTABLE_CORE]);
         //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
-        GameObject dropItem1 = Instantiate(ItemDrop1, transform.position, Quaternion.identity);
-        dropItem1.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_UNSTABLE_CORE]);
+
 
 
         //50%È®·ü·Î µå¶ø

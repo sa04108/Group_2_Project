@@ -137,14 +137,14 @@ public class StoneController : MonoBehaviour
             {
                 animator.SetTrigger("Dead");
                 isAlive = false;
-                Invoke("StoneDrop", 1.7f);
+                Invoke("itemDrop", 1.7f);
                 transform.root.gameObject.gameObject.GetComponent<ErasePatrol>().EraseThis();
 
             }
         }
     }
 
-    void StoneDrop()
+    void itemDrop()
     {
         GameObject dropItem = Instantiate(ItemDrop1, transform.position, Quaternion.identity);
         dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_UNSTABLE_CORE]);

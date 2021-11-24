@@ -31,7 +31,7 @@ public class ChicController : MonoBehaviour
     //public bool isAttack = false;
     //public GameObject AttackHead;
 
-    bool isAlive = false;
+    bool isAlive = true;
     GameObject AttackHead;
 
     GameObject ChicAni;

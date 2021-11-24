@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 5929033247326936668}
   - component: {fileID: 3726644469412811101}
   - component: {fileID: 3726644469412811102}
+  - component: {fileID: 1495427736692780518}
   m_Layer: 0
   m_Name: Boar
   m_TagString: Untagged
@@ -408,18 +409,32 @@ MonoBehaviour:
   timeBeforeNextJump: 1.2
   pos: {x: 0, y: 0, z: 0}
   distance: 0
-  isDie: 0
+  BoarPos: {x: 0, y: 0, z: 0}
   canJump: 0
   isFindPlayer: 0
   target: {fileID: 0}
-  HP: 30
-  AttackPower: 10
-  isAttack: 0
   points: []
   nextIdx: 1
   speed: 3
   damping: 3.5
-  rockItemDrop: {fileID: 0}
+  ItemDrop1: {fileID: 1725668508503290528, guid: 6c489b598ebb5254c8002cf41f88d245, type: 3}
+  HealingPotion: {fileID: 4809852554143681421, guid: 23251862eb1b2244ba689cb801686110, type: 3}
+--- !u!114 &1495427736692780518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3068840638588727256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c831950711a884691a9a7427643983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 30
+  AttackPower: 5
+  isAttack: 0
+  isAlive: 1
 --- !u!1 &3068840638588728552
 GameObject:
   m_ObjectHideFlags: 0
