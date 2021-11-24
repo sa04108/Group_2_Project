@@ -172,6 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4936587561821370}
   - component: {fileID: 95485790526497962}
+  - component: {fileID: 1282224400478947202}
   - component: {fileID: 1219941685}
   - component: {fileID: 1219941684}
   - component: {fileID: 3417575866562186692}
@@ -217,6 +218,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1282224400478947202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755646104177140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c831950711a884691a9a7427643983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 15
+  AttackPower: 2
+  isAttack: 0
+  AttackHead: {fileID: 0}
+  ChicAni: {fileID: 0}
+  isAlive: 1
 --- !u!65 &1219941685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -264,11 +283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798c7904da73f9748a06d901767254f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
   timeBeforeNextJump: 1.2
   pos: {x: 0, y: 0, z: 0}
   distance: 0
-  isDie: 0
   canJump: 0
   isFindPlayer: 0
   target: {fileID: 0}

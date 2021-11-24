@@ -67,6 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6375873503189242683}
+  - component: {fileID: 378515452306171997}
   - component: {fileID: 1709770352740654253}
   - component: {fileID: 4612744922544721892}
   - component: {fileID: 5096878711738985052}
@@ -93,6 +94,24 @@ Transform:
   m_Father: {fileID: 2877214365428866745}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &378515452306171997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6023053626802464087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c831950711a884691a9a7427643983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 15
+  AttackPower: 2
+  isAttack: 0
+  AttackHead: {fileID: 0}
+  ChicAni: {fileID: 0}
+  isAlive: 1
 --- !u!114 &1709770352740654253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ba8d7118b0d5344af162bf40c0f653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
   timeBeforeNextJump: 1.2
   pos: {x: 0, y: 0, z: 0}
   distance: 0
