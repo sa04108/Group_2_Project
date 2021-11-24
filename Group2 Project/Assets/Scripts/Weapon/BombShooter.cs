@@ -5,8 +5,12 @@ using UnityEngine;
 public class BombShooter : MonoBehaviour
 {
     public GameObject bomb;
+    private GameObject Player;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
+    }
     void Update()
     {
         Shoot();
