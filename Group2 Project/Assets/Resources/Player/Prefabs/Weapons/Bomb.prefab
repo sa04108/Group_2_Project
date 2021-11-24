@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7879940216732538543}
   - component: {fileID: 758655211270595284}
   - component: {fileID: 2615920258940884224}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Explosion
   m_TagString: Bomb
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: -2549479727953238036}
   - component: {fileID: 6557160628251169719}
   - component: {fileID: 2364640233140273620}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,9 +290,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3286725775027910213}
     m_Modifications:
+    - target: {fileID: 1051980063851788, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
       propertyPath: m_Name
       value: Explosion_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700404263669884, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817684891897198, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4164528543026860, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
       propertyPath: m_RootOrder

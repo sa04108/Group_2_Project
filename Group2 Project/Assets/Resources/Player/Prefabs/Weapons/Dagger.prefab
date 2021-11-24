@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3049961847685448382}
   - component: {fileID: 7872818721733657785}
   - component: {fileID: -3686963447717278047}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dagger
   m_TagString: basicWeapon
   m_Icon: {fileID: 0}
