@@ -44,7 +44,6 @@ public class CommonDefine {
     public static int RESOURCE_IRON = 6;
     public static int RESOURCE_DIAMOND = 7;
 
-
 }
 
 
