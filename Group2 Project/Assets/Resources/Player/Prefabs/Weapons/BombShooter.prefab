@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8808487279672023115}
   - component: {fileID: 8808487279670696043}
   - component: {fileID: 8808487279669598891}
+  - component: {fileID: 2574760984071406876}
   - component: {fileID: 5263004173454187393}
   m_Layer: 0
   m_Name: BombShooter
@@ -82,6 +83,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &2574760984071406876
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808487279671788651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.34091222
+  m_Height: 0.44811982
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.06444119}
 --- !u!114 &5263004173454187393
 MonoBehaviour:
   m_ObjectHideFlags: 0

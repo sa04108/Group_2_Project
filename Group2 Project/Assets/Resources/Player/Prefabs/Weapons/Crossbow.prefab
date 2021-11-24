@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3964628103034039309}
   - component: {fileID: 3964628103034809389}
   - component: {fileID: 3964628103035809517}
+  - component: {fileID: 262916744445796328}
   m_Layer: 0
   m_Name: Arrow_Small
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &262916744445796328
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3964628103033548845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.469482
+  m_Height: 0.063526
+  m_Direction: 1
+  m_Center: {x: -0.494942, y: 0, z: 0}
 --- !u!1 &3964628103033548847
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +107,7 @@ GameObject:
   - component: {fileID: 3964628103034039311}
   - component: {fileID: 3964628103034809391}
   - component: {fileID: 3964628103035809519}
+  - component: {fileID: 3035609974450097231}
   - component: {fileID: 4498223204499043912}
   m_Layer: 0
   m_Name: Crossbow
@@ -164,6 +180,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &3035609974450097231
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3964628103033548847}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4799375
+  m_Height: 1.196348
+  m_Direction: 1
+  m_Center: {x: -0.2377665, y: 0, z: 0.052722007}
 --- !u!114 &4498223204499043912
 MonoBehaviour:
   m_ObjectHideFlags: 0
