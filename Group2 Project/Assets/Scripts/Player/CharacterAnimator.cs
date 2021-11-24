@@ -7,17 +7,24 @@ public class CharacterAnimator : MonoBehaviour
     Animator animator;
     CharacterMove characterMove;
     PlayerStatus playerStatus;
+    AudioSource audioSource;
+
+    public AudioClip[] audioClips;
     public bool isAttack;
+    bool isWalk;
 
     float playerHP;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         characterMove = GetComponent<CharacterMove>();
         playerStatus = GetComponent<PlayerStatus>();
+        audioSource = GetComponent<AudioSource>();
         
         isAttack = false;
+        isWalk = false;
         playerHP = playerStatus.PlayerHP;
     }
 
@@ -33,13 +40,22 @@ public class CharacterAnimator : MonoBehaviour
         
     }
 
+    void PlaySound(int clipIdx)
+    {
+        audioSource.clip = audioClips[clipIdx];
+        audioSource.Play();
+    }
+
     void GetHit()
     {
         // Debug.Log(playerHP);
         // Debug.Log(playerStatus.PlayerHP);
         //맞으면 실행
         if (playerHP != playerStatus.PlayerHP)
+        {
             animator.SetBool("GetHit", true);
+            PlaySound(0);
+        }
         else
             animator.SetBool("GetHit", false);
 
@@ -53,6 +69,12 @@ public class CharacterAnimator : MonoBehaviour
         if (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.S)|| Input.GetKey(KeyCode.D))
         {
             animator.SetBool("Walk", true);
+            if (!isWalk)
+            {
+                isWalk = true;
+                PlaySound(1);
+                Invoke("ResetWalk", 1.0f);
+            }
         }
         else 
         {
@@ -60,6 +82,11 @@ public class CharacterAnimator : MonoBehaviour
         }
 
     }
+    void ResetWalk()
+    {
+        isWalk = false;
+    }
+
     void Run()
     {
         //걷는 중 leftshift가 눌리면 달린다.
@@ -112,7 +139,7 @@ public class CharacterAnimator : MonoBehaviour
         if(playerStatus.GameOver())
         {
             animator.SetBool("Dead", true);
-
+            PlaySound(2);
         }
     }
 }

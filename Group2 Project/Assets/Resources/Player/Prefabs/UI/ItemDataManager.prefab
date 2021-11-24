@@ -70,13 +70,13 @@ MonoBehaviour:
     itemCount: 10
   - itemType: 0
     itemName: "\uAC15\uD654\uC11D"
-    itemImage: {fileID: 21300000, guid: 44b5d55df7a49564486c024950a82eb1, type: 3}
+    itemImage: {fileID: 21300000, guid: e8cb76eda613d7842bf146ca324d16c4, type: 3}
     itemModel: {fileID: 3034718079717092458, guid: e0fe1b80592a0144babd1bf297ad32ad, type: 3}
     itemMaterial: {fileID: 2100000, guid: 93415edde47040648869ae6638d33ced, type: 2}
     itemCount: 1
   - itemType: 0
     itemName: "\uBD88\uC548\uC815\uD55C \uD575"
-    itemImage: {fileID: 21300000, guid: 44b5d55df7a49564486c024950a82eb1, type: 3}
+    itemImage: {fileID: 21300000, guid: 5a92045f2e5f77b479fd6bc6baa3b066, type: 3}
     itemModel: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     itemMaterial: {fileID: 2100000, guid: 35a80721181006b41a9a1f03dd6ac05f, type: 2}
     itemCount: 1
