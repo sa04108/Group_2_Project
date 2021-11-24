@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 3
   Hp: 3
+  DropItemCount: 3
   DestroyTime: 3
   col: {fileID: 7556311699764445226}
   gather: {fileID: 3918134807574520267}

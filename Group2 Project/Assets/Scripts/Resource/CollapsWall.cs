@@ -16,7 +16,7 @@ public class CollapsWall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Explosion")
+        if(collision.transform.tag == "Bomb")
         {
             Destruction();
         }

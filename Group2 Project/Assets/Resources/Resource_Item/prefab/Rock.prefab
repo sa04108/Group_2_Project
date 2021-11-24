@@ -60,12 +60,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 3
   Hp: 3
+  DropItemCount: 5
   DestroyTime: 3
   col: {fileID: 8386350745378970013}
   gather: {fileID: 8692831563764632818}
   gather_debris: {fileID: 5401783828450280815, guid: 7d188a28da3b0a34e85761aea649b3c9, type: 3}
   gatherItemPrefab: {fileID: 1452224826318035292, guid: 19530e5254b24da4286d1a0d7e5f456e, type: 3}
   PrefabItem: []
+  deb: {fileID: 0}
+  Item: {fileID: 0}
 --- !u!1001 &8386350744746570147
 PrefabInstance:
   m_ObjectHideFlags: 0

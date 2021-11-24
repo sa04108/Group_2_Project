@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 7586827843678333601}
   - component: {fileID: 7586827843677202529}
   - component: {fileID: 7586827843684779361}
+  - component: {fileID: 6793646507110905425}
+  - component: {fileID: 5075583790383122982}
+  - component: {fileID: -1472852632704964890}
   m_Layer: 0
   m_Name: Dimond_Drop
   m_TagString: Untagged
@@ -102,6 +105,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &6793646507110905425
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7586827843675272865}
+  serializedVersion: 2
+  m_Mass: 0.0001
+  m_Drag: 1
+  m_AngularDrag: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &5075583790383122982
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7586827843675272865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.20266388
+  m_Center: {x: -0.0067023993, y: 0.013107587, z: 0.011678363}
+--- !u!65 &-1472852632704964890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7586827843675272865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.23587999, y: 0.21651295, z: 0.22357206}
+  m_Center: {x: 0, y: -0.00000007450582, z: 0}
 --- !u!1001 &5439934809197930004
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class Gathering : MonoBehaviour
     [SerializeField]
     private int Hp;
     [SerializeField]
+    private int DropItemCount;
+    [SerializeField]
     private float DestroyTime;
     [SerializeField]
     private Collider col;
@@ -22,8 +24,8 @@ public class Gathering : MonoBehaviour
     [SerializeField]
     private List<GameObject> PrefabItem = new List<GameObject>();
 
-    public GameObject deb;
-    public GameObject Item;
+    private GameObject deb;
+    private GameObject Item;
     public void Mining(int damage)
     {
         Hp -= damage; // 도구 티어에 따라 Hp -= Tier;
@@ -36,7 +38,7 @@ public class Gathering : MonoBehaviour
     private void Destruction()
     {
         col.enabled = false;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < DropItemCount; i++)
         {
             ItemInstantiate();
         }// 나중에 Tool_Tier를 이용하여 얻을 수 있는 자원의 수 변경.
@@ -52,8 +54,6 @@ public class Gathering : MonoBehaviour
     private void DebInstantiate()
     {
         deb = Instantiate(gather_debris,gameObject.transform.position, Quaternion.identity);
-        //Vector3 scale = gameObject.transform.localScale;
-        //deb.transform.localScale = scale;
     }
     private void ItemInstantiate()
     {
