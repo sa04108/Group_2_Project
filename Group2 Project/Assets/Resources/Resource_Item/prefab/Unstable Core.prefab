@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7982358106013551582}
   - component: {fileID: 3739249904160026775}
   - component: {fileID: 2381729357168774911}
+  - component: {fileID: 3610691196203209114}
   - component: {fileID: 3243015112995657647}
   - component: {fileID: 5328612824778997866}
   - component: {fileID: 8424699278383979832}
@@ -85,6 +86,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &3610691196203209114
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725668508503290528}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!135 &3243015112995657647
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -137,9 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemType: 0
-    itemName: 
-    itemImage: {fileID: 0}
-    itemModel: {fileID: 0}
-    itemMaterial: {fileID: 0}
-    itemCount: 0
+    itemName: "\uBD88\uC548\uC815\uD55C \uD575"
+    itemImage: {fileID: 21300000, guid: 5a92045f2e5f77b479fd6bc6baa3b066, type: 3}
+    itemModel: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    itemMaterial: {fileID: 2100000, guid: 35a80721181006b41a9a1f03dd6ac05f, type: 2}
+    itemCount: 1
   image: {fileID: 0}
