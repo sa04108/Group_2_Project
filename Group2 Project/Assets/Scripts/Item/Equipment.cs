@@ -8,7 +8,8 @@ public enum EQUIP_TYPE {
     HAMMER,
     AXE,
     PICKAXE,
-    BOMB
+    BOMB,
+    SHIELD
 }
 
 [System.Serializable]

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2191147967075027732}
   - component: {fileID: 5847760981111053399}
   - component: {fileID: -6462601714495950596}
+  - component: {fileID: 6906306010221457879}
   m_Layer: 0
   m_Name: RockPrefab
   m_TagString: dropItem
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1452224826318035292}
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 42.83951, y: 0.00000023841858, z: 40.40614}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452224826318035292}
-  m_Mesh: {fileID: -462981019419857548, guid: 76a7222ad78b0404b8a5e7450da87c3a, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 26fb55e8ae34728499f6f45cd0527c73, type: 3}
 --- !u!23 &1092029147214985353
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3986188387995331715, guid: 76a7222ad78b0404b8a5e7450da87c3a, type: 3}
+  - {fileID: 2100000, guid: 37524ae4594222f4f8acd7b76234f79a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,5 +138,25 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0114365835, y: 0.007905491, z: 0.012314567}
-  m_Center: {x: 0.00008559297, y: 0.0033055982, z: -0.00031321193}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6906306010221457879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452224826318035292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11073f3fd888f4e468c812b556430192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    itemType: 0
+    itemName: "\uB3CC"
+    itemImage: {fileID: 21300008, guid: e919f8b19e6260d44b25ce176dd8ee66, type: 3}
+    itemModel: {fileID: 4300000, guid: 26fb55e8ae34728499f6f45cd0527c73, type: 3}
+    itemMaterial: {fileID: 2100000, guid: 37524ae4594222f4f8acd7b76234f79a, type: 2}
+    itemCount: 10
+  image: {fileID: 0}

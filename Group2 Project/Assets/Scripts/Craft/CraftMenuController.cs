@@ -188,7 +188,15 @@ public class CraftMenuController : MonoBehaviour {
 
     public void CraftShield() {
         List<Recipes> recipes = ShieldCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
+        if(CheckResource(recipes, inven.items)) {
+            CraftObject(recipes, inven.items);
+            Equipment shield = itemDB.equipDB[CommonDefine.EQUIPMENT_SHIELD];
+
+            inven.AddEquip(shield);
+            ShieldCraftButton.gameObject.SetActive(false);
+            EnchantShieldCraftButton.gameObject.SetActive(true);
         }
+    }
 
     public void EnchantShield() {
 

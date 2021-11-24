@@ -38,7 +38,7 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
     public List<Equipment> equipments = new List<Equipment>();
-
+    public bool shield = false;
     public void AddEquip(Equipment _equip) {
         foreach(Equipment content in equipments) {
             if(_equip.equipType == content.equipType) {
@@ -54,9 +54,6 @@ public class Inventory : MonoBehaviour
             if (!CheckItemList(_item)) {
                 items.Add(_item);
             }
-           //if(onChangeItem != null) {
-           //    onChangeItem.Invoke();
-           //}
             return true;
         }
         return false;
@@ -78,13 +75,4 @@ public class Inventory : MonoBehaviour
         }
         return false;
     }
-
-   // private void OnTriggerEnter(Collider other) {
-   //     if(other.tag == "dropItem") {
-   //         DropItem dropItems = other.GetComponent<DropItem>();
-   //         if (AddItem(dropItems.GetItem())) {
-   //             dropItems.DestroyItem();
-   //         }
-   //     }
-   // }
 }

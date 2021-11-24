@@ -1611,7 +1611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e840581455abcd5458f2f311baab929f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handTransform: {fileID: 8422892626600249714}
+  weaponTransform: {fileID: 8422892626600249714}
+  shieldTransform: {fileID: 8422892626600249500}
 --- !u!1 &8422892626600285394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,7 +2613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8422892626600249500
 Transform:
   m_ObjectHideFlags: 0
@@ -2752,6 +2753,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 588cb1a3084bba747b81631d0c071523, type: 3}
       propertyPath: m_Name
       value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 588cb1a3084bba747b81631d0c071523, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 588cb1a3084bba747b81631d0c071523, type: 3}
       propertyPath: m_RootOrder

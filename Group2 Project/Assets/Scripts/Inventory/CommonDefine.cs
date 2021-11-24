@@ -31,6 +31,20 @@ public class CommonDefine {
     
     public static int EQUIPMENT_BOMB = 11;
 
+    public static int EQUIPMENT_SHIELD = 12;
+    public static int EQUIPMENT_ENCHANTED_SHIELD = 13;
+
+    //ÀÚ¿ø ÀÎµ¦½º
+    public static int RESOURCE_BRANCH = 0;
+    public static int RESOURCE_WOOD = 1;
+    public static int RESOURCE_STONE = 2;
+    public static int RESOURCE_ROCK = 3;
+    public static int RESOURCE_ENCHANT_STONE = 4;
+    public static int RESOURCE_UNSTABLE_CORE = 5;
+    public static int RESOURCE_IRON = 6;
+    public static int RESOURCE_DIAMOND = 7;
+
+
 }
 
 

@@ -4,18 +4,35 @@ using UnityEngine;
 
 public class CharacterEquip : MonoBehaviour
 {
+    Inventory inven;
+
     CraftEquipmentSlot equipments;
     int currentEquipment;
+    
     GameObject currentEquipObject;
-    public Transform handTransform;
+    GameObject currentShieldObject;
+
+    public Transform weaponTransform;
+    public Transform shieldTransform;
     // Start is called before the first frame update
     void Start()
     {
+        inven = Inventory.instance;
         equipments = CraftEquipmentSlot.instance;
         currentEquipment = -1;
     }
 
     void Update() {
+
+        if(inven.shield == true) {
+            foreach(Equipment equip in inven.equipments) {
+                if(equip.equipType == EQUIP_TYPE.SHIELD) {
+                    currentShieldObject = Instantiate(equip.equipPrefab, shieldTransform);
+                    inven.shield = false;
+                }
+            }
+        }        
+
         //1¹ø½½·Ô °Ë
         if (Input.GetKeyDown(KeyCode.Alpha1) && currentEquipment != CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX) {
             if(currentEquipObject != null) {
@@ -23,7 +40,7 @@ public class CharacterEquip : MonoBehaviour
             }
             currentEquipment = CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX;
             if (equipments.slot[currentEquipment]) {
-                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, weaponTransform);
             }
         }
         //2¹ø½½·Ô È°
@@ -33,7 +50,7 @@ public class CharacterEquip : MonoBehaviour
             }
             currentEquipment = CommonDefine.EQUIPMENT_BOW_SLOT_INDEX;
             if (equipments.slot[currentEquipment]) {
-                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, weaponTransform);
             }
         }
         //3¹ø½½·Ô ÇØ¸Ó
@@ -45,7 +62,7 @@ public class CharacterEquip : MonoBehaviour
             currentEquipment = CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX;
 
             if (equipments.slot[currentEquipment]) {
-                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, weaponTransform);
             }
         }
         //4¹ø½½·Ô µµ³¢
@@ -55,7 +72,7 @@ public class CharacterEquip : MonoBehaviour
             }
             currentEquipment = CommonDefine.EQUIPMENT_AXE_SLOT_INDEX;
             if (equipments.slot[currentEquipment]) {
-                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, weaponTransform);
             }
         }
         //5¹ø½½·Ô °î±ªÀÌ
@@ -65,7 +82,7 @@ public class CharacterEquip : MonoBehaviour
             }
             currentEquipment = CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX;
             if (equipments.slot[currentEquipment]) {
-                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, weaponTransform);
             }
         }
         //6¹ø½½·Ô ÆøÅº
@@ -75,7 +92,7 @@ public class CharacterEquip : MonoBehaviour
             }
             currentEquipment = CommonDefine.EQUIPMENT_BOMB_SLOT_INDEX;
             if (equipments.slot[currentEquipment]) {
-                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, handTransform);
+                currentEquipObject = Instantiate(equipments.slot[currentEquipment].equip.equipPrefab, weaponTransform);
             }
         }
     }
