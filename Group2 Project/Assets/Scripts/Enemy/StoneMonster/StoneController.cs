@@ -31,7 +31,7 @@ public class StoneController : MonoBehaviour
     //public int AttackPower = 2;
     //public bool isAttack = false;
     //GameObject AttackHead;
-    bool isAlive;
+    bool isAlive = true;
     GameObject AttackHead;
     [Header("Patrol and Regen Point")]
     //패트롤 포인트 저장
@@ -47,9 +47,11 @@ public class StoneController : MonoBehaviour
     Animator animator;
     Rigidbody rb;
     [SerializeField]
-    private GameObject rockItemDrop;
-
-
+    private GameObject ItemDrop1;
+    [SerializeField]
+    private GameObject ItemDrop2;
+    [SerializeField]
+    private GameObject HealingPotion;
 
     void Start()
     {
@@ -75,7 +77,7 @@ public class StoneController : MonoBehaviour
 
     void Update()
     {
-        isAlive = GetComponent<MonsterStats>().isAlive;
+        //isAlive = GetComponent<MonsterStats>().isAlive;
         if (isAlive == true)
         {
             float distance = Vector3.Distance(target.position, transform.position);
@@ -144,9 +146,20 @@ public class StoneController : MonoBehaviour
 
     void StoneDrop()
     {
-        GameObject dropItem = Instantiate(rockItemDrop, transform.position, Quaternion.identity);
-        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[2]);
+        GameObject dropItem = Instantiate(ItemDrop1, transform.position, Quaternion.identity);
+        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_UNSTABLE_CORE]);
         //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
+
+        GameObject dropItem1 = Instantiate(ItemDrop2, transform.position, Quaternion.identity);
+        dropItem1.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_ROCK]);
+
+        //30%확률로 드랍
+        int RandomNum = Random.Range(1, 10);
+        if (RandomNum < 4)
+        {
+            GameObject dropItem2 = Instantiate(HealingPotion, transform.position, Quaternion.identity);
+            dropItem2.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.ITEM_HEAL_POTION]);
+        }
     }
     void OnTriggerEnter(Collider coll)
     {

@@ -10,7 +10,7 @@ public class MonsterStats : MonoBehaviour
     public bool isAttack = false;
 
     //public GameObject ChicAni; 치킨만 애니메이터가 자식에 붙어있어서 추가한거였습니다.
-    public bool isAlive = true;
+    public bool isAlive = true; //제대로 못받아와서 몬스터가 안죽음...걍 각 몬스터에 넣었음
     int WeaponPower;
 
     ItemData DB;

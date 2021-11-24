@@ -1,23 +1,24 @@
-ï»¿using System.Collections;
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChicController : MonoBehaviour
+public class BoarCtrl : MonoBehaviour
 {
 
-    //ë„¤ë¹„ë§¤ì‰¬ ì“¸ê±°ë¼ ì í”„í•´ë„ ì•ˆì˜¬ë¼ê°. ì• ë‹ˆë©”ì´ì…˜ìœ¼ë¡œ ëŒ€ì²´
+    //³×ºñ¸Å½¬ ¾µ°Å¶ó Á¡ÇÁÇØµµ ¾È¿Ã¶ó°¨. ¾Ö´Ï¸ŞÀÌ¼ÇÀ¸·Î ´ëÃ¼
     //[SerializeField] float jumpForce = 15f;
     [SerializeField] float timeBeforeNextJump = 1.2f;
     [SerializeField] Vector3 pos;
     [SerializeField] float distance;
-    [SerializeField] bool isDie = false;
-
+    //[SerializeField] bool isDie = false;
+    public Vector3 BoarPos;
 
     [SerializeField] float canJump = 0f;
     [SerializeField] bool isFindPlayer;
 
-    //ë„¤ë¹„ê²Œì´ì…˜ ì¶”ì 
+    //³×ºñ°ÔÀÌ¼Ç ÃßÀû
     public Transform target;
     NavMeshAgent nav;
     Vector3 destination;
@@ -25,53 +26,54 @@ public class ChicController : MonoBehaviour
 
 
 
+
     [Header("Monster Stats")]
-    //public int HP = 15;
-    //public int AttackPower = 2;
+    //public int HP = 30;
+    //public int AttackPower = 10;
     //public bool isAttack = false;
-    //public GameObject AttackHead;
-
-    bool isAlive = false;
+    //GameObject AttackHead;
+    bool isAlive = true;
     GameObject AttackHead;
+    bool isRun = false;
 
-    GameObject ChicAni;
+
 
     [Header("Patrol and Regen Point")]
-    //íŒ¨íŠ¸ë¡¤ í¬ì¸íŠ¸ ì €ì¥
+    //ÆĞÆ®·Ñ Æ÷ÀÎÆ® ÀúÀå
     public Transform[] points;
     public int nextIdx = 1;
     public float speed = 3f;
     private bool isWalk = false;
-    //íšŒì „
+    //È¸Àü
     public float damping = 3.5f;
 
     private Transform tr;
 
-    //Animator animator;
+    Animator animator;
     Rigidbody rb;
     [SerializeField]
-    private GameObject DropItem1;
+    private GameObject ItemDrop1;
+    [SerializeField]
+    private GameObject ItemDrop2;
 
 
 
     void Start()
     {
 
-        //animator = GetComponent<Animator>();
+
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        //íŒ¨íŠ¸ë¡¤ í¬ì¸íŠ¸ ë“¤ê³ ì˜¤ê¸°
+        //ÆĞÆ®·Ñ Æ÷ÀÎÆ® µé°í¿À±â
         tr = GetComponent<Transform>();
         //points = GameObject.Find("RegenPoint").GetComponentsInChildren<Transform>();
-        //ë£¨íŠ¸ì—ì„œ ìì‹ìœ¼ë¡œ íŒ¨íŠ¸ë¡¤ í¬ì¸íŠ¸ ì°¾ê²Œ ë³€ê²½
+        //·çÆ®¿¡¼­ ÀÚ½ÄÀ¸·Î ÆĞÆ®·Ñ Æ÷ÀÎÆ® Ã£°Ô º¯°æ
         points = transform.root.GetChild(1).GetComponentsInChildren<Transform>();
         isFindPlayer = false;
         //AttackHead = transform.GetChild(0).GetCompontnt<AttackArea>();
         //AttackHead = transform.GetChild(0).GetComponentInChilderen<AttackArea>();
+        AttackHead = transform.GetChild(1).gameObject;
 
-        //transform.find ëŠ” ìì‹ë§Œ ì°¾ëŠ”ë‹¤
-
-        AttackHead = GameObject.Find("Body");
-        ChicAni = GameObject.Find("Chicken");
     }
     void Awake()
     {
@@ -86,50 +88,62 @@ public class ChicController : MonoBehaviour
             float distance = Vector3.Distance(target.position, transform.position);
 
 
-            if (distance <= 10.0f && distance >= 2.5f)
+            if (distance <= 17.0f && distance >= 2.8f)
             {
                 isFindPlayer = true;
                 nav.isStopped = false;
                 nav.SetDestination(target.position);
-                //animator.SetInteger("Walk", 1);
-                ChicAni.GetComponent<ChicAnimation>().Walking();
-                //ê³µê²©ìƒíƒœ falseìœ ì§€
-                AttackHead.GetComponent<AttackArea>().StopAttaking();
-                ChicAni.GetComponent<ChicAnimation>().Walking();
+                animator.SetTrigger("Run");
+                if (isRun == false)
+                {
+                    isRun = true;
+                    nav.speed = 7.0f;
+                }
+                //º¸ÀÚ¸¶ÀÚ µ¹Áø
+                AttackHead.GetComponent<AttackArea>().isAttack = true;
             }
-            else if (distance < 2.5f)
+            else if (distance < 2.8f)
             {
                 nav.isStopped = true;
                 rb.velocity = Vector3.zero;
-                //animator.SetTrigger("Attack");
-                ChicAni.GetComponent<ChicAnimation>().Attack();
+                if (isRun == true)
+                {
+                    animator.SetTrigger("Horn Attack");
+                    isRun = false;
+                    nav.speed = 3.5f;
+                }
+                animator.SetTrigger("Basic Attack");
 
 
-                AttackHead.GetComponent<AttackArea>().Attaking();
+                AttackHead.GetComponent<AttackArea>().isAttack = true;
+                pos = transform.position;
+                var rotation = Quaternion.LookRotation(target.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
 
             }
-            else if (distance > 10.0f && isFindPlayer == true)
+            else if (distance > 17.0f && isFindPlayer == true)
             {
-                //ì¶”ì  ì¤‘ì§€
+                nav.speed = 3.5f;
+                //ÃßÀû ÁßÁö
                 nav.Stop();
-                //ì• ë‹ˆë©”ì´ì…˜ ê±·ê¸° ì¤‘ì§€
+                //¾Ö´Ï¸ŞÀÌ¼Ç °È±â ÁßÁö
                 //animator.SetInteger("Walk", 0);
-                ChicAni.GetComponent<ChicAnimation>().WalkingStop();
-                //ê´€ì„±ì œê±°
+                animator.SetTrigger("Walk");
+                //°ü¼ºÁ¦°Å
                 rb.velocity = Vector3.zero;
-                //í”Œë ˆì´ì–´ ëª»ì°¾ìŒ
+                //ÇÃ·¹ÀÌ¾î ¸øÃ£À½
                 isFindPlayer = false;
-                //ê³µê²©ìƒíƒœ falseìœ ì§€
-                AttackHead.GetComponent<AttackArea>().StopAttaking();
+                //°ø°İ»óÅÂ falseÀ¯Áö
+                AttackHead.GetComponent<AttackArea>().isAttack = false;
 
             }
 
             if (isFindPlayer == false)
             {
-                //í˜„ì¬ ~ ê°€ì•¼ í•  ìœ„ì¹˜ì˜ ë²¡í„° 
-
+                //ÇöÀç ~ °¡¾ß ÇÒ À§Ä¡ÀÇ º¤ÅÍ 
+                animator.SetTrigger("Walk");
                 Quaternion rot = Quaternion.LookRotation(points[nextIdx].position - tr.position);
-                //ë‹¤ìŒ ê°€ì•¼ í•  ì§€ì ê¹Œì§€ íšŒì „
+                //´ÙÀ½ °¡¾ß ÇÒ ÁöÁ¡±îÁö È¸Àü
                 tr.rotation = Quaternion.Slerp(tr.rotation, rot, Time.deltaTime * damping);
                 tr.Translate(Vector3.forward * Time.deltaTime * speed);
 
@@ -142,20 +156,31 @@ public class ChicController : MonoBehaviour
         {
             if (isAlive == true)
             {
-                Invoke("StoneDrop", 1.7f);
-                transform.root.gameObject.GetComponent<ErasePatrol>().EraseThis();
-                //animator.SetTrigger("Dead");
-                ChicAni.GetComponent<ChicAnimation>().Dead();
+                animator.SetTrigger("Die");
                 isAlive = false;
-
+                Invoke("itemDrop", 1.7f);
+                transform.root.gameObject.gameObject.GetComponent<ErasePatrol>().EraseThis();
 
             }
         }
     }
 
-    void StoneDrop()
+    void itemDrop()
     {
-        Instantiate(DropItem1, transform.position, Quaternion.identity);
+        GameObject dropItem = Instantiate(ItemDrop1, transform.position, Quaternion.identity);
+        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_UNSTABLE_CORE]);
+        //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
+
+
+        
+        //30%È®·ü·Î µå¶ø
+        int RandomNum = Random.Range(1, 10);
+        if (RandomNum < 4)
+        {
+            GameObject dropItem1 = Instantiate(ItemDrop2, transform.position, Quaternion.identity);
+            dropItem1.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.ITEM_HEAL_POTION]);
+        }
+
     }
     void OnTriggerEnter(Collider coll)
     {
@@ -164,30 +189,25 @@ public class ChicController : MonoBehaviour
             if (isWalk == false)
             {
                 isWalk = true;
-                //animator.SetInteger("Walk", 1);
-                ChicAni.GetComponent<ChicAnimation>().Walking();
+                animator.SetTrigger("Walk");
             }
-            //íŒ¨íŠ¸ë¡¤í¬ì¸íŠ¸ ì¦ê°€ì‹œí‚¤ë‹¤ê°€ ëì´ë©´ ì²«ë²ˆì¨°ë¡œ
+            //ÆĞÆ®·ÑÆ÷ÀÎÆ® Áõ°¡½ÃÅ°´Ù°¡ ³¡ÀÌ¸é Ã¹¹ø¤Š·Î
             nextIdx = (++nextIdx >= points.Length) ? 1 : nextIdx;
             canJump = Time.time + timeBeforeNextJump;
-            //animator.SetTrigger("jump");
-            ChicAni.GetComponent<ChicAnimation>().jump();
 
         }
         /*
-        if(coll.tag == "basicWeapon")
+        if (coll.tag == "basicWeapon")
         {
-            
-            if(GameObject.Find("Player").GetComponent<CharacterAnimator>().isAttack == true)
+
+            if (GameObject.Find("Player").GetComponent<CharacterAnimator>().isAttack == true)
             {
-                HP = HP - (coll.gameObject.GetComponent<WeaponHitBox>().AttackPower - 10 );
+                HP = HP - coll.gameObject.GetComponent<WeaponHitBox>().AttackPower;
                 GameObject.Find("Player").GetComponent<CharacterAnimator>().isAttack = false;
 
             }
         }
         */
-
-
     }
     /*
     void Update()
@@ -195,7 +215,7 @@ public class ChicController : MonoBehaviour
 
         pos = this.transform.position;
 
-        //íƒ€ê²Ÿ(í”Œë ˆì´ì–´)ì˜ í¬ì§€ì…˜ì„ ëª©í‘œì§€ì ìœ¼ë¡œ
+        //Å¸°Ù(ÇÃ·¹ÀÌ¾î)ÀÇ Æ÷Áö¼ÇÀ» ¸ñÇ¥ÁöÁ¡À¸·Î
 
 
         if (distance <= 5.0f && distance >= 1.5f)
@@ -208,19 +228,19 @@ public class ChicController : MonoBehaviour
 
         else if (distance < 1.5f)
         {
-            //ê³µê²©ë²”ìœ„ ì•ˆì— ë“¤ì–´ì™”ì„ ë•Œ ì •ì§€
+            //°ø°İ¹üÀ§ ¾È¿¡ µé¾î¿ÔÀ» ¶§ Á¤Áö
             nav.isStopped = true;
             animator.SetTrigger("Attack");
         }
         else if(Vector3.Distance(destination, target.position) > 5f)
         {
-            //íƒ€ê²Ÿ ì¶”ì  ì¤‘ì§€
+            //Å¸°Ù ÃßÀû ÁßÁö
             nav.enabled = false;
             animator.SetInteger("Walk", 0);
             //anim.SetTrigger("jump");
         }
     }
-    //ì í”„ìš©
+    //Á¡ÇÁ¿ë
                 rb.AddForce(0, jumpForce, 0);
                 canJump = Time.time + timeBeforeNextJump;
                 anim.SetTrigger("jump");

@@ -32,7 +32,7 @@ public class BoarCtrl : MonoBehaviour
     //public int AttackPower = 10;
     //public bool isAttack = false;
     //GameObject AttackHead;
-    bool isAlive;
+    bool isAlive = true;
     GameObject AttackHead;
     bool isRun = false;
 
@@ -54,7 +54,7 @@ public class BoarCtrl : MonoBehaviour
     [SerializeField]
     private GameObject ItemDrop1;
     [SerializeField]
-    private GameObject ItemDrop2;
+    private GameObject HealingPotion;
 
 
 
@@ -82,7 +82,7 @@ public class BoarCtrl : MonoBehaviour
 
     void Update()
     {
-        isAlive = GetComponent<MonsterStats>().isAlive;
+        //isAlive = GetComponent<MonsterStats>().isAlive;
         if (isAlive == true)
         {
             float distance = Vector3.Distance(target.position, transform.position);
@@ -170,9 +170,17 @@ public class BoarCtrl : MonoBehaviour
         GameObject dropItem = Instantiate(ItemDrop1, transform.position, Quaternion.identity);
         dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_UNSTABLE_CORE]);
         //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
+        GameObject dropItem1 = Instantiate(ItemDrop1, transform.position, Quaternion.identity);
+        dropItem1.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_UNSTABLE_CORE]);
 
-        GameObject dropItem1 = Instantiate(ItemDrop2, transform.position, Quaternion.identity);
-        //dropItem1.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.
+
+        //50%È®·ü·Î µå¶ø
+        int RandomNum = Random.Range(1, 10);
+        if (RandomNum < 6)
+        {
+            GameObject dropItem2 = Instantiate(HealingPotion, transform.position, Quaternion.identity);
+            dropItem2.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.ITEM_HEAL_POTION]);
+        }
 
     }
     void OnTriggerEnter(Collider coll)
