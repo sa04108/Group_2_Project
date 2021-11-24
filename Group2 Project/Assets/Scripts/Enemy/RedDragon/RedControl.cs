@@ -22,7 +22,7 @@ public class RedControl : MonoBehaviour
     
 
 
-    bool isDie = false;
+    //bool isDie = false;
 
     void Awake()
     {

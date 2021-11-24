@@ -11,7 +11,7 @@ public class StoneController : MonoBehaviour
     [SerializeField] float timeBeforeNextJump = 1.2f;
     [SerializeField] Vector3 pos;
     [SerializeField] float distance;
-    [SerializeField] bool isDie = false;
+    //[SerializeField] bool isDie = false;
 
 
     [SerializeField] float canJump = 0f;

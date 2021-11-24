@@ -12,8 +12,8 @@ public class BoarCtrl : MonoBehaviour
     [SerializeField] float timeBeforeNextJump = 1.2f;
     [SerializeField] Vector3 pos;
     [SerializeField] float distance;
-    [SerializeField] bool isDie = false;
-
+    //[SerializeField] bool isDie = false;
+    public Vector3 BoarPos;
 
     [SerializeField] float canJump = 0f;
     [SerializeField] bool isFindPlayer;
@@ -80,7 +80,7 @@ public class BoarCtrl : MonoBehaviour
             float distance = Vector3.Distance(target.position, transform.position);
 
 
-            if (distance <= 17.0f && distance >= 3.2f)
+            if (distance <= 17.0f && distance >= 2.8f)
             {
                 isFindPlayer = true;
                 nav.isStopped = false;
@@ -94,7 +94,7 @@ public class BoarCtrl : MonoBehaviour
                 //보자마자 돌진
                 AttackHead.GetComponent<AttackArea>().isAttack = true;
             }
-            else if (distance < 3.2f)
+            else if (distance < 2.8f)
             {
                 nav.isStopped = true;
                 rb.velocity = Vector3.zero;
@@ -108,6 +108,9 @@ public class BoarCtrl : MonoBehaviour
 
 
                 AttackHead.GetComponent<AttackArea>().isAttack = true;
+                pos = transform.position;
+                var rotation = Quaternion.LookRotation(target.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
 
             }
             else if (distance > 17.0f && isFindPlayer == true)
