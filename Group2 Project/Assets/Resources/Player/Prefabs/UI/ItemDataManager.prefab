@@ -87,6 +87,12 @@ MonoBehaviour:
     itemMaterial: {fileID: 2100000, guid: 55a512382d8a87e48bf3bb9092ecbf4e, type: 2}
     itemCount: 10
   - itemType: 0
+    itemName: "\uCCA0\uAD11\uC11D"
+    itemImage: {fileID: 21300034, guid: fd0b7189c26761e4c833b6c9734d6cd4, type: 3}
+    itemModel: {fileID: 4300000, guid: 7406bc5b8e13a284a929f0fb559ae654, type: 3}
+    itemMaterial: {fileID: 2100000, guid: c7726fbed07b42949bc5921566b46fb3, type: 2}
+    itemCount: 10
+  - itemType: 0
     itemName: "\uB2E4\uC774\uC544\uBAAC\uB4DC"
     itemImage: {fileID: 21300034, guid: fd0b7189c26761e4c833b6c9734d6cd4, type: 3}
     itemModel: {fileID: 4300000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
