@@ -14,6 +14,7 @@ TagManager:
   - Ground
   - Rock
   - Wood
+  - Bomb
   layers:
   - Default
   - TransparentFX
