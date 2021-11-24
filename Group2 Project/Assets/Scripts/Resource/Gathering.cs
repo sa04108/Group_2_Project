@@ -25,6 +25,13 @@ public class Gathering : MonoBehaviour {
     [SerializeField]
     private List<GameObject> PrefabItem = new List<GameObject>();
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip HitSound;
+    [SerializeField]
+    private AudioClip debrisSound;
+
     private GameObject deb;
     private GameObject Item;
 
@@ -33,6 +40,8 @@ public class Gathering : MonoBehaviour {
     }
 
     public void Mining(int damage) {
+        audioSource.clip = HitSound;
+        audioSource.Play();
         var HE = Instantiate(HitEffect, col.bounds.center, Quaternion.identity);
         Destroy(HE, DestroyTime);
         Hp -= damage; // 도구 티어에 따라 Hp -= Tier;
@@ -42,6 +51,8 @@ public class Gathering : MonoBehaviour {
     }
 
     private void Destruction() {
+        audioSource.clip = debrisSound;
+        audioSource.Play();
         col.enabled = false;
         for (int i = 0; i < 5; i++) {
             ItemInstantiate();

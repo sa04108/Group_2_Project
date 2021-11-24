@@ -12,4 +12,9 @@ public class Arrow : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.velocity = Camera.main.transform.forward * 50;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
 }
