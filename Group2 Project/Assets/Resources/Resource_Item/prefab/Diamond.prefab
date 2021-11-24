@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6822668509195794000}
   m_Layer: 0
   m_Name: Diamond
-  m_TagString: Rock
+  m_TagString: Diamond
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,12 +49,11 @@ MonoBehaviour:
   Hp: 6
   DestroyTime: 3
   col: {fileID: 6822668509195794000}
+  HitEffect: {fileID: 204697647466844157, guid: 2ddc0b7b3d6485c46ab08fa2e56f80d7, type: 3}
   gather: {fileID: 7244537696398758793}
   gather_debris: {fileID: 5401783828450280815, guid: 7d188a28da3b0a34e85761aea649b3c9, type: 3}
   gatherItemPrefab: {fileID: 7586827843675272865, guid: 1ee5fbeb91caf174fa374e0556df4030, type: 3}
   PrefabItem: []
-  deb: {fileID: 0}
-  Item: {fileID: 0}
 --- !u!135 &6822668509195794000
 SphereCollider:
   m_ObjectHideFlags: 0

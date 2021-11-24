@@ -19,6 +19,13 @@ public class PickAxe : MonoBehaviour
         {
             other.GetComponent<Gathering>().Mining(Tier);
         }
-        
+        if (other.CompareTag("Iron") && Player.GetComponent<CharacterAnimator>().isAttack&&Tier>=2)
+        {
+            other.GetComponent<Gathering>().Mining(Tier);
+        }
+        if (other.CompareTag("Diamond") && Player.GetComponent<CharacterAnimator>().isAttack&&Tier>=3)
+        {
+            other.GetComponent<Gathering>().Mining(Tier);
+        }
     }
 }

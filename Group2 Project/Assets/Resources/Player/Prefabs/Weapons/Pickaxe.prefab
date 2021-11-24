@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db21d86d56800de4da057801e9bf366e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tier: 1
+  Tier: 2
   Player: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c, type: 3}
 --- !u!54 &-3773819231599042067
 Rigidbody:

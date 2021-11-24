@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3368354762969577144}
   m_Layer: 0
   m_Name: Iron
-  m_TagString: Rock
+  m_TagString: Iron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,15 +60,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 5
   Hp: 5
-  DropItemCount: 3
   DestroyTime: 3
   col: {fileID: 1658982310731770315}
+  HitEffect: {fileID: 204697647466844157, guid: 2ddc0b7b3d6485c46ab08fa2e56f80d7, type: 3}
   gather: {fileID: 4824819245390412514}
   gather_debris: {fileID: 5401783828450280815, guid: 7d188a28da3b0a34e85761aea649b3c9, type: 3}
   gatherItemPrefab: {fileID: 3817851193338386625, guid: c45dcc19052a1294392a46dac29736d8, type: 3}
   PrefabItem: []
-  deb: {fileID: 0}
-  Item: {fileID: 0}
 --- !u!1001 &2092566332888418083
 PrefabInstance:
   m_ObjectHideFlags: 0

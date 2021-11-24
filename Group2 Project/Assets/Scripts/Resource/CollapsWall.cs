@@ -14,9 +14,10 @@ public class CollapsWall : MonoBehaviour
     [SerializeField]
     private GameObject Wall_debris;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.transform.tag == "Bomb")
+        Debug.Log(other.name);
+        if (other.transform.tag == "Bomb")
         {
             Destruction();
         }

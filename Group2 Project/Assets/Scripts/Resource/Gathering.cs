@@ -13,6 +13,8 @@ public class Gathering : MonoBehaviour {
     private float DestroyTime;
     [SerializeField]
     private Collider col;
+    [SerializeField]
+    private GameObject HitEffect;
 
     [SerializeField]
     private GameObject gather;
@@ -23,14 +25,16 @@ public class Gathering : MonoBehaviour {
     [SerializeField]
     private List<GameObject> PrefabItem = new List<GameObject>();
 
-    public GameObject deb;
-    public GameObject Item;
+    private GameObject deb;
+    private GameObject Item;
 
     public void Start() {
         itemDB = ItemData.instance;
     }
 
     public void Mining(int damage) {
+        var HE = Instantiate(HitEffect, col.bounds.center, Quaternion.identity);
+        Destroy(HE, DestroyTime);
         Hp -= damage; // 도구 티어에 따라 Hp -= Tier;
         if (Hp <= 0) {
             Destruction();
@@ -53,8 +57,6 @@ public class Gathering : MonoBehaviour {
 
     private void DebInstantiate() {
         deb = Instantiate(gather_debris, gameObject.transform.position, Quaternion.identity);
-        //Vector3 scale = gameObject.transform.localScale;
-        //deb.transform.localScale = scale;
     }
     private void ItemInstantiate() {
         if (gameObject.tag == "Wood") {
