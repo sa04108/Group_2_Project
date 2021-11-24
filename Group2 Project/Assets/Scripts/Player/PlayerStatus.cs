@@ -54,6 +54,15 @@ public class PlayerStatus : MonoBehaviour
             }
             Destroy(other.gameObject, 0.01f);
         }
+        if (other.tag == "Portion")
+        {
+            PlayerHP = PlayerHP + 100;
+            if (PlayerHP >= 100)
+            {
+                PlayerHP = 100;
+            }
+            Destroy(other.gameObject, 0.01f);
+        }
         //Esder 태그의 아이탬 습득시 데미지 15
         if (other.tag == "Esder")
         {
