@@ -177,8 +177,8 @@ MonoBehaviour:
     miningPower: 15
   - equipType: 5
     equipName: "\uD3ED\uD0C4"
-    equipPrefab: {fileID: 135746, guid: aa64b9ae639024c5097e12b27ac1d84c, type: 3}
-    equipImage: {fileID: 21300060, guid: 36bbf91eb47491242b75b7e2df16947f, type: 3}
+    equipPrefab: {fileID: 8808487279671788651, guid: bd78ae9039dc8274586386f33e446866, type: 3}
+    equipImage: {fileID: 21300000, guid: 261a3622a2ac89840aec517ad14cc3ba, type: 3}
     equipTier: 1
     damage: 20
     loggingPower: 20
