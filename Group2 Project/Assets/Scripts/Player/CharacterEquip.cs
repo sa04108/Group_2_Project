@@ -32,6 +32,15 @@ public class CharacterEquip : MonoBehaviour
                 }
             }
         }        
+        if(inven.enchantShield == true) {
+            Destroy(currentShieldObject);
+            foreach (Equipment equip in inven.equipments) {
+                if (equip.equipType == EQUIP_TYPE.SHIELD) {
+                    currentShieldObject = Instantiate(equip.equipPrefab, shieldTransform);
+                    inven.enchantShield = false;
+                }
+            }
+        }
 
         //1¹ø½½·Ô °Ë
         if (Input.GetKeyDown(KeyCode.Alpha1) && currentEquipment != CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX) {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponHitBox : MonoBehaviour
 {
-    public int AttackPower = 5;
+    public int AttackPower;
     //GameObject HitTheMonster;
 
     // Start is called before the first frame update

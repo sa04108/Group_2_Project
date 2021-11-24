@@ -33,11 +33,26 @@ public class CraftMenuController : MonoBehaviour {
     public Button RockPickAxeCraftButton;
     public Button IronPickAxeCraftButton;
 
+
+    //가공 버튼
+    public Button BranchToWoodButton;
+    public Button StoneToRockButton;
+    public Button IronOreToIronIngot;
+        
     private void Start() {
         inven = Inventory.instance;
         equipSlot = CraftEquipmentSlot.instance;
         itemDB = ItemData.instance;
 
+        BranchToWoodButton.onClick.AddListener(() => {
+            ProcessWood();
+        });
+        StoneToRockButton.onClick.AddListener(() => {
+            ProcessRock();
+        });
+        IronOreToIronIngot.onClick.AddListener(() => {
+            ProcessIron();
+        });
         SwordCraftButton.onClick.AddListener(() => {
             CraftSword();
         });
@@ -161,7 +176,19 @@ public class CraftMenuController : MonoBehaviour {
         }
     }
 
+    public bool CheckHammer() {
+        foreach(Equipment equip in inven.equipments) {
+            if (equip.equipType == EQUIP_TYPE.HAMMER) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void CraftSword() {
+
+        if (!CheckHammer()) return;
+
         List<Recipes> recipes = SwordCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -175,6 +202,7 @@ public class CraftMenuController : MonoBehaviour {
     }
 
     public void EnchantSword() {
+        if (!CheckHammer()) return;
         List<Recipes> recipes = EnchantSwordCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -187,22 +215,35 @@ public class CraftMenuController : MonoBehaviour {
     }
 
     public void CraftShield() {
+        if (!CheckHammer()) return;
         List<Recipes> recipes = ShieldCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if(CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
             Equipment shield = itemDB.equipDB[CommonDefine.EQUIPMENT_SHIELD];
 
             inven.AddEquip(shield);
+            inven.shield = true;
             ShieldCraftButton.gameObject.SetActive(false);
             EnchantShieldCraftButton.gameObject.SetActive(true);
         }
     }
 
     public void EnchantShield() {
+        if (!CheckHammer()) return;
+        List<Recipes> recipes = ShieldCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
+        if (CheckResource(recipes, inven.items)) {
+            CraftObject(recipes, inven.items);
+            Equipment enchantShield = itemDB.equipDB[CommonDefine.EQUIPMENT_ENCHANTED_SHIELD];
 
+            inven.AddEquip(enchantShield);
+            inven.enchantShield = true;
+
+            EnchantShieldCraftButton.gameObject.SetActive(false);
+        }
     }
 
     public void CraftBow() {
+        if (!CheckHammer()) return;
         List<Recipes> recipes = BowCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -216,6 +257,7 @@ public class CraftMenuController : MonoBehaviour {
     }
 
     public void EnchantBow() {
+        if (!CheckHammer()) return;
         List<Recipes> recipes = EnchantBowCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if(CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -228,6 +270,7 @@ public class CraftMenuController : MonoBehaviour {
     }
 
     public void CraftHammer() {
+
         List<Recipes> recipes = HammerCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if(CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -240,6 +283,7 @@ public class CraftMenuController : MonoBehaviour {
     }
 
     public void CraftWoodAxe() {
+        if (!CheckHammer()) return;
         List<Recipes> recipes = WoodAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -253,6 +297,7 @@ public class CraftMenuController : MonoBehaviour {
     }
 
     public void CraftRockAxe() {
+        if (!CheckHammer()) return;
         List<Recipes> recipes = RockAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -266,6 +311,7 @@ public class CraftMenuController : MonoBehaviour {
     }
 
     public void CraftIronAxe() {
+        if (!CheckHammer()) return;
         List<Recipes> recipes = IronAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -278,6 +324,7 @@ public class CraftMenuController : MonoBehaviour {
     }
 
     public void CraftWoodPickAxe() {
+        if (!CheckHammer()) return;
         List<Recipes> recipes = WoodPickAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -291,6 +338,7 @@ public class CraftMenuController : MonoBehaviour {
     }
 
     public void CraftRockPickAxe() {
+        if (!CheckHammer()) return;
         List<Recipes> recipes = RockPickAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -304,6 +352,7 @@ public class CraftMenuController : MonoBehaviour {
     }
 
     public void CraftIronPickAxe() {
+        if (!CheckHammer()) return;
         List<Recipes> recipes = IronPickAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -316,6 +365,7 @@ public class CraftMenuController : MonoBehaviour {
     }
 
     public void CraftBomb() {
+        if (!CheckHammer()) return;
         List<Recipes> recipes = BombCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -326,6 +376,31 @@ public class CraftMenuController : MonoBehaviour {
         }
     }
 
+
+    public void ProcessWood() {
+        List<Recipes> recipes = BranchToWoodButton.gameObject.GetComponent<CraftRecipe>().recipes;
+        if(CheckResource(recipes, inven.items)) {
+            CraftObject(recipes, inven.items);
+            Item wood = itemDB.itemDB[CommonDefine.RESOURCE_WOOD];
+            inven.AddItem(wood);
+        }
+    }
+    public void ProcessRock() {
+        List<Recipes> recipes = StoneToRockButton.gameObject.GetComponent<CraftRecipe>().recipes;
+        if (CheckResource(recipes, inven.items)) {
+            CraftObject(recipes, inven.items);
+            Item rock = itemDB.itemDB[CommonDefine.RESOURCE_ROCK];
+            inven.AddItem(rock);
+        }
+    }
+    public void ProcessIron() {
+        List<Recipes> recipes = IronOreToIronIngot.gameObject.GetComponent<CraftRecipe>().recipes;
+        if (CheckResource(recipes, inven.items)) {
+            CraftObject(recipes, inven.items);
+            Item iron = itemDB.itemDB[CommonDefine.RESOURCE_IRON_INGOT];
+            inven.AddItem(iron);
+        }
+    }
     public bool CheckResource(List<Recipes> recipes, List<Item> items) {
         int nameCheck = 0;
         int quantityCheck = 0;

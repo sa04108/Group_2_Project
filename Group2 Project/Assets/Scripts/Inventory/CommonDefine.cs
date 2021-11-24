@@ -41,8 +41,12 @@ public class CommonDefine {
     public static int RESOURCE_ROCK = 3;
     public static int RESOURCE_ENCHANT_STONE = 4;
     public static int RESOURCE_UNSTABLE_CORE = 5;
-    public static int RESOURCE_IRON = 6;
-    public static int RESOURCE_DIAMOND = 7;
+    public static int RESOURCE_IRON_ORE = 6;
+    public static int RESOURCE_IRON_INGOT = 7;
+    public static int RESOURCE_DIAMOND = 8;
+
+    //Æ÷¼Ç
+    public static int ITEM_HEAL_POTION = 9;
 
 }
 

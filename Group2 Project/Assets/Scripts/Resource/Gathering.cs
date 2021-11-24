@@ -69,7 +69,7 @@ public class Gathering : MonoBehaviour {
             gatherItemPrefab.GetComponent<DropItem>().SetItem(itemDB.itemDB[CommonDefine.RESOURCE_DIAMOND]);
         }
         else if(gameObject.tag == "Iron") {
-            gatherItemPrefab.GetComponent<DropItem>().SetItem(itemDB.itemDB[CommonDefine.RESOURCE_IRON]);
+            gatherItemPrefab.GetComponent<DropItem>().SetItem(itemDB.itemDB[CommonDefine.RESOURCE_IRON_ORE]);
         }
 
         Item = Instantiate(gatherItemPrefab, gameObject.transform.position, Quaternion.identity);
