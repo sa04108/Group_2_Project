@@ -81,12 +81,6 @@ MonoBehaviour:
     itemMaterial: {fileID: 2100000, guid: 35a80721181006b41a9a1f03dd6ac05f, type: 2}
     itemCount: 10
   - itemType: 0
-    itemName: "\uCCA0\uAD11\uC11D"
-    itemImage: {fileID: 21300034, guid: fd0b7189c26761e4c833b6c9734d6cd4, type: 3}
-    itemModel: {fileID: 4300000, guid: 7406bc5b8e13a284a929f0fb559ae654, type: 3}
-    itemMaterial: {fileID: 2100000, guid: c7726fbed07b42949bc5921566b46fb3, type: 2}
-    itemCount: 10
-  - itemType: 0
     itemName: "\uCCA0\uC7AC"
     itemImage: {fileID: 21300034, guid: fd0b7189c26761e4c833b6c9734d6cd4, type: 3}
     itemModel: {fileID: 846622713991476264, guid: c2f79e21e006fba4c8c77c508b688343, type: 3}
@@ -171,8 +165,8 @@ MonoBehaviour:
     miningPower: 1
   - equipType: 4
     equipName: "\uB098\uBB34 \uACE1\uAD2D\uC774"
-    equipPrefab: {fileID: 0}
-    equipImage: {fileID: 0}
+    equipPrefab: {fileID: 5409580506501253632, guid: c4b0d687e132c8145aa2fc3002c7fca3, type: 3}
+    equipImage: {fileID: 21300000, guid: 1d5a81172da762e4686c7fe53ec82f9c, type: 3}
     equipTier: 1
     damage: 1
     loggingPower: 1
@@ -203,7 +197,7 @@ MonoBehaviour:
     miningPower: 20
   - equipType: 6
     equipName: "\uBC29\uD328"
-    equipPrefab: {fileID: 176636, guid: b4ea2f3e0e40943219a8997915f71646, type: 3}
+    equipPrefab: {fileID: 3497437527442245570, guid: 9eed9d92cf565a340bed09335ffe57e2, type: 3}
     equipImage: {fileID: 21300000, guid: 0a744130dcabdc54fb4230d6f62ff85d, type: 3}
     equipTier: 1
     damage: 0
