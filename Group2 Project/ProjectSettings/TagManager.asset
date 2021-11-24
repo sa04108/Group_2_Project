@@ -18,6 +18,11 @@ TagManager:
   - Diamond
   - Iron
   - Portion
+  - Arrow
+  - Axe
+  - Dagger
+  - Hammer
+  - Pickaxe
   layers:
   - Default
   - TransparentFX

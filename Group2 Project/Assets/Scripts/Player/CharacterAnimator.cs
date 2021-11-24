@@ -127,12 +127,12 @@ public class CharacterAnimator : MonoBehaviour
     {
         animator.SetBool("Attack", true);
         isAttack = true;
-
+        isAttackColliderEnable();
         yield return new WaitForSeconds(0.35f);
 
         animator.SetBool("Attack", false);
         isAttack = false;
-
+        isAttackColliderUnable();
     }
     void Dead()
     {
@@ -140,6 +140,33 @@ public class CharacterAnimator : MonoBehaviour
         {
             animator.SetBool("Dead", true);
             PlaySound(2);
+        }
+    }
+    void isAttackColliderEnable()
+    {
+        Transform[] child = GameObject.Find("Weapon").GetComponentsInChildren<Transform>();
+        var WeaponChild = child;
+
+        foreach (var num in WeaponChild)
+        {
+            if (num.name != GameObject.Find("Weapon").name)
+            {
+                num.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+            }
+
+        }
+    }
+    void isAttackColliderUnable()
+    {
+        Transform[] child = GameObject.Find("Weapon").GetComponentsInChildren<Transform>();
+        var WeaponChild = child;
+
+        foreach (var num in WeaponChild)
+        {
+            if (num.name != GameObject.Find("Weapon").name)
+            {
+                num.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            }
         }
     }
 }

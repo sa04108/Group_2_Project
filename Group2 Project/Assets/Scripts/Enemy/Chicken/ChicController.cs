@@ -30,11 +30,11 @@ public class ChicController : MonoBehaviour
     //public int AttackPower = 2;
     //public bool isAttack = false;
     //public GameObject AttackHead;
-    
+
     bool isAlive;
     GameObject AttackHead;
 
-    public GameObject ChicAni;
+    GameObject ChicAni;
 
     [Header("Patrol and Regen Point")]
     //패트롤 포인트 저장
@@ -52,12 +52,11 @@ public class ChicController : MonoBehaviour
     [SerializeField]
     private GameObject rockItemDrop;
 
-    
+
 
     void Start()
     {
-        AttackHead = GetComponent<MonsterStats>().AttackHead;
-        isAlive = GetComponent<MonsterStats>().isAlive;
+
         //animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         //패트롤 포인트 들고오기
@@ -81,6 +80,7 @@ public class ChicController : MonoBehaviour
 
     void Update()
     {
+        isAlive = GetComponent<MonsterStats>().isAlive;
         if (isAlive == true)
         {
             float distance = Vector3.Distance(target.position, transform.position);
@@ -137,23 +137,20 @@ public class ChicController : MonoBehaviour
 
         }
 
-        //사망시
-        /*
+        int HP = GetComponent<MonsterStats>().HP;
         if (HP <= 0)
         {
-            if(isAlive == true)
+            if (isAlive == true)
             {
                 Invoke("StoneDrop", 1.7f);
-                Debug.Log("Dead");
                 transform.root.gameObject.GetComponent<ErasePatrol>().EraseThis();
                 //animator.SetTrigger("Dead");
                 ChicAni.GetComponent<ChicAnimation>().Dead();
                 isAlive = false;
-                
+
 
             }
         }
-        */
     }
 
     void StoneDrop()
@@ -162,7 +159,7 @@ public class ChicController : MonoBehaviour
     }
     void OnTriggerEnter(Collider coll)
     {
-        if(coll.tag == "PatrolPoint")
+        if (coll.tag == "PatrolPoint")
         {
             if (isWalk == false)
             {

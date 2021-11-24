@@ -52,14 +52,16 @@ public class BoarCtrl : MonoBehaviour
     Animator animator;
     Rigidbody rb;
     [SerializeField]
-    private GameObject rockItemDrop;
+    private GameObject ItemDrop1;
+    [SerializeField]
+    private GameObject ItemDrop2;
 
 
 
     void Start()
     {
-        AttackHead = GetComponent<MonsterStats>().AttackHead;
-        isAlive = GetComponent<MonsterStats>().isAlive;
+
+
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         //패트롤 포인트 들고오기
@@ -80,6 +82,7 @@ public class BoarCtrl : MonoBehaviour
 
     void Update()
     {
+        isAlive = GetComponent<MonsterStats>().isAlive;
         if (isAlive == true)
         {
             float distance = Vector3.Distance(target.position, transform.position);
@@ -91,7 +94,7 @@ public class BoarCtrl : MonoBehaviour
                 nav.isStopped = false;
                 nav.SetDestination(target.position);
                 animator.SetTrigger("Run");
-                if(isRun == false)
+                if (isRun == false)
                 {
                     isRun = true;
                     nav.speed = 7.0f;
@@ -103,7 +106,7 @@ public class BoarCtrl : MonoBehaviour
             {
                 nav.isStopped = true;
                 rb.velocity = Vector3.zero;
-                if(isRun == true)
+                if (isRun == true)
                 {
                     animator.SetTrigger("Horn Attack");
                     isRun = false;
@@ -148,27 +151,29 @@ public class BoarCtrl : MonoBehaviour
 
         }
 
-        //사망시
-        /*
+        int HP = GetComponent<MonsterStats>().HP;
         if (HP <= 0)
         {
             if (isAlive == true)
             {
                 animator.SetTrigger("Die");
                 isAlive = false;
-                Invoke("StoneDrop", 1.7f);
+                Invoke("itemDrop", 1.7f);
                 transform.root.gameObject.gameObject.GetComponent<ErasePatrol>().EraseThis();
 
             }
         }
-        */
     }
 
-    void StoneDrop()
+    void itemDrop()
     {
-        GameObject dropItem = Instantiate(rockItemDrop, transform.position, Quaternion.identity);
-        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[2]);
+        GameObject dropItem = Instantiate(ItemDrop1, transform.position, Quaternion.identity);
+        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_UNSTABLE_CORE]);
         //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
+
+        GameObject dropItem1 = Instantiate(ItemDrop2, transform.position, Quaternion.identity);
+        //dropItem1.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.
+
     }
     void OnTriggerEnter(Collider coll)
     {

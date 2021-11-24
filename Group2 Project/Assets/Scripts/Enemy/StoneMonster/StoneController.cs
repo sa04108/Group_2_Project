@@ -33,7 +33,6 @@ public class StoneController : MonoBehaviour
     //GameObject AttackHead;
     bool isAlive;
     GameObject AttackHead;
-
     [Header("Patrol and Regen Point")]
     //패트롤 포인트 저장
     public Transform[] points;
@@ -50,12 +49,13 @@ public class StoneController : MonoBehaviour
     [SerializeField]
     private GameObject rockItemDrop;
 
-    
+
 
     void Start()
     {
-        AttackHead = GetComponent<MonsterStats>().AttackHead;
-        isAlive = GetComponent<MonsterStats>().isAlive;
+
+
+
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         //패트롤 포인트 들고오기
@@ -75,6 +75,7 @@ public class StoneController : MonoBehaviour
 
     void Update()
     {
+        isAlive = GetComponent<MonsterStats>().isAlive;
         if (isAlive == true)
         {
             float distance = Vector3.Distance(target.position, transform.position);
@@ -127,11 +128,10 @@ public class StoneController : MonoBehaviour
 
         }
 
-        //사망시
-        /*
+        int HP = GetComponent<MonsterStats>().HP;
         if (HP <= 0)
         {
-            if(isAlive == true)
+            if (isAlive == true)
             {
                 animator.SetTrigger("Dead");
                 isAlive = false;
@@ -140,18 +140,17 @@ public class StoneController : MonoBehaviour
 
             }
         }
-        */
     }
 
     void StoneDrop()
     {
         GameObject dropItem = Instantiate(rockItemDrop, transform.position, Quaternion.identity);
-        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_STONE]);
+        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[2]);
         //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
     }
     void OnTriggerEnter(Collider coll)
     {
-        if(coll.tag == "PatrolPoint")
+        if (coll.tag == "PatrolPoint")
         {
             if (isWalk == false)
             {
