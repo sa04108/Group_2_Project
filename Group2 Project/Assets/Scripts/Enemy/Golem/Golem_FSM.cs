@@ -5,6 +5,9 @@ using UnityEngine;
 public class Golem_FSM : MonoBehaviour
 {
     private Animator animator;
+    private MonsterStats monsterStats;
+    PlayerStatus playerStatus;
+
     private Ray ray;
     private RaycastHit hit;
     private float maxDistanceToCheck = 10.0f;
@@ -15,12 +18,18 @@ public class Golem_FSM : MonoBehaviour
     public Transform pointB;
     public Transform pointC;
     public Transform pointD;
+
     public GameObject player;
+    public GameObject Rock;
+    public GameObject Hand;
+    public GameObject ShootRock;
+
 
     public UnityEngine.AI.NavMeshAgent navMeshAgent;
 
     private int currentTarget;
     private float distanceFromTarget;
+    private float preHP;
     private Transform[] waypoints = null;
 
 
@@ -28,6 +37,9 @@ public class Golem_FSM : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+        monsterStats = gameObject.GetComponent<MonsterStats>();
+        playerStatus = GameObject.Find("Player").GetComponent<PlayerStatus>();
+
         pointA = GameObject.Find("p1").transform;
         pointB = GameObject.Find("p2").transform;
         pointC = GameObject.Find("p3").transform;
@@ -42,13 +54,13 @@ public class Golem_FSM : MonoBehaviour
         };
         currentTarget = 0;
         navMeshAgent.SetDestination(waypoints[currentTarget].position);
+
+        preHP = monsterStats.HP;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(pointA);
-
         navMeshAgent.SetDestination(waypoints[currentTarget].position);
 
 
@@ -76,14 +88,17 @@ public class Golem_FSM : MonoBehaviour
 
         distanceFromTarget = Vector3.Distance(waypoints[currentTarget].position, transform.position);
         animator.SetFloat("distanceFromWaypoint", distanceFromTarget);
+
+
         ChasePlayer();
-        Attack();
-        
+        AttackSystem();
+        GetHit();
+
     }
 
     public void ChasePlayer()
     {
-        if (currentDistance < 10 && currentDistance > 6)
+        if (currentDistance < 15 && currentDistance > 1)
         {
             navMeshAgent.SetDestination(player.transform.position);
             navMeshAgent.speed = 5;
@@ -93,18 +108,6 @@ public class Golem_FSM : MonoBehaviour
             navMeshAgent.speed = 2;
         }
     }
-
-    public void Attack()
-    {
-        if (currentDistance < 6 && currentDistance > 1)
-        {
-            navMeshAgent.SetDestination(player.transform.position);
-            navMeshAgent.speed = 0;
-        }
-        else
-            return;
-    }
-
 
     public void SetNextPoint()
     {
@@ -126,4 +129,75 @@ public class Golem_FSM : MonoBehaviour
         }
         navMeshAgent.SetDestination(waypoints[currentTarget].position);
     }
+    void AttackSystem()
+    {
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01"))
+        {
+            Rock.transform.position = Hand.transform.position;
+            Rock.SetActive(true);
+            navMeshAgent.speed = 0;
+
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.6f)
+        {
+
+            if(Rock.activeSelf==true)
+            {
+                //Shoot();
+            }
+            Rock.SetActive(false);
+
+
+        }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02"))
+        {
+            navMeshAgent.speed = 0;
+
+            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.2f
+                && animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.8f)
+                monsterStats.isAttack = true;
+            else
+                monsterStats.isAttack = false;
+
+        }
+
+    }
+    void GetHit()
+    {
+        if (preHP > monsterStats.HP)
+        {
+            animator.SetTrigger("Hit");
+        }
+        else
+            return;
+
+        if (monsterStats.HP <= 0)
+            monsterStats.isAlive = false;
+    }
+
+    void Shoot()
+    {
+        Instantiate(ShootRock, Rock.transform.position, Rock.transform.rotation);
+
+    }
+
+    /*
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.tag == "Player")
+        {
+            if (monsterStats.isAttack == true)
+            {
+                playerStatus.PlayerHP -= monsterStats.AttackPower;
+            }
+            else
+                return;
+        }
+        else
+            return;
+
+    }
+    */
 }
