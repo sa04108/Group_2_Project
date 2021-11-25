@@ -18,6 +18,8 @@ public class DragonWingStatus : MonoBehaviour
     void Start()
     {
         dragonStatus = this.transform.root.gameObject.GetComponent<DragonStatus>();
+        //날때만 true로 바꿔준다.
+        GetComponent<BoxCollider>().enabled = false;
     }
 
     // Update is called once per frame
@@ -49,6 +51,15 @@ public class DragonWingStatus : MonoBehaviour
         }
     }
     
+    public void WingColliderEnabled()
+    {
+        GetComponent<BoxCollider>().enabled = true;
+    }
 
+    public void WingColliderDisableAndReset()
+    {
+        GetComponent<BoxCollider>().enabled = false;
+        WingHP = 50;
+    }
 
 }

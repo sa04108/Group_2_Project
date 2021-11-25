@@ -66,6 +66,9 @@ public class RedControl : MonoBehaviour
             }
         }*/
 
+
+
+
     }
 
     public void GameEnd()

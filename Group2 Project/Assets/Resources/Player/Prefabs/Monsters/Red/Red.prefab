@@ -2181,6 +2181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 925771834564050878}
+  - component: {fileID: 1008769102}
   m_Layer: 0
   m_Name: Neck02
   m_TagString: Untagged
@@ -2203,6 +2204,19 @@ Transform:
   m_Father: {fileID: 925771834564130234}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1008769102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925771834564329806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 400, y: 100, z: 100}
+  m_Center: {x: -100, y: -20, z: 0}
 --- !u!1 &925771834564330558
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,7 +2662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925771834564335564}
   m_LocalRotation: {x: 0.076412596, y: 0.702966, z: 0.076412596, w: 0.702966}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.95, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 925771834564020712}
@@ -3582,6 +3596,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 925771834564106888}
+  - component: {fileID: 1420087096}
+  - component: {fileID: 1420087097}
   m_Layer: 0
   m_Name: UpperMouth02
   m_TagString: Untagged
@@ -3603,6 +3619,33 @@ Transform:
   m_Father: {fileID: 925771834564104916}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1420087096
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925771834564488226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 30
+  m_Center: {x: 0, y: -20, z: -13}
+--- !u!114 &1420087097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925771834564488226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871e113c8f8fdbd4082995c8225cd589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttack: 0
+  AttackPower: 10
 --- !u!1 &925771834564489054
 GameObject:
   m_ObjectHideFlags: 0
@@ -3646,8 +3689,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 500, y: 200, z: 300}
-  m_Center: {x: -150, y: -90, z: 0}
+  m_Size: {x: 400, y: 100, z: 300}
+  m_Center: {x: -70, y: -60, z: 0}
 --- !u!1 &925771834564490800
 GameObject:
   m_ObjectHideFlags: 0
