@@ -2,23 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterStats : MonoBehaviour
+public class DragonStatus : MonoBehaviour
 {
-    [Header("Monster Stats")]
-    public int HP = 15;
-    public int AttackPower = 2;
-    public bool isAttack = false;
 
-    //public GameObject ChicAni; 치킨만 애니메이터가 자식에 붙어있어서 추가한거였습니다.
-    public bool isAlive = true; //제대로 못받아와서 몬스터가 안죽음...걍 각 몬스터에 넣었음
+    [Header("Dragon Stats")]
+    public int HP = 1000;
+    public int WingHP = 100; //강화된 bow 데미지 고려, 양날개 5대씩
+
     int WeaponPower;
 
     ItemData DB;
 
+
+    // Start is called before the first frame update
     void Start()
     {
-        DB = ItemData.instance;
+        HP = 1000;
+        WingHP = 100;
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
 
     void OnTriggerEnter(Collider coll)
     {
@@ -49,5 +57,7 @@ public class MonsterStats : MonoBehaviour
             HP -= WeaponPower;
         }
     }
+
+
 
 }

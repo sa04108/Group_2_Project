@@ -12,8 +12,10 @@ public class MeteorExplosion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dropDirX = Random.Range(-0.010f, 0.010f);
-        dropDirZ = Random.Range(-0.010f, 0.010f);
+        //흩뿌려주는 용
+        dropDirX = Random.Range(-0.013f, 0.013f);
+        dropDirZ = Random.Range(-0.013f, 0.013f);
+        // 용 앞쪽으로 이동시켜주는 용
         dropPlusZ = 0.025f;
     }
 

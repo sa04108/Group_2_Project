@@ -9,16 +9,17 @@ public class RedControl : MonoBehaviour
     public Vector3 pos;
     public Transform target;
     public int life;
-    
-
+    public Transform meteor;
+    public Transform meteor1;
+    public Transform meteorPos;
+    public bool isChase;
     [Header("rotationSpeed")]//플레이어쪽으로 돌리는 속도
     [SerializeField] float speed;
-    //플레이어를 바라보는가 유무
-    public bool isChase;
 
 
 
-
+    
+    
 
 
     //bool isDie = false;
@@ -35,7 +36,9 @@ public class RedControl : MonoBehaviour
         speed = 0.8f;
         life = 10;
         isChase = true;
-        
+        MeteorDrop(1);
+        MeteorDrop(2);
+        MeteorDrop(3);
     }
 
     // Update is called once per frame
@@ -78,7 +81,54 @@ public class RedControl : MonoBehaviour
         */
         
     }
-    
+    public void MeteorDrop(int x)
+    {
+        if (x == 1)
+        {
+            meteorPos.localPosition = new Vector3(0, 41, -10);
+        }
+        else if (x == 2)
+        {
+            meteorPos.localPosition = new Vector3(0, 41, 0);
+        }
+        else if (x == 3)
+        {
+            meteorPos.localPosition = new Vector3(0, 41, 10);
+        }
+        Invoke("MeteorInstantiate", 0.5f);
+        Invoke("MeteorInstantiate", 0.55f);
+        Invoke("MeteorInstantiate", 0.8f);
+        Invoke("MeteorInstantiate", 0.85f);
+        Invoke("MeteorInstantiate", 1.1f);
+        Invoke("MeteorInstantiate", 1.2f);
+        Invoke("MeteorInstantiate", 1.23f);
+        Invoke("MeteorInstantiate", 1.5f);
+        Invoke("MeteorInstantiate", 1.54f);
+        Invoke("MeteorInstantiate", 1.7f);
+        Invoke("MeteorInstantiate", 1.9f);
+        Invoke("MeteorInstantiate", 2.0f);
+        Invoke("MeteorInstantiate", 2.1f);
+        Invoke("MeteorInstantiate", 2.2f);
+        Invoke("MeteorInstantiate", 2.3f);
+        Invoke("MeteorInstantiate", 2.35f);
+        Invoke("ChasePlayer", 2.2f);
+    }
+    public void MeteorInstantiate()
+    {
+        isChase = false;
+        float randomFloat = Random.Range(1,2);
+        
+        if (randomFloat >= 2)
+        {
+
+            Transform meteorIns = (Transform)Instantiate(meteor, meteorPos.position, transform.rotation);
+        }
+        else
+        {
+
+            Transform meteorIns = (Transform)Instantiate(meteor1, meteorPos.position, transform.rotation);
+        }
+    }
     public void ChasePlayer()
     {
         isChase = true;

@@ -1,0 +1,46 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DragonWingStatus : MonoBehaviour
+{
+    [Header("Dragon Wing Stats")]
+    public int WingHP = 50;
+
+
+
+
+    private int WeaponPower;
+    ItemData DB;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //날개 HP가 0이 되면 DragonStatus에 한쪽날개 hp==0를 전달한다.
+        if(WingHP <= 0)
+        {
+            DragonStatus dragonStatus = this.transform.root.gameObject.GetComponent<DragonStatus>();
+            
+        }
+
+    }
+
+    void OnTriggerEnter(Collider coll)
+    {
+        //플레이어의 무기에 따라 체력감소
+        if (coll.tag == "Arrow")//화살은 isAttack 판별 필요없음.
+        {
+            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage;
+            WingHP -= WeaponPower;
+        }
+    }
+    
+
+
+}
