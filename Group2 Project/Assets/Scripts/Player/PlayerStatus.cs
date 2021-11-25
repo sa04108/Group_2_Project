@@ -73,13 +73,13 @@ public class PlayerStatus : MonoBehaviour
 
     }
     
-    public void Burning()
+    public void Burning(float x)
     {
         if(isBurning == false)
         {
             isBurning = true;
             InvokeRepeating("BurningDamage", 0.5f, 0.5f);
-            Invoke("BurningEnd", 4f);
+            Invoke("BurningEnd", x);
 
         }
     }
@@ -91,5 +91,10 @@ public class PlayerStatus : MonoBehaviour
     void BurningDamage()
     {
         PlayerHP = PlayerHP - 5;
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Burning(2);
     }
 }

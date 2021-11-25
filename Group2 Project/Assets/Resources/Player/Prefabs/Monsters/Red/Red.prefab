@@ -4144,14 +4144,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925771835537483093}
-  m_LocalRotation: {x: 0.09897919, y: 0.00000011920926, z: -0.000000044703473, w: -0.9950895}
+  m_LocalRotation: {x: -0.07952659, y: 0.000042200074, z: 0.0011714841, w: -0.99683213}
   m_LocalPosition: {x: -0.000100742516, y: -46.620823, z: 35.994133}
   m_LocalScale: {x: 99.99997, y: 99.999985, z: 100}
   m_Children:
   - {fileID: 1101105038578351320}
   m_Father: {fileID: 925771834564119852}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.123, y: -0.016, z: -0.136}
 --- !u!1001 &8330805224951581168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4165,7 +4165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8996817685059234056, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8996817685059728680, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
       propertyPath: m_RootOrder
@@ -4210,6 +4210,42 @@ PrefabInstance:
     - target: {fileID: 8996817685059728680, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996817685073816392, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996817685073816392, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
+      propertyPath: TriggerModule.inside
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996817685073816392, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996817685073816392, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996817685073816392, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996817685073883240, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996817685073883240, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996817685073883240, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996817685073883240, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfd12543f3431e54aa3d7d041d1b1bb9, type: 3}

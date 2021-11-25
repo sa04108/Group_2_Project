@@ -21,7 +21,7 @@ public class EffectDes : MonoBehaviour
         if (other.tag == "Player")
         {
             PlayerStatus playerStatus = other.GetComponent<PlayerStatus>();
-            playerStatus.Burning();
+            playerStatus.Burning(4);
         }
     }
 }
