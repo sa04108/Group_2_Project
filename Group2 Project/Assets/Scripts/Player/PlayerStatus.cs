@@ -64,10 +64,11 @@ public class PlayerStatus : MonoBehaviour
             Destroy(other.gameObject, 0.01f);
         }
         //Esder 태그의 아이탬 습득시 데미지 15
+
         if (other.tag == "Esder")
         {
-            obj = GameObject.Find("Sword");
-            obj.GetComponent<WeaponHitBox>().AttackPower = 15;
+            AttackPower = 25;
+
             Destroy(other.gameObject, 0.01f);
         }
 

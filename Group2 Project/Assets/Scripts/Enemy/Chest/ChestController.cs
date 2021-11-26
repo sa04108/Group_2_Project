@@ -6,8 +6,6 @@ public class ChestController : MonoBehaviour
 {
     [SerializeField] bool isDie = false;
 
-
-    [Header("Monster Stats")]
     public int HP = 15;
     bool isAlive = true;
 
@@ -56,12 +54,12 @@ public class ChestController : MonoBehaviour
     void OnTriggerEnter(Collider coll)
     {
 
-        if (coll.tag == "basicWeapon")
+        if (coll.tag == "Dagger"|| coll.tag == "basicWeapon")
         {
 
             if (GameObject.Find("Player").GetComponent<CharacterAnimator>().isAttack == true)
             {
-                HP = HP - (coll.gameObject.GetComponent<WeaponHitBox>().AttackPower);
+                HP = HP - 5;
                 GameObject.Find("Player").GetComponent<CharacterAnimator>().isAttack = false;
 
             }
