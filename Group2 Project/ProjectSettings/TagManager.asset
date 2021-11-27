@@ -23,6 +23,7 @@ TagManager:
   - Dagger
   - Hammer
   - Pickaxe
+  - Wing
   layers:
   - Default
   - TransparentFX
