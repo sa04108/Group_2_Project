@@ -24,14 +24,14 @@ public class Golem_FSM : MonoBehaviour
     public GameObject Hand;
     public GameObject ShootRock;
 
-
     public UnityEngine.AI.NavMeshAgent navMeshAgent;
 
     private int currentTarget;
     private float distanceFromTarget;
     private float preHP;
+    private float countRock = 0;
     private Transform[] waypoints = null;
-
+    private GameObject insRock;
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +94,9 @@ public class Golem_FSM : MonoBehaviour
         AttackSystem();
         GetHit();
 
+        VictoryCheck();
+        AliveCheck();
+
     }
 
     public void ChasePlayer()
@@ -131,23 +134,24 @@ public class Golem_FSM : MonoBehaviour
     }
     void AttackSystem()
     {
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01"))
+        {
+            countRock = 0;
+
+
+        }
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01"))
         {
             Rock.transform.position = Hand.transform.position;
             Rock.SetActive(true);
             navMeshAgent.speed = 0;
-
         }
+        
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.6f)
         {
-
-            if(Rock.activeSelf==true)
-            {
-                //Shoot();
-            }
+            Shoot();
             Rock.SetActive(false);
-
 
         }
 
@@ -158,8 +162,7 @@ public class Golem_FSM : MonoBehaviour
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.2f
                 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.8f)
                 monsterStats.isAttack = true;
-            else
-                monsterStats.isAttack = false;
+            
 
         }
 
@@ -179,25 +182,38 @@ public class Golem_FSM : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(ShootRock, Rock.transform.position, Rock.transform.rotation);
-
+        if (1 > countRock && Rock.activeSelf==true)
+        {
+            monsterStats.isAttack = true;
+            insRock = Instantiate(ShootRock, Rock.transform.position, Rock.transform.rotation);
+            countRock += 1;
+            Destroy(insRock, 0.5f);            
+        }
+        
     }
 
-    /*
-    void OnTriggerEnter(Collider coll)
+    void AliveCheck()
     {
-        if (coll.tag == "Player")
+        if (monsterStats.HP <= 0)
         {
-            if (monsterStats.isAttack == true)
-            {
-                playerStatus.PlayerHP -= monsterStats.AttackPower;
-            }
-            else
-                return;
+            animator.SetBool("Die", true);
+            navMeshAgent.speed = 0;
+
+            Destroy(gameObject, 15.0f);
         }
         else
             return;
-
     }
-    */
+
+    void VictoryCheck()
+    {
+        if (playerStatus.PlayerHP <= 0)
+        {
+            navMeshAgent.speed = 0;
+
+            animator.SetBool("PlayerDie", true);
+        }
+        else
+            return;
+    }
 }

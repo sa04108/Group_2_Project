@@ -9,6 +9,6 @@ public class Golem_Rock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * 0.5f);
+        transform.Translate(Vector3.forward * 0.1f);
     }
 }
