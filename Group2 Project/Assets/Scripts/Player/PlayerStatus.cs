@@ -10,6 +10,8 @@ public class PlayerStatus : MonoBehaviour
     GameObject obj;
     bool isBurning;
     public static Vector3 lastPlayerPos;
+
+    Esder esder;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,8 +69,9 @@ public class PlayerStatus : MonoBehaviour
 
         if (other.tag == "Esder")
         {
-            AttackPower = 25;
-
+            esder = FindObjectOfType<Esder>();
+            esder.esderP = 25;
+            
             Destroy(other.gameObject, 0.01f);
         }
 
