@@ -6,8 +6,8 @@ public class HpBar : MonoBehaviour
 {
     [SerializeField] GameObject Hp_Bar_Prefebs = null;
 
-    List<Transform> m_objectList = new List<Transform>();
-    List<GameObject> m_hpBarList = new List<GameObject>();
+    [SerializeField] List<Transform> m_objectList = new List<Transform>();
+    [SerializeField] List<GameObject> m_hpBarList = new List<GameObject>();
 
     Camera m_cam = null;
 
@@ -22,6 +22,7 @@ public class HpBar : MonoBehaviour
             m_objectList.Add(t_objects[i].transform);
             GameObject t_hpbar = Instantiate(Hp_Bar_Prefebs, t_objects[i].transform.position, Quaternion.identity, transform);
             m_hpBarList.Add(t_hpbar);
+            m_hpBarList[i].transform.GetChild(0).gameObject.GetComponent<HpBarConnect>().obj = t_objects[i];
         }
     }
 
