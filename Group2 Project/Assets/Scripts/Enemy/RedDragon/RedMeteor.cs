@@ -21,28 +21,25 @@ public class RedMeteor : MonoBehaviour
         
     }
 
-    public void MeteorPosMove()
-    {
-
-
-    }
+    
     public void MeteorDrop()
     {
-        //메테오 시작되면 제자리에서 울부짖는 모션이라 isChase 중지함
-        GetComponent<RedControl>().isChase = false;
+        //메테오 시작되면 제자리에서 울부짖는 모션이라 isLook 중지함
+        GetComponent<RedControl>().isLook = false;
         //메테오 생성 포지션 앞으로 3초간 이동
         MeteorPosMove meteorPosMove = GameObject.Find("MeteorPos").GetComponent<MeteorPosMove>();
         meteorPosMove.MeteorPosMoveOn = true;
 
-        InvokeRepeating("MeteorInstantiate", 0, 0.05f);
+        InvokeRepeating("MeteorInstantiate", 0, 0.049f);
         
         
     }
     public void MeteorInstantiate()
     {
+        
         //운석생성
-        float randomFloat = Random.Range(1, 2);
-        if (randomFloat >= 2)
+        float randomFloat = Random.Range(1, 4);
+        if (randomFloat >= 3)
         {
 
             Transform meteorIns = (Transform)Instantiate(meteor, meteorPos.position, transform.rotation);
@@ -52,20 +49,23 @@ public class RedMeteor : MonoBehaviour
 
             Transform meteorIns = (Transform)Instantiate(meteor1, meteorPos.position, transform.rotation);
         }
-
         //운석 60개 발사되면 종료
         MeteorCount++;
-        if(MeteorCount >= 60)
+        if (MeteorCount > 60)
         {
             CancelInvoke("MeteorInstantiate");
+            Debug.Log("stop");
             MeteorPosMove meteorPosMove = GameObject.Find("MeteorPos").GetComponent<MeteorPosMove>();
             //메테오 생성위치 이동 중지
             meteorPosMove.MeteorPosMoveOn = false;
             //메테오 생성위치 초기화
             meteorPosMove.PositionReset();
+            MeteorCount = 0;
+            GetComponent<RedControl>().isLook = true;
         }
-        
-        
+
+
+
     }
 
 

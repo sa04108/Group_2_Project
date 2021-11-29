@@ -23,6 +23,12 @@ public class MeteorExplosion : MonoBehaviour
     void Update()
     {
         transform.Translate(dropDirX, 0, dropDirZ+dropPlusZ);
+
+        //맵반경보다 멀리 날아가서 클론이 안 지워질 경우 대비
+        if(this.transform.position.y < -5)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -33,5 +39,6 @@ public class MeteorExplosion : MonoBehaviour
             Instantiate(meteorEffect, transform.position, transform.rotation);
             Destroy(gameObject, 0.1f);
         }
+        
     }
 }

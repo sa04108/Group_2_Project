@@ -33,4 +33,6 @@ public class HpBar : MonoBehaviour
             m_hpBarList[i].transform.position = m_cam.WorldToScreenPoint(m_objectList[i].position + new Vector3(0, 1f, 0));
         }
     }
+
+
 }

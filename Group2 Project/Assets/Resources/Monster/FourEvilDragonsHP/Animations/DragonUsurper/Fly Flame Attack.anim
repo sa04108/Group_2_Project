@@ -124258,7 +124258,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.8333333
+  - time: 2.7333333
     functionName: offFire
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: d86b577c76c4c22439e125d0e4e7ba65, type: 3}

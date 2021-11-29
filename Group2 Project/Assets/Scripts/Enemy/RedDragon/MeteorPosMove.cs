@@ -23,6 +23,10 @@ public class MeteorPosMove : MonoBehaviour
     
     public void PositionReset()
     {
+        Invoke("PositionResetDelay", 0.5f);
+    }
+    public void PositionResetDelay()
+    {
         transform.localPosition = new Vector3(0, 40, 0);
     }
 }

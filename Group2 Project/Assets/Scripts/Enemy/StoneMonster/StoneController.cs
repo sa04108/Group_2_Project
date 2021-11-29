@@ -106,6 +106,7 @@ public class StoneController : MonoBehaviour
             {
                 //추적 중지
                 nav.Stop();
+                
                 //애니메이션 걷기 중지
                 animator.SetInteger("Walk", 0);
                 //관성제거
