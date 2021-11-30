@@ -94,7 +94,7 @@ public class ChicController : MonoBehaviour
                 //animator.SetInteger("Walk", 1);
                 ChicAni.GetComponent<ChicAnimation>().Walking();
                 //공격상태 false유지
-                AttackHead.GetComponent<AttackArea>().StopAttaking();
+                AttackHead.GetComponent<AttackArea>().StopAttacking();
                 ChicAni.GetComponent<ChicAnimation>().Walking();
             }
             else if (distance < 2.5f)
@@ -105,13 +105,13 @@ public class ChicController : MonoBehaviour
                 ChicAni.GetComponent<ChicAnimation>().Attack();
 
 
-                AttackHead.GetComponent<AttackArea>().Attaking();
+                AttackHead.GetComponent<AttackArea>().Attacking();
 
             }
             else if (distance > 10.0f && isFindPlayer == true)
             {
                 //추적 중지
-                nav.Stop();
+                nav.isStopped = true;
                 //애니메이션 걷기 중지
                 //animator.SetInteger("Walk", 0);
                 ChicAni.GetComponent<ChicAnimation>().WalkingStop();
@@ -120,7 +120,7 @@ public class ChicController : MonoBehaviour
                 //플레이어 못찾음
                 isFindPlayer = false;
                 //공격상태 false유지
-                AttackHead.GetComponent<AttackArea>().StopAttaking();
+                AttackHead.GetComponent<AttackArea>().StopAttacking();
 
             }
 

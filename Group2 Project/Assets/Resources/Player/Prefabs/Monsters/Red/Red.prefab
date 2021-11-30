@@ -818,6 +818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WingHP: 50
+  WingBroken: 0
 --- !u!1 &925771834564299034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2761,9 +2762,6 @@ MonoBehaviour:
   isLook: 0
   isChase: 0
   isAttack: 0
-  FlyPatternLeft: 2
-  isWingInjureL: 0
-  isWingInjureR: 0
   Rotspeed: 5
   AnimationAddForce: 300
   StepBackCD: 5
@@ -2783,6 +2781,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 1000
   WingHP: 100
+  isWingInjureCount: 0
+  FlyPatternLeft: 2
 --- !u!114 &300672848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3574,6 +3574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WingHP: 50
+  WingBroken: 0
 --- !u!1 &925771834564484230
 GameObject:
   m_ObjectHideFlags: 0

@@ -86738,4 +86738,11 @@ AnimationClip:
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: ChasePlayer
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 42a3c54569f97f042a0bfac004d7c1e5, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

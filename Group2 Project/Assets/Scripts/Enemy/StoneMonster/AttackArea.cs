@@ -35,11 +35,11 @@ public class AttackArea : MonoBehaviour
 
     }
 
-    public void Attaking()
+    public void Attacking()
     {
         isAttack = true;
     }
-    public void StopAttaking()
+    public void StopAttacking()
     {
         isAttack = false;
     }

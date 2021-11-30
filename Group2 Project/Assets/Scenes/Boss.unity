@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 20379615}
   - component: {fileID: 20379614}
   - component: {fileID: 20379613}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -376,13 +376,25 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1371791294}
-    - target: {fileID: 591896321, guid: 59f27b2196bf8f24eb2660515bfddbe1, type: 3}
-      propertyPath: WingHP
-      value: 50
+    - target: {fileID: 346377246, guid: 59f27b2196bf8f24eb2660515bfddbe1, type: 3}
+      propertyPath: StepBackCD
+      value: 3.5
       objectReference: {fileID: 0}
-    - target: {fileID: 761787475, guid: 59f27b2196bf8f24eb2660515bfddbe1, type: 3}
-      propertyPath: WingHP
-      value: 50
+    - target: {fileID: 346377246, guid: 59f27b2196bf8f24eb2660515bfddbe1, type: 3}
+      propertyPath: StepBackLT
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 346377246, guid: 59f27b2196bf8f24eb2660515bfddbe1, type: 3}
+      propertyPath: AnimationAddForce
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072140462, guid: 59f27b2196bf8f24eb2660515bfddbe1, type: 3}
+      propertyPath: m_Speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072140462, guid: 59f27b2196bf8f24eb2660515bfddbe1, type: 3}
+      propertyPath: m_WalkableMask
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 925771834564127236, guid: 59f27b2196bf8f24eb2660515bfddbe1, type: 3}
       propertyPath: m_RootOrder

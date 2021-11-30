@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class RedControl : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class RedControl : MonoBehaviour
     public Vector3 pos;
     //쫒는 대상
     public Transform target;
-    
 
+    NavMeshAgent nav;
 
     [Header("Dragon's Behavior")]
     //public int DragonHP;
@@ -35,18 +36,18 @@ public class RedControl : MonoBehaviour
 
 
     [Header("AnimationForce")]
-    public float AnimationAddForce = 30.0f;
+    public float AnimationAddForce = 350.0f;
 
     Rigidbody rb;
 
-    public float StepBackCD = 5.0f;
-    public float StepBackLT = 5.0f;
+    public float StepBackCD = 3.5f;
+    public float StepBackLT = 3.5f;
     public bool isUseSB = false;
     //bool isDie = false;
 
     void Awake()
     {
-        
+        nav = GetComponent<NavMeshAgent>();
     }
 
     // Start is called before the first frame update
@@ -57,7 +58,7 @@ public class RedControl : MonoBehaviour
         Rotspeed = 5f;
         //DragonHP = 1000;
         isLook = true;
-        
+        nav.isStopped = true;
     }
 
     // Update is called once per frame
@@ -112,6 +113,8 @@ public class RedControl : MonoBehaviour
         //애니메이션에 distance 전달
         animator.SetFloat("DistancePlayer", distance);
 
+
+        /* 애니메이터에서 처리하는게 편한듯
         if (distance <= 50.0f && distance >= 35f)
         {
             //달려가기 
@@ -136,6 +139,7 @@ public class RedControl : MonoBehaviour
 
 
         }
+        */
 
 
 
@@ -154,16 +158,6 @@ public class RedControl : MonoBehaviour
         if (distance <= 50.0f && distance >= 35f)
         {//너무 멀기 때문에 fly상태로 이동
             
-        }
-        else if (distance <= 35.0f && distance >= 25f)
-        {
-            //브레스, 메테오 1:3 시전, 앞으로 다가가면서 거리 20f유지
-
-        }
-        else if (distance <= 25f && distance >= 13f)
-        {
-            //브레스 메테오 3:1 시전, 뒤로 도망가면서 거리 20f유지
-
         }
         else if (distance <= 15f)
         {
@@ -205,13 +199,65 @@ public class RedControl : MonoBehaviour
         */
         
     }
-    
+
+    public void isAttackMouseStart()
+    {
+        GameObject.Find("UpperMouth02").GetComponent<AttackArea>().Attacking();
+        
+    }
+    public void isAttackMouseStop()
+    {
+        GameObject.Find("UpperMouth02").gameObject.GetComponent<AttackArea>().StopAttacking();
+    }
+
+    public void KnockBack()
+    {
+        Vector3 reactVector = transform.position - target.position;
+        reactVector = reactVector.normalized;
+        reactVector += Vector3.up;
+        //target.GetComponent<Rigidbody>().AddForce(reactVector * 10, ForceMode.Impulse);
+        //rb.AddForce(reactVector*10, ForceMode.Impulse);
+        //target.transform.Translate(reactVector*100);
+    }
+
+    public void navStart()
+    {
+        nav.isStopped = false;
+        nav.SetDestination(target.position);
+        Invoke("navStop", 1.2f);
+    }
+    public void navStop()
+    {
+        nav.isStopped = true;
+    }
+    public void navSpeedUp()
+    {
+        nav.speed = 18f;
+
+    }
+    public void navSpeedReset()
+    {
+        nav.speed = 10f;
+    }
+    public void navSpeedZero()
+    {
+        nav.speed = 0f;
+        Invoke("navSpeedReset", 1f);
+    }
+    public void isAttacking()
+    {
+        animator.SetBool("isAttack", true);
+    }
+    public void isAttackEnd()
+    {
+        animator.SetBool("isAttack", false);
+    }
     //애니메이션 이벤트로 호출시에 필요할 것 같아 만듦
     public void ChasePlayer()
     {
         isLook = true;
     }
-    public void NoChasePlayer()
+    public void ChasePlayerStop()
     {
         isLook = false;
     }

@@ -54,7 +54,7 @@ public class RedMeteor : MonoBehaviour
         if (MeteorCount > 60)
         {
             CancelInvoke("MeteorInstantiate");
-            Debug.Log("stop");
+            
             MeteorPosMove meteorPosMove = GameObject.Find("MeteorPos").GetComponent<MeteorPosMove>();
             //메테오 생성위치 이동 중지
             meteorPosMove.MeteorPosMoveOn = false;

@@ -105,7 +105,7 @@ public class StoneController : MonoBehaviour
             else if (distance > 10.0f && isFindPlayer == true)
             {
                 //추적 중지
-                nav.Stop();
+                nav.isStopped = true;
                 
                 //애니메이션 걷기 중지
                 animator.SetInteger("Walk", 0);
