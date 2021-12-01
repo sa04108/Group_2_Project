@@ -293,7 +293,7 @@ MonoBehaviour:
   speed: 3
   damping: 3.5
   ItemDrop: {fileID: 7436326173788290965, guid: a2a9d15eb75b4694aafc8573479324e3, type: 3}
-  HealingPotion: {fileID: 0}
+  Potion: {fileID: 4809852554143681421, guid: 23251862eb1b2244ba689cb801686110, type: 3}
 --- !u!54 &6693308976774638464
 Rigidbody:
   m_ObjectHideFlags: 0

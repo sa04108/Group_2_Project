@@ -27,7 +27,11 @@ public class InventoryUI : MonoBehaviour
     {
         RedrawSlotUI();
         if (Input.GetKeyDown(KeyCode.I)) {
-
+            Cursor.visible = !isInventoryActive;
+            if (!isInventoryActive)
+                Cursor.lockState = CursorLockMode.None;
+            else
+                Cursor.lockState = CursorLockMode.Locked;
             isInventoryActive = !isInventoryActive;
             inventoryPanel.SetActive(isInventoryActive);
         }

@@ -48,6 +48,8 @@ public class StoneController : MonoBehaviour
     Rigidbody rb;
     [SerializeField]
     private GameObject ItemDrop;
+    [SerializeField]
+    private GameObject Potion;
 
     void Start()
     {
@@ -154,7 +156,7 @@ public class StoneController : MonoBehaviour
         int RandomNum = Random.Range(1, 10);
         if (RandomNum < 4)
         {
-            GameObject dropItem2 = Instantiate(ItemDrop, transform.position, Quaternion.identity);
+            GameObject dropItem2 = Instantiate(Potion, transform.position, Quaternion.identity);
             dropItem2.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.ITEM_HEAL_POTION]);
         }
     }
