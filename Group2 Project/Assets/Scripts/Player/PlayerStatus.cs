@@ -10,24 +10,18 @@ public class PlayerStatus : MonoBehaviour
     public int AttackPower = 5;
     GameObject obj;
     bool isBurning;
-    public static Vector3 lastPlayerPos;
 
     Esder esder;
     // Start is called before the first frame update
     void Start()
     {
         isBurning = false;
-        if (lastPlayerPos != Vector3.zero && SceneManager.GetActiveScene().name != "Boss")
-            transform.position = lastPlayerPos + Vector3.back * 5;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name != "Boss")
-        {
-            lastPlayerPos = transform.position;
-        }
+
     }
 
     public bool GameOver()
