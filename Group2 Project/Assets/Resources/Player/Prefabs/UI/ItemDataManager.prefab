@@ -52,13 +52,13 @@ MonoBehaviour:
     itemCount: 10
   - itemType: 0
     itemName: "\uBAA9\uC7AC"
-    itemImage: {fileID: 21300000, guid: 7cb8be4db15b0c34682408cc902dd991, type: 3}
+    itemImage: {fileID: 21300000, guid: e1ee613bda57e4d48a94e820d88c9259, type: 3}
     itemModel: {fileID: 4651790976113752566, guid: e9a01d2a3de15954eb2cccf4df7f3d5b, type: 3}
     itemMaterial: {fileID: 2100000, guid: 3922c043c1c52cb47a7b1bfed562a4b6, type: 2}
     itemCount: 10
   - itemType: 0
     itemName: "\uB3CC"
-    itemImage: {fileID: 21300008, guid: e919f8b19e6260d44b25ce176dd8ee66, type: 3}
+    itemImage: {fileID: 21300000, guid: 591341ba93acf66439b72c3202e0663e, type: 3}
     itemModel: {fileID: 4300000, guid: 26fb55e8ae34728499f6f45cd0527c73, type: 3}
     itemMaterial: {fileID: 2100000, guid: 37524ae4594222f4f8acd7b76234f79a, type: 2}
     itemCount: 10
@@ -82,7 +82,7 @@ MonoBehaviour:
     itemCount: 10
   - itemType: 0
     itemName: "\uCCA0\uC7AC"
-    itemImage: {fileID: 21300034, guid: fd0b7189c26761e4c833b6c9734d6cd4, type: 3}
+    itemImage: {fileID: 21300000, guid: 746ce48d27a7bfe459ea9a50f91bbd64, type: 3}
     itemModel: {fileID: 846622713991476264, guid: c2f79e21e006fba4c8c77c508b688343, type: 3}
     itemMaterial: {fileID: 2100000, guid: 55a512382d8a87e48bf3bb9092ecbf4e, type: 2}
     itemCount: 10
@@ -94,7 +94,7 @@ MonoBehaviour:
     itemCount: 10
   - itemType: 0
     itemName: "\uB2E4\uC774\uC544\uBAAC\uB4DC"
-    itemImage: {fileID: 21300034, guid: fd0b7189c26761e4c833b6c9734d6cd4, type: 3}
+    itemImage: {fileID: 21300000, guid: 4b4c038cddc5f2d4abf2f721ed916788, type: 3}
     itemModel: {fileID: 4300000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
     itemMaterial: {fileID: 2100000, guid: f0ea9b9011cb0744ebd0687fa99ee177, type: 2}
     itemCount: 10
