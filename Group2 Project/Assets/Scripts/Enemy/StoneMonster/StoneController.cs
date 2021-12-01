@@ -36,6 +36,7 @@ public class StoneController : MonoBehaviour
     [Header("Patrol and Regen Point")]
     //패트롤 포인트 저장
     public Transform[] points;
+    public Transform PatrolPoint;
     public int nextIdx = 1;
     public float speed = 3f;
     private bool isWalk = false;
@@ -62,7 +63,7 @@ public class StoneController : MonoBehaviour
         tr = GetComponent<Transform>();
         //points = GameObject.Find("RegenPoint").GetComponentsInChildren<Transform>();
         //루트에서 자식으로 패트롤 포인트 찾게 변경
-        points = transform.root.GetChild(1).GetComponentsInChildren<Transform>();
+        points = PatrolPoint.GetComponentsInChildren<Transform>();
         isFindPlayer = false;
         //AttackHead = transform.GetChild(0).GetCompontnt<AttackArea>();
         //AttackHead = transform.GetChild(0).GetComponentInChilderen<AttackArea>();
@@ -104,7 +105,7 @@ public class StoneController : MonoBehaviour
             {
                 //추적 중지
                 nav.isStopped = true;
-                
+
                 //애니메이션 걷기 중지
                 animator.SetInteger("Walk", 0);
                 //관성제거

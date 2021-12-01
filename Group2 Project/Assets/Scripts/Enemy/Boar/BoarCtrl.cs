@@ -41,6 +41,7 @@ public class BoarCtrl : MonoBehaviour
     [Header("Patrol and Regen Point")]
     //패트롤 포인트 저장
     public Transform[] points;
+    public Transform PatrolPoint;
     public int nextIdx = 1;
     public float speed = 3f;
     private bool isWalk = false;
@@ -52,9 +53,7 @@ public class BoarCtrl : MonoBehaviour
     Animator animator;
     Rigidbody rb;
     [SerializeField]
-    private GameObject ItemDrop_UnstableCore;
-    [SerializeField]
-    private GameObject ItemDrop_EnchantStone;
+    private GameObject ItemDrop1;
     [SerializeField]
     private GameObject HealingPotion;
 
@@ -70,7 +69,8 @@ public class BoarCtrl : MonoBehaviour
         tr = GetComponent<Transform>();
         //points = GameObject.Find("RegenPoint").GetComponentsInChildren<Transform>();
         //루트에서 자식으로 패트롤 포인트 찾게 변경
-        points = transform.root.GetChild(1).GetComponentsInChildren<Transform>();
+        points = PatrolPoint.GetComponentsInChildren<Transform>();
+
         isFindPlayer = false;
         //AttackHead = transform.GetChild(0).GetCompontnt<AttackArea>();
         //AttackHead = transform.GetChild(0).GetComponentInChilderen<AttackArea>();
@@ -169,11 +169,8 @@ public class BoarCtrl : MonoBehaviour
 
     void itemDrop()
     {
-        GameObject dropItem = Instantiate(ItemDrop_UnstableCore, transform.position, Quaternion.identity);
+        GameObject dropItem = Instantiate(ItemDrop1, transform.position, Quaternion.identity);
         dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_UNSTABLE_CORE]);
-
-        dropItem = Instantiate(ItemDrop_EnchantStone, transform.position, Quaternion.identity);
-        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_ENCHANT_STONE]);
         //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
 
 

@@ -414,11 +414,11 @@ MonoBehaviour:
   isFindPlayer: 0
   target: {fileID: 0}
   points: []
+  PatrolPoint: {fileID: 4249812580214849718}
   nextIdx: 1
   speed: 3
   damping: 3.5
-  ItemDrop_UnstableCore: {fileID: 1725668508503290528, guid: 6c489b598ebb5254c8002cf41f88d245, type: 3}
-  ItemDrop_EnchantStone: {fileID: 1164576815786792511, guid: 230830383fb5d2246835354c52ef617b, type: 3}
+  ItemDrop1: {fileID: 0}
   HealingPotion: {fileID: 4809852554143681421, guid: 23251862eb1b2244ba689cb801686110, type: 3}
 --- !u!114 &1495427736692780518
 MonoBehaviour:

@@ -41,10 +41,11 @@ public class MonsterStats : MonoBehaviour
         //플레이어의 무기에 따라 체력감소
         if (coll.tag == "Arrow")//화살은 isAttack 판별 필요없음.
         {
+            Destroy(coll);
             WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage + P_AttackPower;
             HP -= WeaponPower;
             hud.RenewMonsterHPGauge(this);
-            Destroy(coll);
+            
         }
         else if (coll.tag == "Axe")
         {

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ChicAnimation : MonoBehaviour
 {
-    public int status = 0;
 
 
     Animator animator;
@@ -17,28 +16,25 @@ public class ChicAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
 
     public void Walking()
     {
-        status = 1;
         animator.SetInteger("Walk", 1);
-        
+
     }
     public void WalkingStop()
     {
-        status = 2;
         animator.SetInteger("Walk", 0);
-        
+
     }
     public void Attack()
     {
-        status = 3;
         animator.SetTrigger("Attack");
-        
+
     }
     public void idle()
     {
@@ -47,16 +43,21 @@ public class ChicAnimation : MonoBehaviour
 
     public void jump()
     {
-        status = 4;
         animator.SetTrigger("jump");
 
     }
 
     public void Dead()
     {
-        status = 5;
         animator.SetTrigger("Dead");
     }
 
-
+    public void ChicIsAttackTrue()
+    {
+        transform.Find("Body").gameObject.GetComponent<AttackArea>().isAttack = true;
+    }
+    public void ChicIsAttackfalse()
+    {
+        transform.Find("Body").gameObject.GetComponent<AttackArea>().isAttack = false;
+    }
 }

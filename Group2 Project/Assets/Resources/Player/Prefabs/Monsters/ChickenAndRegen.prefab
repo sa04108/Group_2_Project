@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 029e7a46ba9dc43449a4f1350bcedac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: 0
 --- !u!1 &2877214365428866744
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +131,7 @@ MonoBehaviour:
   isFindPlayer: 0
   target: {fileID: 0}
   points: []
+  PatrolPoint: {fileID: 7239329971033610382}
   nextIdx: 1
   speed: 3
   damping: 3.5
