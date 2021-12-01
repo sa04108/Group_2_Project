@@ -544,7 +544,15 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = BranchToWoodButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Item wood = itemDB.itemDB[CommonDefine.RESOURCE_WOOD];
+            Item wood = new Item();
+            Item woodDB = itemDB.itemDB[CommonDefine.RESOURCE_WOOD];
+            wood.itemCount = woodDB.itemCount;
+            wood.itemImage = woodDB.itemImage;
+            wood.itemMaterial = woodDB.itemMaterial;
+            wood.itemModel = woodDB.itemModel;
+            wood.itemName = woodDB.itemName;
+            wood.itemType = woodDB.itemType;
+            
             inven.AddItem(wood);
             return true;
         }
@@ -554,7 +562,15 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = StoneToRockButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Item rock = itemDB.itemDB[CommonDefine.RESOURCE_ROCK];
+            Item rock = new Item();
+            Item rockDB = itemDB.itemDB[CommonDefine.RESOURCE_ROCK];
+            rock.itemCount = rockDB.itemCount;
+            rock.itemImage = rockDB.itemImage;
+            rock.itemMaterial = rockDB.itemMaterial;
+            rock.itemModel = rockDB.itemModel;
+            rock.itemName = rockDB.itemName;
+            rock.itemType = rockDB.itemType;
+
             inven.AddItem(rock);
             return true;
         }
@@ -564,7 +580,15 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = IronOreToIronIngot.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Item iron = itemDB.itemDB[CommonDefine.RESOURCE_IRON_INGOT];
+            Item iron = new Item();
+            Item ironDB = itemDB.itemDB[CommonDefine.RESOURCE_IRON_INGOT];
+            iron.itemCount = ironDB.itemCount;
+            iron.itemImage = ironDB.itemImage;
+            iron.itemMaterial = ironDB.itemMaterial;
+            iron.itemModel = ironDB.itemModel;
+            iron.itemName = ironDB.itemName;
+            iron.itemType = ironDB.itemType;
+
             inven.AddItem(iron);
             return true;
         }

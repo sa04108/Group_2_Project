@@ -22,6 +22,7 @@ public class ItemData : MonoBehaviour
 
     public Vector3[] pos;
 
+
     private void Start() {
 
         // GameObject go = Instantiate(fieldItemPrefab, new Vector3 (266f, 21f, 70f), Quaternion.identity);

@@ -72,7 +72,11 @@ public class Inventory : MonoBehaviour
     public bool CheckItemList(Item _item) {
         foreach(Item content in items) {
             if(_item.itemName == content.itemName) {
+                Debug.Log(content.itemCount);
+                Debug.Log(_item.itemCount);
                 content.itemCount += _item.itemCount;
+                Debug.Log(content.itemCount);
+                Debug.Log(_item.itemCount);
                 return true;
             }
         }
