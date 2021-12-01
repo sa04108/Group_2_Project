@@ -225,74 +225,86 @@ public class CraftMenuController : MonoBehaviour {
 
     public void initButtonUI() {
         //검
-        if (equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX] == null) {//등록된 무기가없을때
+        if (inven.SearchEquipment(EQUIP_TYPE.SWORD) == null) {//등록된 무기가없을때
             SwordCraftButton.gameObject.SetActive(true);
             EnchantSwordCraftButton.gameObject.SetActive(false);
-        } else if (equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].equip.equipTier == 1) {//무기가 있을떄
+        } else if (inven.SearchEquipment(EQUIP_TYPE.SWORD).equipTier == 1) {//무기가 있을떄
             SwordCraftButton.gameObject.SetActive(false);
             EnchantSwordCraftButton.gameObject.SetActive(true);
         }
-        else if (equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].equip.equipTier == 2) {//강화된 무기가 있을때
+        else if (inven.SearchEquipment(EQUIP_TYPE.SWORD).equipTier == 2) {//강화된 무기가 있을때
             SwordCraftButton.gameObject.SetActive(false);
             EnchantSwordCraftButton.gameObject.SetActive(false);
         }
+        //방패
+        if (inven.SearchEquipment(EQUIP_TYPE.SHIELD) == null) {
+            ShieldCraftButton.gameObject.SetActive(true);
+            EnchantShieldCraftButton.gameObject.SetActive(false);
+        }
+        else if (inven.SearchEquipment(EQUIP_TYPE.SHIELD).equipTier == 1) {
+            ShieldCraftButton.gameObject.SetActive(false);
+            EnchantShieldCraftButton.gameObject.SetActive(true);
+        }
+        else if (inven.SearchEquipment(EQUIP_TYPE.SHIELD).equipTier == 2) {
+            EnchantBowCraftButton.gameObject.SetActive(false);
+        }
         //활
-        if (equipSlot.slot[CommonDefine.EQUIPMENT_BOW_SLOT_INDEX] == null) {
+        if (inven.SearchEquipment(EQUIP_TYPE.BOW) == null) {
             BowCraftButton.gameObject.SetActive(true);
             EnchantBowCraftButton.gameObject.SetActive(false);
-        }else if(equipSlot.slot[CommonDefine.EQUIPMENT_BOW_SLOT_INDEX].equip.equipTier == 1) {
+        }else if(inven.SearchEquipment(EQUIP_TYPE.BOW).equipTier == 1) {
             BowCraftButton.gameObject.SetActive(false);
             EnchantBowCraftButton.gameObject.SetActive(true);
         }
-        else if (equipSlot.slot[CommonDefine.EQUIPMENT_BOW_SLOT_INDEX].equip.equipTier == 2) {
+        else if (inven.SearchEquipment(EQUIP_TYPE.BOW).equipTier == 2) {
             BowCraftButton.gameObject.SetActive(false);
             EnchantBowCraftButton.gameObject.SetActive(false);
         }
         //해머
-        if (equipSlot.slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX] == null) {
+        if (inven.SearchEquipment(EQUIP_TYPE.HAMMER) == null) {
             HammerCraftButton.gameObject.SetActive(true);
         }
-        else if (equipSlot.slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].equip.equipTier == 1) {
+        else if (inven.SearchEquipment(EQUIP_TYPE.HAMMER).equipTier == 1) {
             HammerCraftButton.gameObject.SetActive(false);
         }
         //도끼
-        if (equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX] == null) {
+        if (inven.SearchEquipment(EQUIP_TYPE.AXE) == null) {
             WoodAxeCraftButton.gameObject.SetActive(true);
             RockAxeCraftButton.gameObject.SetActive(false);
             IronAxeCraftButton.gameObject.SetActive(false);
         }
-        else if (equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].equip.equipTier == 1) {
+        else if (inven.SearchEquipment(EQUIP_TYPE.AXE).equipTier == 1) {
             WoodAxeCraftButton.gameObject.SetActive(false);
             RockAxeCraftButton.gameObject.SetActive(true);
             IronAxeCraftButton.gameObject.SetActive(false);
         }
-        else if (equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].equip.equipTier == 2) {
+        else if (inven.SearchEquipment(EQUIP_TYPE.AXE).equipTier == 2) {
             WoodAxeCraftButton.gameObject.SetActive(false);
             RockAxeCraftButton.gameObject.SetActive(false);
             IronAxeCraftButton.gameObject.SetActive(true);
         }
-        else if (equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].equip.equipTier == 3) {
+        else if (inven.SearchEquipment(EQUIP_TYPE.AXE).equipTier == 3) {
             WoodAxeCraftButton.gameObject.SetActive(false);
             RockAxeCraftButton.gameObject.SetActive(false);
             IronAxeCraftButton.gameObject.SetActive(false);
         }
         //곡괭이
-        if (equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX] == null) {
+        if (inven.SearchEquipment(EQUIP_TYPE.PICKAXE) == null) {
             WoodPickAxeCraftButton.gameObject.SetActive(true);
             RockPickAxeCraftButton.gameObject.SetActive(false);
             IronPickAxeCraftButton.gameObject.SetActive(false);
         }
-        else if (equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].equip.equipTier == 1) {
+        else if (inven.SearchEquipment(EQUIP_TYPE.PICKAXE).equipTier == 1) {
             WoodPickAxeCraftButton.gameObject.SetActive(false);
             RockPickAxeCraftButton.gameObject.SetActive(true);
             IronPickAxeCraftButton.gameObject.SetActive(false);
         }
-        else if (equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].equip.equipTier == 2) {
+        else if (inven.SearchEquipment(EQUIP_TYPE.PICKAXE).equipTier == 2) {
             WoodPickAxeCraftButton.gameObject.SetActive(false);
             RockPickAxeCraftButton.gameObject.SetActive(false);
             IronPickAxeCraftButton.gameObject.SetActive(true);
         }
-        else if (equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].equip.equipTier == 3) {
+        else if (inven.SearchEquipment(EQUIP_TYPE.PICKAXE).equipTier == 3) {
             WoodPickAxeCraftButton.gameObject.SetActive(false);
             RockPickAxeCraftButton.gameObject.SetActive(false);
             IronPickAxeCraftButton.gameObject.SetActive(false);

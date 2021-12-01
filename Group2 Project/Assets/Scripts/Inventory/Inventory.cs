@@ -60,6 +60,15 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
+    public Equipment SearchEquipment(EQUIP_TYPE type) {
+        foreach(Equipment equip in equipments){
+            if(equip.equipType == type) {
+                return equip; 
+            }
+        }
+        return null;
+    }
+
     public bool CheckItemList(Item _item) {
         foreach(Item content in items) {
             if(_item.itemName == content.itemName) {
