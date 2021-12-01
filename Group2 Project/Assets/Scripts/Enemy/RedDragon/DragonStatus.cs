@@ -20,10 +20,12 @@ public class DragonStatus : MonoBehaviour
     public bool isFly;
 
     int WeaponPower;
+    public int P_AttackPower;
 
     HUD hud;
     ItemData DB;
     Rigidbody rb;
+    Esder esder;
 
     // Start is called before the first frame update
     void Start()
@@ -131,10 +133,19 @@ public class DragonStatus : MonoBehaviour
     {
         if (isFly == false)
         {
+            esder = FindObjectOfType<Esder>();
+            P_AttackPower = esder.esderP;
+
             //플레이어의 무기에 따라 체력감소
             if (coll.tag == "Arrow")//화살은 isAttack 판별 필요없음.
             {
-                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage;
+                
+                P_AttackPower -= 20;
+                if(P_AttackPower <= 0)
+                {
+                    P_AttackPower = 5;
+                }
+                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage + P_AttackPower;
                 HP -= WeaponPower;
                 hud.RenewDragonHPGauge(this);
                 Destroy(coll);
@@ -142,28 +153,28 @@ public class DragonStatus : MonoBehaviour
             }
             else if (coll.tag == "Axe")
             {
-                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_AXE].damage;
-                HP -= 3*WeaponPower;
+                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_AXE].damage + P_AttackPower;
+                HP -= WeaponPower;
                 hud.RenewDragonHPGauge(this);
 
             }
             else if (coll.tag == "Dagger")
             {
-                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_SWORD].damage;
-                HP -= 3*WeaponPower;
+                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_SWORD].damage + P_AttackPower;
+                HP -= WeaponPower;
                 hud.RenewDragonHPGauge(this);
 
             }
             else if (coll.tag == "Hammer")
             {
-                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_HAMMER].damage;
-                HP -= 3*WeaponPower;
+                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_HAMMER].damage + P_AttackPower;
+                HP -= WeaponPower;
                 hud.RenewDragonHPGauge(this);
             }
             else if (coll.tag == "Pickaxe")
             {
-                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_PICKAXE].damage;
-                HP -= 3*WeaponPower;
+                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_PICKAXE].damage + P_AttackPower;
+                HP -= WeaponPower;
                 hud.RenewDragonHPGauge(this);
             }
             

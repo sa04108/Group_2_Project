@@ -49,25 +49,25 @@ public class MonsterStats : MonoBehaviour
         }
         else if (coll.tag == "Axe")
         {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage + P_AttackPower;
+            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_AXE].damage + P_AttackPower;
             HP -= WeaponPower;
             hud.RenewMonsterHPGauge(this);
         }
         else if (coll.tag == "Dagger")
         {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage + P_AttackPower;
+            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_SWORD].damage + P_AttackPower;
             HP -= WeaponPower;
             hud.RenewMonsterHPGauge(this);
         }
         else if (coll.tag == "Hammer")
         {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage + P_AttackPower;
+            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_HAMMER].damage + P_AttackPower;
             HP -= WeaponPower;
             hud.RenewMonsterHPGauge(this);
         }
         else if (coll.tag == "Pickaxe")
         {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage + P_AttackPower;
+            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_PICKAXE].damage + P_AttackPower;
             HP -= WeaponPower;
             hud.RenewMonsterHPGauge(this);
         }
