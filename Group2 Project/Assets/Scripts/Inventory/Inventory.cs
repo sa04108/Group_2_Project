@@ -53,6 +53,12 @@ public class Inventory : MonoBehaviour
     public bool AddItem(Item _item) {
         if(items.Count < SlotCnt) {
             if (!CheckItemList(_item)) {
+                for (int i = 0; i < items.Count; i++) {
+                    if (items[i].itemCount == 0) {
+                        items[i] = _item;
+                        return true;
+                    }
+                }
                 items.Add(_item);
             }
             return true;
@@ -72,11 +78,7 @@ public class Inventory : MonoBehaviour
     public bool CheckItemList(Item _item) {
         foreach(Item content in items) {
             if(_item.itemName == content.itemName) {
-                Debug.Log(content.itemCount);
-                Debug.Log(_item.itemCount);
                 content.itemCount += _item.itemCount;
-                Debug.Log(content.itemCount);
-                Debug.Log(_item.itemCount);
                 return true;
             }
         }

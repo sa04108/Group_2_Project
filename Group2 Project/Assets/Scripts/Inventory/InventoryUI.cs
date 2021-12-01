@@ -34,11 +34,11 @@ public class InventoryUI : MonoBehaviour
 
     }
 
-    void RedrawSlotUI() {
+    void RedrawSlotUI() { 
         foreach(InventorySlot slot in slots) {
             if (slot.item.itemName != "" && slot.item.itemCount == 0) {
-                slot.RemoveSlot();
-                slot.gameObject.transform.SetAsLastSibling();
+                slot.InitSlot();
+                //slot.gameObject.transform.SetAsLastSibling();
             }
         }
         for(int i =0; i<inven.items.Count; i++) {

@@ -8,7 +8,6 @@ public class InventorySlot : MonoBehaviour
 
     public Item item;//등록될 아이템 정보
     public Image itemImage;//아이템 이미지 등록될 자리
-
     [SerializeField]
     private Text text_Count;
 
@@ -18,7 +17,7 @@ public class InventorySlot : MonoBehaviour
         text_Count.text = item.itemCount.ToString();
     }
 
-    public void RemoveSlot() {
+    public void InitSlot() {
         item.itemImage = null;
         item.itemName = "";
         item.itemModel = null;

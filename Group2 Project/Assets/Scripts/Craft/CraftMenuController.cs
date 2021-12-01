@@ -604,7 +604,6 @@ public class CraftMenuController : MonoBehaviour {
             foreach (Item item in items) {
                 if (recipe.resourceName == item.itemName) {
                     item.itemCount -= recipe.resourceCount;
-                    //inven.onChangeItem.Invoke();
                     break;
                 }
             }
