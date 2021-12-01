@@ -7,6 +7,9 @@ public class Golem_FSM : MonoBehaviour
     private Animator animator;
     private MonsterStats monsterStats;
     PlayerStatus playerStatus;
+    AudioSource audioSource;
+    AudioSource golemSource;
+
 
     private Ray ray;
     private RaycastHit hit;
@@ -24,6 +27,8 @@ public class Golem_FSM : MonoBehaviour
     public GameObject Hand;
     public GameObject ShootRock;
 
+    public AudioClip audioClip;
+
     public UnityEngine.AI.NavMeshAgent navMeshAgent;
 
     private int currentTarget;
@@ -39,6 +44,7 @@ public class Golem_FSM : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         monsterStats = gameObject.GetComponent<MonsterStats>();
         playerStatus = GameObject.Find("Player").GetComponent<PlayerStatus>();
+        audioSource = this.gameObject.GetComponent<AudioSource>();
 
         pointA = GameObject.Find("p1").transform;
         pointB = GameObject.Find("p2").transform;
@@ -105,6 +111,11 @@ public class Golem_FSM : MonoBehaviour
         {
             navMeshAgent.SetDestination(player.transform.position);
             navMeshAgent.speed = 5;
+            //audioSource.PlayOneShot(audioClip);
+        }
+        else if (currentDistance < 15 || currentDistance > 1)
+        {
+            //audioSource.PlayOneShot(golemSource);
         }
         else
         {
