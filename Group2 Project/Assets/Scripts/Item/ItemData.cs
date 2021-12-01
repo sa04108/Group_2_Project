@@ -22,6 +22,18 @@ public class ItemData : MonoBehaviour
 
     public Vector3[] pos;
 
+    public Item CloneItem(int index) {
+        Item itemRef = itemDB[index];
+        Item _item = new Item();
+        _item.itemCount = itemRef.itemCount;
+        _item.itemImage = itemRef.itemImage;
+        _item.itemMaterial = itemRef.itemMaterial;
+        _item.itemModel = itemRef.itemModel;
+        _item.itemName = itemRef.itemName;
+        _item.itemType = itemRef.itemType;
+
+        return _item;
+    }
 
     private void Start() {
 

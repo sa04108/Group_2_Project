@@ -374,9 +374,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipes:
   - resourceName: "\uBAA9\uC7AC"
-    resourceCount: 3
-  - resourceName: "\uC11D\uC7AC"
-    resourceCount: 3
+    resourceCount: 1
+  - resourceName: "\uCCA0\uC7AC"
+    resourceCount: 2
 --- !u!1 &85461885076147853
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,7 +601,7 @@ MonoBehaviour:
     resourceCount: 1
   - resourceName: "\uAC15\uD654\uC11D"
     resourceCount: 2
-  - resourceName: "\uB2E4\uC774\uC544"
+  - resourceName: "\uB2E4\uC774\uC544\uBAAC\uB4DC"
     resourceCount: 2
 --- !u!114 &6232588930658593042
 MonoBehaviour:
@@ -1538,7 +1538,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD544\uC694\uD55C \uC790\uC6D0 : \uBAA9\uC7AC X 1 \uC11D\uC7AC X 1"
+  m_Text: "\uD544\uC694\uD55C \uC790\uC6D0 : \uBAA9\uC7AC X 1 \uCCA0\uC7AC X 2"
 --- !u!1 &686268782036759938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,9 +2809,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipes:
   - resourceName: "\uBAA9\uC7AC"
-    resourceCount: 3
-  - resourceName: "\uC11D\uC7AC"
-    resourceCount: 3
+    resourceCount: 1
+  - resourceName: "\uCCA0\uC7AC"
+    resourceCount: 2
 --- !u!1 &2440285028017984642
 GameObject:
   m_ObjectHideFlags: 0
@@ -3610,9 +3610,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipes:
   - resourceName: "\uBAA9\uC7AC"
-    resourceCount: 3
+    resourceCount: 1
   - resourceName: "\uC11D\uC7AC"
-    resourceCount: 3
+    resourceCount: 2
 --- !u!1 &3545324788339817146
 GameObject:
   m_ObjectHideFlags: 0
@@ -4346,9 +4346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipes:
   - resourceName: "\uBAA9\uC7AC"
-    resourceCount: 3
-  - resourceName: "\uC11D\uC7AC"
-    resourceCount: 3
+    resourceCount: 2
 --- !u!1 &3553883056739754810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4667,9 +4665,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipes:
   - resourceName: "\uBAA9\uC7AC"
-    resourceCount: 3
+    resourceCount: 1
   - resourceName: "\uC11D\uC7AC"
-    resourceCount: 3
+    resourceCount: 1
 --- !u!1 &3553883056790885583
 GameObject:
   m_ObjectHideFlags: 0
@@ -7426,9 +7424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipes:
   - resourceName: "\uBAA9\uC7AC"
-    resourceCount: 3
-  - resourceName: "\uC11D\uC7AC"
-    resourceCount: 3
+    resourceCount: 2
 --- !u!1 &3553883057813619428
 GameObject:
   m_ObjectHideFlags: 0
@@ -9795,9 +9791,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipes:
   - resourceName: "\uBAA9\uC7AC"
-    resourceCount: 3
+    resourceCount: 1
   - resourceName: "\uC11D\uC7AC"
-    resourceCount: 3
+    resourceCount: 1
 --- !u!1 &4000118599553353469
 GameObject:
   m_ObjectHideFlags: 0
