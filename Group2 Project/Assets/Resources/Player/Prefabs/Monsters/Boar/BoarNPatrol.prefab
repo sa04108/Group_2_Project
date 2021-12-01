@@ -417,7 +417,7 @@ MonoBehaviour:
   nextIdx: 1
   speed: 3
   damping: 3.5
-  ItemDrop1: {fileID: 0}
+  ItemDrop: {fileID: 7436326173788290965, guid: a2a9d15eb75b4694aafc8573479324e3, type: 3}
   HealingPotion: {fileID: 4809852554143681421, guid: 23251862eb1b2244ba689cb801686110, type: 3}
 --- !u!114 &1495427736692780518
 MonoBehaviour:
@@ -1625,6 +1625,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7180267304173325025}
     m_Modifications:
+    - target: {fileID: 5363652552045705471, guid: b926f5b54e956d848857ef0f1dad1b12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363652552045705471, guid: b926f5b54e956d848857ef0f1dad1b12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5363652552391472443, guid: b926f5b54e956d848857ef0f1dad1b12, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1672,6 +1680,14 @@ PrefabInstance:
     - target: {fileID: 5363652552391472444, guid: b926f5b54e956d848857ef0f1dad1b12, type: 3}
       propertyPath: m_Name
       value: RegenPointBoar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363652553056917711, guid: b926f5b54e956d848857ef0f1dad1b12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363652553056917711, guid: b926f5b54e956d848857ef0f1dad1b12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b926f5b54e956d848857ef0f1dad1b12, type: 3}

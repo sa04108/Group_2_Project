@@ -53,7 +53,7 @@ public class BoarCtrl : MonoBehaviour
     Animator animator;
     Rigidbody rb;
     [SerializeField]
-    private GameObject ItemDrop1;
+    private GameObject ItemDrop;
     [SerializeField]
     private GameObject HealingPotion;
 
@@ -167,8 +167,11 @@ public class BoarCtrl : MonoBehaviour
 
     void itemDrop()
     {
-        GameObject dropItem = Instantiate(ItemDrop1, transform.position, Quaternion.identity);
+        GameObject dropItem = Instantiate(ItemDrop, transform.position, Quaternion.identity);
         dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_UNSTABLE_CORE]);
+
+        dropItem = Instantiate(ItemDrop, transform.position, Quaternion.identity);
+        dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_ENCHANT_STONE]);
         //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
 
 
