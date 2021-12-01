@@ -20,27 +20,26 @@ public class CharacterEquip : MonoBehaviour
         inven = Inventory.instance;
         equipments = CraftEquipmentSlot.instance;
         currentEquipment = -1;
-    }
 
-    void Update() {
-
-        if(inven.shield == true) {
-            foreach(Equipment equip in inven.equipments) {
-                if(equip.equipType == EQUIP_TYPE.SHIELD) {
+        if (inven.shield == true) {
+            foreach (Equipment equip in inven.equipments) {
+                if (equip.equipType == EQUIP_TYPE.SHIELD) {
                     currentShieldObject = Instantiate(equip.equipPrefab, shieldTransform);
-                    inven.shield = false;
                 }
             }
-        }        
-        if(inven.enchantShield == true) {
+        }
+        if (inven.enchantShield == true) {
             Destroy(currentShieldObject);
             foreach (Equipment equip in inven.equipments) {
                 if (equip.equipType == EQUIP_TYPE.SHIELD) {
                     currentShieldObject = Instantiate(equip.equipPrefab, shieldTransform);
-                    inven.enchantShield = false;
                 }
             }
         }
+    }
+
+    void Update() {
+
 
         //1¹ø½½·Ô °Ë
         if (Input.GetKeyDown(KeyCode.Alpha1) && currentEquipment != CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX) {
