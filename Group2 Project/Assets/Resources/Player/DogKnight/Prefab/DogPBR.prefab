@@ -1570,7 +1570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: 97cd33e3324ab7c408d165e33a0ff7bd, type: 3}
+  - {fileID: 8300000, guid: 2ec1a7a6eadb1a044aee2667feb529f0, type: 3}
   - {fileID: 8300000, guid: ddebdaf0994fb3e408c97316c237f1bc, type: 3}
   - {fileID: 8300000, guid: 7dfb2716aac47cd408f8e10483978b26, type: 3}
   isAttack: 0
@@ -1587,9 +1587,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 100
-  speed: 10
+  speed: 7
   RotSpeed: 3
-  runSpeed: 8
+  runSpeed: 5
 --- !u!114 &676599011
 MonoBehaviour:
   m_ObjectHideFlags: 0
