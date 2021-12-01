@@ -159,7 +159,7 @@ public class BoarCtrl : MonoBehaviour
                 animator.SetTrigger("Die");
                 isAlive = false;
                 Invoke("itemDrop", 1.7f);
-                transform.root.gameObject.gameObject.GetComponent<ErasePatrol>().EraseThis();
+                transform.parent.gameObject.GetComponent<ErasePatrol>().EraseThis();
 
             }
         }

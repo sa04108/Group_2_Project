@@ -138,7 +138,7 @@ public class StoneController : MonoBehaviour
                 animator.SetTrigger("Dead");
                 isAlive = false;
                 Invoke("itemDrop", 1.7f);
-                transform.root.gameObject.gameObject.GetComponent<ErasePatrol>().EraseThis();
+                transform.parent.gameObject.gameObject.GetComponent<ErasePatrol>().EraseThis();
 
             }
         }

@@ -144,7 +144,7 @@ public class ChicController : MonoBehaviour
             if (isAlive == true)
             {
                 Invoke("StoneDrop", 1.7f);
-                transform.root.gameObject.GetComponent<ErasePatrol>().EraseThis();
+                transform.parent.gameObject.GetComponent<ErasePatrol>().EraseThis();
                 //animator.SetTrigger("Dead");
                 ChicAni.GetComponent<ChicAnimation>().Dead();
                 isAlive = false;
