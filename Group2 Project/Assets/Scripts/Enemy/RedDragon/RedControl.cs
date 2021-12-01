@@ -17,12 +17,13 @@ public class RedControl : MonoBehaviour
     public Vector3 pos;
     //쫒는 대상
     public Transform target;
-
+    //날개 hp UI
+    public GameObject WingHpUI;
     NavMeshAgent nav;
 
     [Header("Dragon's Behavior")]
     //public int DragonHP;
-    public bool isFly;
+    
     public bool isLook; //고개돌리기
     public bool isChase; //nav로 추적
     public bool isAttack;
@@ -73,11 +74,8 @@ public class RedControl : MonoBehaviour
         //특정 애니메이션동안은 플레이어쪽으로 회전 안함. 나중에 조건 줄 것
         if (isLook == true)
         { LookPlayer(); }
-
-        if(isFly == true )//&& isWingInjureCount<=2)
-        {
-            InBattleFly();
-        }
+        
+        
         /*
         else if(isFly == true )//&& isWingInjureCount >= 2)
         {
@@ -87,12 +85,12 @@ public class RedControl : MonoBehaviour
             //animator.SetTrigger("FlyGetHit");
 
         }*/
-        else
-        {
-            InBattleWithPlayer();
-        }
 
         
+        //InBattleFly();
+        
+        InBattleWithPlayer();
+
 
 
 
@@ -289,14 +287,18 @@ public class RedControl : MonoBehaviour
     public void FlyStart()
     {
         animator.SetBool("isFly", true);
-        GameObject.Find("CanvasDragonWingHp").GetComponent<HpBar>().enabled = true;
-        isFly = true;
+        //GameObject.Find("CanvasDragonWingHp").GetComponent<HpBar>().enabled = true;
+        Instantiate(WingHpUI);
+        //isFly = true;
     }
     public void FlyEnd()
     {
         animator.SetBool("isFly", false);
-        GameObject.Find("CanvasDragonWingHp").GetComponent<HpBar>().enabled = false;
-        isFly = false;
+        //GameObject.Find("CanvasDragonWingHp").GetComponent<HpBar>().enabled = false;
+        //isFly = false;
+
         GetComponent<DragonStatus>().isWingInjureCount = 0;
+        GetComponent<DragonStatus>().isFly = false;
+        animator.SetInteger("WingInjureCount", 0);
     }
 }

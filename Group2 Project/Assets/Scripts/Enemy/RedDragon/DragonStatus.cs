@@ -6,25 +6,35 @@ public class DragonStatus : MonoBehaviour
 {
     Animator animator;
 
+    public GameObject Lwing;
+    public GameObject Rwing;
+    public GameObject WingHpBar;
+
     [Header("Dragon Stats")]
     public int HP = 1000;
     public int WingHP = 100; //강화된 bow 데미지 고려, 양날개 5대씩
     public int isWingInjureCount = 0;
     public int FlyPatternLeft = 2;
+    bool isDie = false;
+    public bool isFly;
 
     int WeaponPower;
 
     ItemData DB;
-
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        DB = ItemData.instance;
+
         HP = 1000;
         WingHP = 100;
         isWingInjureCount = 0;
         FlyPatternLeft = 2;
+        isFly = false;
     }
 
     // Update is called once per frame
@@ -41,6 +51,9 @@ public class DragonStatus : MonoBehaviour
         {
             FlyPatternLeft -= 1;
             animator.SetInteger("FlyPatternLeft", FlyPatternLeft);
+            animator.SetTrigger("FlyGetHit");
+            isFly = true;
+            
         }
         else if(HP <=800 && HP >= 400 && FlyPatternLeft == 1)
         {
@@ -51,10 +64,18 @@ public class DragonStatus : MonoBehaviour
         {
             FlyPatternLeft -= 1;
             animator.SetInteger("FlyPatternLeft", FlyPatternLeft);
+            animator.SetTrigger("FlyGetHit");
+            isFly = true;
+            
         }
         else if (HP <= 400 && HP > 0 && FlyPatternLeft == 0)
         {
 
+        }
+        else if(HP <= 0 && isDie == false)
+        {
+            isDie = true;
+            animator.SetTrigger("isDie");
         }
 
 
@@ -71,6 +92,12 @@ public class DragonStatus : MonoBehaviour
 
 
     }
+
+    public void WingColliderOn()
+    {
+        Lwing.GetComponent<DragonWingStatus>().WingColliderEnabled();
+        Rwing.GetComponent<DragonWingStatus>().WingColliderEnabled();
+    }
     public void FlyPatternAdd()
     {
         FlyPatternLeft -= 1;
@@ -81,35 +108,57 @@ public class DragonStatus : MonoBehaviour
         isWingInjureCount += 1;
         animator.SetTrigger("WingInjure");
         animator.SetInteger("WingInjureCount", isWingInjureCount);
+        if(isWingInjureCount == 2)
+        {
+            GameObject wingUI = GameObject.Find("DragonWingHpPrefebs(Clone)");
+            Destroy(wingUI);
+
+            //다음 패턴을 위한 초기화
+            Lwing.GetComponent<DragonWingStatus>().WingColliderDisableAndReset();
+            Rwing.GetComponent<DragonWingStatus>().WingColliderDisableAndReset();
+            isWingInjureCount = 0;
+            //WingHpBar.GetComponent<HpBar>().removeHpBar();
+            //GetComponent<RedControl>().WingHpUI.transform.GetChild(0).gameObject.GetComponent<HpBar>().removeHpBar();
+            
+        }
     }
     void OnTriggerEnter(Collider coll)
     {
-        //플레이어의 무기에 따라 체력감소
-        if (coll.tag == "Arrow")//화살은 isAttack 판별 필요없음.
+        if (isFly == false)
         {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage;
-            HP -= WeaponPower;
+            //플레이어의 무기에 따라 체력감소
+            if (coll.tag == "Arrow")//화살은 isAttack 판별 필요없음.
+            {
+                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage;
+                HP -= WeaponPower;
+                Destroy(coll);
+
+            }
+            else if (coll.tag == "Axe")
+            {
+                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_AXE].damage;
+                HP -= WeaponPower;
+
+            }
+            else if (coll.tag == "Dagger")
+            {
+                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_SWORD].damage;
+                HP -= WeaponPower;
+
+            }
+            else if (coll.tag == "Hammer")
+            {
+                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_HAMMER].damage;
+                HP -= WeaponPower;
+
+            }
+            else if (coll.tag == "Pickaxe")
+            {
+                WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_PICKAXE].damage;
+                HP -= WeaponPower;
+            }
         }
-        else if (coll.tag == "Axe")
-        {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_AXE].damage;
-            HP -= WeaponPower;
-        }
-        else if (coll.tag == "Dagger")
-        {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_SWORD].damage;
-            HP -= WeaponPower;
-        }
-        else if (coll.tag == "Hammer")
-        {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_HAMMER].damage;
-            HP -= WeaponPower;
-        }
-        else if (coll.tag == "Pickaxe")
-        {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_PICKAXE].damage;
-            HP -= WeaponPower;
-        }
+        
     }
 
 

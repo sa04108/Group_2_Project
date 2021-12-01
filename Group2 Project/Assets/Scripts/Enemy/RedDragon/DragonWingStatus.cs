@@ -9,8 +9,9 @@ public class DragonWingStatus : MonoBehaviour
     [Header("Dragon Wing Stats")]
     public int WingHP;
     public bool WingBroken;
+    bool isFly = false;
 
-
+    public GameObject obj;
     DragonStatus dragonStatus;
     private int WeaponPower;
     ItemData DB;
@@ -18,11 +19,13 @@ public class DragonWingStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        WingHP = 500;
+        DB = ItemData.instance;
+        WingHP = 80;
         dragonStatus = this.transform.root.gameObject.GetComponent<DragonStatus>();
         //날때만 true로 바꿔준다.
         GetComponent<BoxCollider>().enabled = false;
         WingBroken = false;
+        
     }
 
     // Update is called once per frame
@@ -40,13 +43,15 @@ public class DragonWingStatus : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
 
             dragonStatus.WingInjureCountAdd();
-
+            
         }
         else if (WingHP >= 0)
         {
-            WingHP -= WeaponPower;
+            
             //dragonStatus.WingHP -= WeaponPower;
         }
+
+        
     }
 
     void OnTriggerEnter(Collider coll)
@@ -56,9 +61,9 @@ public class DragonWingStatus : MonoBehaviour
         {
             //화살만이 날개에 데미지를 주므로 화살 데미지 받아옴(강화된 보우도 따로 처리해야함)
             WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage;
+            WingHP -= WeaponPower;
+            obj.transform.GetChild(0).gameObject.GetComponent<HpBarConnect>().HpToUi(WingHP);
 
-            
-            
 
 
 
@@ -75,7 +80,8 @@ public class DragonWingStatus : MonoBehaviour
     public void WingColliderDisableAndReset()
     {
         GetComponent<BoxCollider>().enabled = false;
-        WingHP = 50;
+        WingHP = 80;
+        WingBroken = false;
     }
 
 }

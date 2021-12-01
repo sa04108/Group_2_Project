@@ -817,8 +817,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675621b5ea6f9c447be7c8bcd80076aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WingHP: 50
+  WingHP: 80
   WingBroken: 0
+  obj: {fileID: 0}
 --- !u!1 &925771834564299034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2758,14 +2759,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
-  isFly: 0
+  WingHpUI: {fileID: 2381667799247868768, guid: 2553843454f59b2489686685457b24b1, type: 3}
   isLook: 0
   isChase: 0
   isAttack: 0
   Rotspeed: 5
-  AnimationAddForce: 300
-  StepBackCD: 5
-  StepBackLT: 5
+  AnimationAddForce: 350
+  StepBackCD: 3.5
+  StepBackLT: 3.5
   isUseSB: 0
 --- !u!114 &300672847
 MonoBehaviour:
@@ -2779,10 +2780,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876b149ba5e5ee14cb1c18e80375f12f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lwing: {fileID: 925771834564482284}
+  Rwing: {fileID: 925771834564298770}
+  WingHpBar: {fileID: 0}
   HP: 1000
   WingHP: 100
   isWingInjureCount: 0
   FlyPatternLeft: 2
+  isFly: 0
 --- !u!114 &300672848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2809,7 +2814,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2819,7 +2824,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!54 &378500428
 Rigidbody:
@@ -3573,8 +3578,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675621b5ea6f9c447be7c8bcd80076aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WingHP: 50
+  WingHP: 80
   WingBroken: 0
+  obj: {fileID: 0}
 --- !u!1 &925771834564484230
 GameObject:
   m_ObjectHideFlags: 0

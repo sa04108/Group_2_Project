@@ -34,7 +34,7 @@ public class MonsterStats : MonoBehaviour
         P_AttackPower = esder.esderP;
 
         player = GameObject.Find("Player");
-        Debug.Log(P_AttackPower);
+        
         //플레이어의 무기에 따라 체력감소
         if (coll.tag == "Arrow")//화살은 isAttack 판별 필요없음.
         {

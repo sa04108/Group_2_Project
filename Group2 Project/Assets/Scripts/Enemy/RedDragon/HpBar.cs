@@ -12,7 +12,7 @@ public class HpBar : MonoBehaviour
     Camera m_cam = null;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         m_cam = Camera.main;
 
@@ -22,8 +22,20 @@ public class HpBar : MonoBehaviour
             m_objectList.Add(t_objects[i].transform);
             GameObject t_hpbar = Instantiate(Hp_Bar_Prefebs, t_objects[i].transform.position, Quaternion.identity, transform);
             m_hpBarList.Add(t_hpbar);
-            m_hpBarList[i].transform.GetChild(0).gameObject.GetComponent<HpBarConnect>().obj = t_objects[i];
+            //m_hpBarList[i].transform.GetChild(0).gameObject.GetComponent<HpBarConnect>().obj = t_objects[i];
+            t_objects[i].GetComponent<DragonWingStatus>().obj = m_hpBarList[i];
         }
+        /*
+        GameObject[] d_objects = GameObject.FindGameObjectsWithTag("dragon");
+        for (int i = 0; i < t_objects.Length; i++)
+        {
+            m_objectList.Add(d_objects[i].transform);
+            GameObject t_hpbar = Instantiate(Hp_Bar_Prefebs, d_objects[i].transform.position, Quaternion.identity, transform);
+            m_hpBarList.Add(t_hpbar);
+            m_hpBarList[i].transform.GetChild(0).gameObject.GetComponent<HpBarConnect>().obj = d_objects[i];
+        }
+        */
+
     }
 
     // Update is called once per frame
@@ -35,5 +47,16 @@ public class HpBar : MonoBehaviour
         }
     }
 
-
+    public void removeHpBar()
+    {
+        Transform[] childList = GetComponentsInChildren<Transform>(true);
+        if (childList != null)
+        {
+            for (int i = 1; i < childList.Length; i++)
+            {
+                if (childList[i] != transform)
+                    Destroy(childList[i].gameObject); Debug.Log("dd");
+            }
+        }
+    }
 }
