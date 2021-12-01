@@ -134,6 +134,7 @@ public class DragonStatus : MonoBehaviour
             {
                 WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage;
                 HP -= WeaponPower;
+                hud.RenewDragonHPGauge(this);
                 Destroy(coll);
 
             }
@@ -141,26 +142,29 @@ public class DragonStatus : MonoBehaviour
             {
                 WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_AXE].damage;
                 HP -= WeaponPower;
+                hud.RenewDragonHPGauge(this);
 
             }
             else if (coll.tag == "Dagger")
             {
                 WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_SWORD].damage;
                 HP -= WeaponPower;
+                hud.RenewDragonHPGauge(this);
 
             }
             else if (coll.tag == "Hammer")
             {
                 WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_HAMMER].damage;
                 HP -= WeaponPower;
-
+                hud.RenewDragonHPGauge(this);
             }
             else if (coll.tag == "Pickaxe")
             {
                 WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_PICKAXE].damage;
                 HP -= WeaponPower;
+                hud.RenewDragonHPGauge(this);
             }
-            hud.RenewDragonHPGauge(this);
+            
         }
         
     }
