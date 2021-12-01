@@ -57,7 +57,7 @@ public class ChicController : MonoBehaviour
 
     void Start()
     {
-
+        target = GameObject.Find("Player").transform;
         //animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         //패트롤 포인트 들고오기

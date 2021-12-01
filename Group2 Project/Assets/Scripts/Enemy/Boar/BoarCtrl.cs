@@ -19,7 +19,7 @@ public class BoarCtrl : MonoBehaviour
     [SerializeField] bool isFindPlayer;
 
     //네비게이션 추적
-    public Transform target;
+    Transform target;
     NavMeshAgent nav;
     Vector3 destination;
 
@@ -62,7 +62,7 @@ public class BoarCtrl : MonoBehaviour
     void Start()
     {
 
-
+        target = GameObject.Find("Player").transform;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         //패트롤 포인트 들고오기

@@ -55,7 +55,7 @@ public class StoneController : MonoBehaviour
     void Start()
     {
 
-
+        target = GameObject.Find("Player").transform;
 
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
