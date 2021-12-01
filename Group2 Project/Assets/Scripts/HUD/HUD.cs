@@ -24,12 +24,14 @@ public class HUD : MonoBehaviour
 
     public void RenewMonsterHPGauge(MonsterStats stats)
     {
-        StopCoroutine(coroutine);
+        if (coroutine != null)
+            StopCoroutine(coroutine);
         coroutine = StartCoroutine(SetActiveGauge(stats.HP, stats.FullHp));
     }
     public void RenewDragonHPGauge(DragonStatus stats)
     {
-        StopCoroutine(coroutine);
+        if (coroutine != null)
+            StopCoroutine(coroutine);
         coroutine = StartCoroutine(SetActiveGauge(stats.HP, stats.FullHP));
     }
 
