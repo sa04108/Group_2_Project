@@ -99,7 +99,7 @@ public class StoneController : MonoBehaviour
 
 
                 AttackHead.GetComponent<AttackArea>().isAttack = true;
-
+                LookPlayer();
             }
             else if (distance > 10.0f && isFindPlayer == true)
             {
@@ -189,6 +189,13 @@ public class StoneController : MonoBehaviour
             }
         }
         */
+    }
+    public void LookPlayer()
+    {
+
+        pos = transform.position;
+        var rotation = Quaternion.LookRotation(target.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 2);
     }
     /*
     void Update()

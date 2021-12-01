@@ -118,10 +118,8 @@ public class BoarCtrl : MonoBehaviour
 
 
                 AttackHead.GetComponent<AttackArea>().isAttack = true;
-                pos = transform.position;
-                var rotation = Quaternion.LookRotation(target.position - transform.position);
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
 
+                LookPlayer();
             }
             else if (distance > 17.0f && isFindPlayer == true)
             {
@@ -210,6 +208,13 @@ public class BoarCtrl : MonoBehaviour
             }
         }
         */
+    }
+    public void LookPlayer()
+    {
+
+        pos = transform.position;
+        var rotation = Quaternion.LookRotation(target.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 2);
     }
     /*
     void Update()
