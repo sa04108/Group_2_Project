@@ -7,6 +7,7 @@ public class Attack : MonoBehaviour
     MonsterStats monsterStats;
     PlayerStatus playerStatus;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,6 @@ public class Attack : MonoBehaviour
     {
         if (coll.tag == "Player")
         {
-            Debug.Log(monsterStats.AttackPower);
             if (monsterStats.isAttack == true)
             {
                 playerStatus.PlayerHP -= monsterStats.AttackPower;
@@ -30,6 +30,7 @@ public class Attack : MonoBehaviour
         }
         else
             return;
+
 
     }
 

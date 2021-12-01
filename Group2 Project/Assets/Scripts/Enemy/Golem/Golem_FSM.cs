@@ -8,7 +8,6 @@ public class Golem_FSM : MonoBehaviour
     private MonsterStats monsterStats;
     PlayerStatus playerStatus;
     AudioSource audioSource;
-    AudioSource golemSource;
 
 
     private Ray ray;
@@ -28,6 +27,8 @@ public class Golem_FSM : MonoBehaviour
     public GameObject ShootRock;
 
     public AudioClip audioClip;
+    public AudioClip golemSource;
+
 
     public UnityEngine.AI.NavMeshAgent navMeshAgent;
 
@@ -98,7 +99,7 @@ public class Golem_FSM : MonoBehaviour
 
         ChasePlayer();
         AttackSystem();
-        GetHit();
+        //GetHit();
 
         VictoryCheck();
         AliveCheck();
@@ -111,11 +112,11 @@ public class Golem_FSM : MonoBehaviour
         {
             navMeshAgent.SetDestination(player.transform.position);
             navMeshAgent.speed = 5;
-            //audioSource.PlayOneShot(audioClip);
+            audioSource.PlayOneShot(audioClip);
         }
         else if (currentDistance < 15 || currentDistance > 1)
         {
-            //audioSource.PlayOneShot(golemSource);
+            audioSource.PlayOneShot(golemSource);
         }
         else
         {
@@ -198,7 +199,8 @@ public class Golem_FSM : MonoBehaviour
             monsterStats.isAttack = true;
             insRock = Instantiate(ShootRock, Rock.transform.position, Rock.transform.rotation);
             countRock += 1;
-            Destroy(insRock, 0.5f);            
+            Destroy(insRock, 0.5f);
+            
         }
         
     }
