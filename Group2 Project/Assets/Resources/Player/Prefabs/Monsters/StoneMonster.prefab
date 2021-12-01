@@ -233,8 +233,7 @@ MonoBehaviour:
   HP: 15
   AttackPower: 2
   isAttack: 0
-  AttackHead: {fileID: 0}
-  ChicAni: {fileID: 0}
+  P_AttackPower: 0
   isAlive: 1
 --- !u!65 &1219941685
 BoxCollider:
@@ -289,14 +288,12 @@ MonoBehaviour:
   canJump: 0
   isFindPlayer: 0
   target: {fileID: 0}
-  HP: 15
-  AttackPower: 5
-  isAttack: 0
   points: []
   nextIdx: 1
   speed: 3
   damping: 3.5
-  rockItemDrop: {fileID: 7436326173788290965, guid: a2a9d15eb75b4694aafc8573479324e3, type: 3}
+  ItemDrop: {fileID: 7436326173788290965, guid: a2a9d15eb75b4694aafc8573479324e3, type: 3}
+  HealingPotion: {fileID: 0}
 --- !u!54 &6693308976774638464
 Rigidbody:
   m_ObjectHideFlags: 0

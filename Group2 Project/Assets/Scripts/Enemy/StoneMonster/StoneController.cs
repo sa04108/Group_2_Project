@@ -47,11 +47,7 @@ public class StoneController : MonoBehaviour
     Animator animator;
     Rigidbody rb;
     [SerializeField]
-    private GameObject ItemDrop1;
-    [SerializeField]
-    private GameObject ItemDrop2;
-    [SerializeField]
-    private GameObject HealingPotion;
+    private GameObject ItemDrop;
 
     void Start()
     {
@@ -147,18 +143,18 @@ public class StoneController : MonoBehaviour
 
     void itemDrop()
     {
-        GameObject dropItem = Instantiate(ItemDrop1, transform.position, Quaternion.identity);
+        GameObject dropItem = Instantiate(ItemDrop, transform.position, Quaternion.identity);
         dropItem.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_UNSTABLE_CORE]);
         //Instantiate(rockItemDrop, transform.position, Quaternion.identity);
 
-        GameObject dropItem1 = Instantiate(ItemDrop2, transform.position, Quaternion.identity);
+        GameObject dropItem1 = Instantiate(ItemDrop, transform.position, Quaternion.identity);
         dropItem1.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.RESOURCE_ROCK]);
 
         //30%확률로 드랍
         int RandomNum = Random.Range(1, 10);
         if (RandomNum < 4)
         {
-            GameObject dropItem2 = Instantiate(HealingPotion, transform.position, Quaternion.identity);
+            GameObject dropItem2 = Instantiate(ItemDrop, transform.position, Quaternion.identity);
             dropItem2.GetComponent<DropItem>().SetItem(ItemData.instance.itemDB[CommonDefine.ITEM_HEAL_POTION]);
         }
     }
