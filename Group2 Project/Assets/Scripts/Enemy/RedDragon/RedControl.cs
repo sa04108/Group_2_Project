@@ -305,4 +305,8 @@ public class RedControl : MonoBehaviour
         GetComponent<DragonStatus>().isFly = false;
         animator.SetInteger("WingInjureCount", 0);
     }
+    public void DragonDie()
+    {
+        animator.SetBool("isDieBool", true);
+    }
 }
