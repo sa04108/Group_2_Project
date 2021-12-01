@@ -55,6 +55,7 @@ public class DragonStatus : MonoBehaviour
             FlyPatternLeft -= 1;
             animator.SetInteger("FlyPatternLeft", FlyPatternLeft);
             animator.SetTrigger("FlyGetHit");
+            animator.SetBool("isFly", true);
             isFly = true;
             
         }
@@ -68,6 +69,7 @@ public class DragonStatus : MonoBehaviour
             FlyPatternLeft -= 1;
             animator.SetInteger("FlyPatternLeft", FlyPatternLeft);
             animator.SetTrigger("FlyGetHit");
+            animator.SetBool("isFly", true);
             isFly = true;
             
         }
