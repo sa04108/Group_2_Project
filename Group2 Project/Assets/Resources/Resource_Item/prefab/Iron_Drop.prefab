@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -5488106524871528151}
   m_Layer: 0
   m_Name: Iron_Drop
-  m_TagString: Untagged
+  m_TagString: dropItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

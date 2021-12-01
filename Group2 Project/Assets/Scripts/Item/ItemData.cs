@@ -6,7 +6,12 @@ public class ItemData : MonoBehaviour
 {
     public static ItemData instance;
     private void Awake() {
-        instance = this;
+        if (!instance)
+            instance = this;
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public List<Item> itemDB = new List<Item>();

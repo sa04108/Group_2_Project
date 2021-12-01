@@ -18,12 +18,13 @@ public class MonsterStats : MonoBehaviour
     public bool isAlive = true; //제대로 못받아와서 몬스터가 안죽음...걍 각 몬스터에 넣었음
     int WeaponPower;
 
+    HUD hud;
     ItemData DB;
-
     Esder esder;
 
     void Start()
     {
+        hud = FindObjectOfType<HUD>();
         DB = ItemData.instance;
     }
 
@@ -61,5 +62,7 @@ public class MonsterStats : MonoBehaviour
             WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage + P_AttackPower;
             HP -= WeaponPower;
         }
+
+        hud.RenewMonsterHPGauge(this);
     }
 }
