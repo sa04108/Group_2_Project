@@ -5,9 +5,16 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    public PlayerStatus playerStatus;
+    PlayerStatus playerStatus;
+    Coroutine coroutine;
+
     public Image playerHpGauge;
     public Image monsterHPGauge;
+
+    private void Awake()
+    {
+        playerStatus = FindObjectOfType<PlayerStatus>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -17,11 +24,22 @@ public class HUD : MonoBehaviour
 
     public void RenewMonsterHPGauge(MonsterStats stats)
     {
-        monsterHPGauge.fillAmount = (float)stats.HP / (float)stats.FullHp;
+        StopCoroutine(coroutine);
+        coroutine = StartCoroutine(SetActiveGauge(stats.HP, stats.FullHp));
     }
     public void RenewDragonHPGauge(DragonStatus stats)
     {
-        monsterHPGauge.fillAmount = (float)stats.HP / (float)stats.FullHP;
-        
+        StopCoroutine(coroutine);
+        coroutine = StartCoroutine(SetActiveGauge(stats.HP, stats.FullHP));
+    }
+
+    IEnumerator SetActiveGauge(int hp, int fullHp)
+    {
+        monsterHPGauge.transform.parent.gameObject.SetActive(true);
+        monsterHPGauge.fillAmount = hp / (float)fullHp;
+
+        yield return new WaitForSeconds(5.0f);
+
+        monsterHPGauge.transform.parent.gameObject.SetActive(false);
     }
 }

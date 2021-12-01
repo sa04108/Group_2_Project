@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -16,14 +17,17 @@ public class PlayerStatus : MonoBehaviour
     void Start()
     {
         isBurning = false;
-        if (lastPlayerPos != Vector3.zero)
+        if (lastPlayerPos != Vector3.zero && SceneManager.GetActiveScene().name != "Boss")
             transform.position = lastPlayerPos + Vector3.back * 5;
     }
 
     // Update is called once per frame
     void Update()
     {
-        lastPlayerPos = transform.position;
+        if (SceneManager.GetActiveScene().name != "Boss")
+        {
+            lastPlayerPos = transform.position;
+        }
     }
 
     public bool GameOver()
