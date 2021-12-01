@@ -12,6 +12,8 @@ public class BossSceneLoad : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             SceneManager.LoadScene("Boss");
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.None;
         }
         
     }
