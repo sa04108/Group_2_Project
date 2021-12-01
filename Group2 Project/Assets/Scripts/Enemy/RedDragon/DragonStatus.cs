@@ -11,7 +11,8 @@ public class DragonStatus : MonoBehaviour
     public GameObject WingHpBar;
 
     [Header("Dragon Stats")]
-    public int HP = 1000;
+    public int FullHP = 1000;
+    public int HP;
     public int WingHP = 100; //강화된 bow 데미지 고려, 양날개 5대씩
     public int isWingInjureCount = 0;
     public int FlyPatternLeft = 2;
@@ -20,6 +21,7 @@ public class DragonStatus : MonoBehaviour
 
     int WeaponPower;
 
+    HUD hud;
     ItemData DB;
     Rigidbody rb;
 
@@ -29,8 +31,9 @@ public class DragonStatus : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         DB = ItemData.instance;
+        hud = FindObjectOfType<HUD>();
 
-        HP = 1000;
+        HP = FullHP;
         WingHP = 100;
         isWingInjureCount = 0;
         FlyPatternLeft = 2;
@@ -157,6 +160,7 @@ public class DragonStatus : MonoBehaviour
                 WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_PICKAXE].damage;
                 HP -= WeaponPower;
             }
+            hud.RenewDragonHPGauge(this);
         }
         
     }

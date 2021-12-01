@@ -106,11 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c831950711a884691a9a7427643983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FullHp: 15
   HP: 15
   AttackPower: 2
   isAttack: 0
-  AttackHead: {fileID: 0}
-  ChicAni: {fileID: 0}
+  P_AttackPower: 0
   isAlive: 1
 --- !u!114 &1709770352740654253
 MonoBehaviour:
@@ -131,16 +131,11 @@ MonoBehaviour:
   canJump: 0
   isFindPlayer: 0
   target: {fileID: 0}
-  HP: 15
-  AttackPower: 2
-  isAttack: 0
-  AttackHead: {fileID: 0}
-  ChicAni: {fileID: 0}
   points: []
   nextIdx: 1
   speed: 3
   damping: 3.5
-  rockItemDrop: {fileID: 909603332184790777, guid: 8c72b7af9059753458b13137449423e1, type: 3}
+  DropItem1: {fileID: 909603332184790777, guid: 8c72b7af9059753458b13137449423e1, type: 3}
 --- !u!54 &4612744922544721892
 Rigidbody:
   m_ObjectHideFlags: 0

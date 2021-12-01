@@ -17,6 +17,11 @@ public class HUD : MonoBehaviour
 
     public void RenewMonsterHPGauge(MonsterStats stats)
     {
-        monsterHPGauge.fillAmount = stats.HP / 100;
+        monsterHPGauge.fillAmount = (float)stats.HP / (float)stats.FullHp;
+    }
+    public void RenewDragonHPGauge(DragonStatus stats)
+    {
+        monsterHPGauge.fillAmount = (float)stats.HP / (float)stats.FullHP;
+        
     }
 }

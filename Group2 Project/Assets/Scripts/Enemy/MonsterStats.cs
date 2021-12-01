@@ -5,7 +5,8 @@ using UnityEngine;
 public class MonsterStats : MonoBehaviour
 {
     [Header("Monster Stats")]
-    public int HP = 15;
+    public int FullHp = 30;
+    public int HP;
     public int AttackPower;
     public bool isAttack = false;
 
@@ -26,6 +27,7 @@ public class MonsterStats : MonoBehaviour
     {
         hud = FindObjectOfType<HUD>();
         DB = ItemData.instance;
+        HP = FullHp;
     }
 
 
@@ -41,6 +43,7 @@ public class MonsterStats : MonoBehaviour
         {
             WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage + P_AttackPower;
             HP -= WeaponPower;
+            Destroy(coll);
         }
         else if (coll.tag == "Axe")
         {

@@ -431,9 +431,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c831950711a884691a9a7427643983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FullHp: 30
   HP: 30
   AttackPower: 5
   isAttack: 0
+  P_AttackPower: 0
   isAlive: 1
 --- !u!1 &3068840638588728552
 GameObject:

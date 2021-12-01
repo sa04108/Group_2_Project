@@ -2783,6 +2783,7 @@ MonoBehaviour:
   Lwing: {fileID: 925771834564482284}
   Rwing: {fileID: 925771834564298770}
   WingHpBar: {fileID: 0}
+  FullHP: 1000
   HP: 1000
   WingHP: 100
   isWingInjureCount: 0
