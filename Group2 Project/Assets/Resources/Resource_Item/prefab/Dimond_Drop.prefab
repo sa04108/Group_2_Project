@@ -162,11 +162,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemType: 0
-    itemName: "\uB2E4\uC774\uC544\uBAAC\uB4DC"
-    itemImage: {fileID: 21300034, guid: fd0b7189c26761e4c833b6c9734d6cd4, type: 3}
-    itemModel: {fileID: 4300000, guid: 456aa20c486e5da4c91e989620329b6d, type: 3}
-    itemMaterial: {fileID: 2100000, guid: f0ea9b9011cb0744ebd0687fa99ee177, type: 2}
-    itemCount: 10
+    itemName: 
+    itemImage: {fileID: 0}
+    itemModel: {fileID: 0}
+    itemMaterial: {fileID: 0}
+    itemCount: 0
   image: {fileID: 0}
 --- !u!1001 &5439934809197930004
 PrefabInstance:

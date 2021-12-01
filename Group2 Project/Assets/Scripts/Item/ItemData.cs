@@ -24,19 +24,19 @@ public class ItemData : MonoBehaviour
 
     private void Start() {
 
-         GameObject go = Instantiate(fieldItemPrefab, new Vector3 (266f, 21f, 70f), Quaternion.identity);
-         go.GetComponent<DropItem>().SetItem(itemDB[0]);
-        GameObject go2 = Instantiate(fieldItemPrefab, new Vector3(263f, 21f, 76f), Quaternion.identity);
-        go2.GetComponent<DropItem>().SetItem(itemDB[1]);
-        GameObject go3 = Instantiate(fieldItemPrefab, new Vector3(251f, 21f, 70f), Quaternion.identity);
-        go3.GetComponent<DropItem>().SetItem(itemDB[2]);
-        GameObject go4 = Instantiate(fieldItemPrefab, new Vector3(251f, 21f, 76f), Quaternion.identity);
-        go4.GetComponent<DropItem>().SetItem(itemDB[3]);
-        GameObject go5 = Instantiate(fieldItemPrefab, new Vector3(245f, 21f, 76f), Quaternion.identity);
-        go5.GetComponent<DropItem>().SetItem(itemDB[4]);
-        GameObject go6 = Instantiate(fieldItemPrefab, new Vector3(245f, 21f, 70f), Quaternion.identity);
-        go6.GetComponent<DropItem>().SetItem(itemDB[5]);
-        GameObject go7 = Instantiate(fieldItemPrefab, new Vector3(245f, 25f, 70f), Quaternion.identity);
-        go7.GetComponent<DropItem>().SetItem(itemDB[6]);
+        // GameObject go = Instantiate(fieldItemPrefab, new Vector3 (266f, 21f, 70f), Quaternion.identity);
+        // go.GetComponent<DropItem>().SetItem(itemDB[0]);
+        //GameObject go2 = Instantiate(fieldItemPrefab, new Vector3(263f, 21f, 76f), Quaternion.identity);
+        //go2.GetComponent<DropItem>().SetItem(itemDB[1]);
+        //GameObject go3 = Instantiate(fieldItemPrefab, new Vector3(251f, 21f, 70f), Quaternion.identity);
+        //go3.GetComponent<DropItem>().SetItem(itemDB[2]);
+        //GameObject go4 = Instantiate(fieldItemPrefab, new Vector3(251f, 21f, 76f), Quaternion.identity);
+        //go4.GetComponent<DropItem>().SetItem(itemDB[3]);
+        //GameObject go5 = Instantiate(fieldItemPrefab, new Vector3(245f, 21f, 76f), Quaternion.identity);
+        //go5.GetComponent<DropItem>().SetItem(itemDB[4]);
+        //GameObject go6 = Instantiate(fieldItemPrefab, new Vector3(245f, 21f, 70f), Quaternion.identity);
+        //go6.GetComponent<DropItem>().SetItem(itemDB[5]);
+        //GameObject go7 = Instantiate(fieldItemPrefab, new Vector3(245f, 25f, 70f), Quaternion.identity);
+        //go7.GetComponent<DropItem>().SetItem(itemDB[6]);
     }
 }

@@ -194,6 +194,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2877214365428866745}
     m_Modifications:
+    - target: {fileID: 4871398877217546765, guid: 94b88f65daafd51489ad61ce1398f31f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871398877217546765, guid: 94b88f65daafd51489ad61ce1398f31f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871398877727848654, guid: 94b88f65daafd51489ad61ce1398f31f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871398877727848654, guid: 94b88f65daafd51489ad61ce1398f31f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.87
+      objectReference: {fileID: 0}
     - target: {fileID: 4871398878155624441, guid: 94b88f65daafd51489ad61ce1398f31f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -241,6 +257,18 @@ PrefabInstance:
     - target: {fileID: 4871398878155624446, guid: 94b88f65daafd51489ad61ce1398f31f, type: 3}
       propertyPath: m_Name
       value: RegenPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871398878346723901, guid: 94b88f65daafd51489ad61ce1398f31f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871398878989762258, guid: 94b88f65daafd51489ad61ce1398f31f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871398878989762258, guid: 94b88f65daafd51489ad61ce1398f31f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94b88f65daafd51489ad61ce1398f31f, type: 3}

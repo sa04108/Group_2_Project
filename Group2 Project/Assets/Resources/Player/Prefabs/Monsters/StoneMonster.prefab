@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c831950711a884691a9a7427643983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FullHp: 30
   HP: 15
   AttackPower: 2
   isAttack: 0
@@ -292,7 +293,7 @@ MonoBehaviour:
   nextIdx: 1
   speed: 3
   damping: 3.5
-  ItemDrop: {fileID: 7436326173788290965, guid: a2a9d15eb75b4694aafc8573479324e3, type: 3}
+  ItemDrop: {fileID: 1725668508503290528, guid: 6c489b598ebb5254c8002cf41f88d245, type: 3}
   Potion: {fileID: 4809852554143681421, guid: 23251862eb1b2244ba689cb801686110, type: 3}
 --- !u!54 &6693308976774638464
 Rigidbody:

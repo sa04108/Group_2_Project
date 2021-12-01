@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7436326173788290959}
   - component: {fileID: 5236618768436571305}
   m_Layer: 0
-  m_Name: item
+  m_Name: empty_item
   m_TagString: dropItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7436326173788290965}
-  m_Mesh: {fileID: 852798479006970287, guid: 268a14e7ef45f1542a7d335b0a20d200, type: 3}
+  m_Mesh: {fileID: 4300052, guid: a1ce5be76dbaf4c4398d8d6789a61fe8, type: 3}
 --- !u!23 &7436326173788290954
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3922c043c1c52cb47a7b1bfed562a4b6, type: 2}
+  - {fileID: 2100000, guid: 056b8378eaa9abc4099799b460ca1f78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,11 +128,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemType: 0
-    itemName: "\uB098\uBB47\uAC00\uC9C0"
-    itemImage: {fileID: 21300000, guid: 3f6de3e24bddcbe478a03dc2f6a6a5a9, type: 3}
-    itemModel: {fileID: 852798479006970287, guid: 268a14e7ef45f1542a7d335b0a20d200, type: 3}
-    itemMaterial: {fileID: 2100000, guid: 3922c043c1c52cb47a7b1bfed562a4b6, type: 2}
-    itemCount: 10
+    itemName: 
+    itemImage: {fileID: 0}
+    itemModel: {fileID: 0}
+    itemMaterial: {fileID: 0}
+    itemCount: 0
   image: {fileID: 0}
 --- !u!135 &5236618768436571305
 SphereCollider:

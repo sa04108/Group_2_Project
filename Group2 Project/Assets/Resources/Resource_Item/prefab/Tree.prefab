@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2684634724747718389}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 249.54141, y: 20.62, z: 113.85}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -53,7 +53,7 @@ MonoBehaviour:
   HitEffect: {fileID: 3323350498930536447, guid: fcc5f52a27f269f48a8a1dc18f15f168, type: 3}
   gather: {fileID: 3918134807574520267}
   gather_debris: {fileID: 7745751647690216580, guid: 5d7fa61f718a607479b1640965be6c8c, type: 3}
-  gatherItemPrefab: {fileID: 7436326173788290965, guid: a2a9d15eb75b4694aafc8573479324e3, type: 3}
+  gatherItemPrefab: {fileID: 7436326173788290965, guid: 27a3feecbaeeeea48863950c8a9bc311, type: 3}
   PrefabItem: []
   audioSource: {fileID: 3751611725494870435}
   HitSound: {fileID: 8300000, guid: 22565b89313696b4b95f5a5be2e5bae2, type: 3}
