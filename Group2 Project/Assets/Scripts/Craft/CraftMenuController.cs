@@ -8,6 +8,9 @@ public class CraftMenuController : MonoBehaviour {
     CraftEquipmentSlot equipSlot;
     [SerializeField]
 
+    public AudioClip craftSuccessSound;
+    public AudioClip craftFailSound;
+    AudioSource audioSource;
     //장비
     //검 버튼
     public Button SwordCraftButton;
@@ -44,56 +47,176 @@ public class CraftMenuController : MonoBehaviour {
         equipSlot = CraftEquipmentSlot.instance;
         itemDB = ItemData.instance;
 
+        audioSource = GetComponent<AudioSource>();
         BranchToWoodButton.onClick.AddListener(() => {
-            ProcessWood();
+            if (ProcessWood()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         StoneToRockButton.onClick.AddListener(() => {
-            ProcessRock();
+            if (ProcessRock()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         IronOreToIronIngot.onClick.AddListener(() => {
-            ProcessIron();
+            if (ProcessIron()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         SwordCraftButton.onClick.AddListener(() => {
-            CraftSword();
+            if (CraftSword()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         EnchantSwordCraftButton.onClick.AddListener(() => {
-            EnchantSword();
+            if (EnchantSword()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         BowCraftButton.onClick.AddListener(() => {
-            CraftBow();
+            if (CraftBow()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         EnchantBowCraftButton.onClick.AddListener(() => {
-            EnchantBow();
+            if (EnchantBow()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         HammerCraftButton.onClick.AddListener(() => {
-            CraftHammer();
+            if (CraftHammer()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         WoodAxeCraftButton.onClick.AddListener(() => {
-            CraftWoodAxe();
+            if (CraftWoodAxe()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         RockAxeCraftButton.onClick.AddListener(() => {
-            CraftRockAxe();
+            if (CraftRockAxe()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         IronAxeCraftButton.onClick.AddListener(() => {
-            CraftIronAxe();
+            if (CraftIronAxe()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         WoodPickAxeCraftButton.onClick.AddListener(() => {
-            CraftWoodPickAxe();
+            if (CraftWoodPickAxe()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         RockPickAxeCraftButton.onClick.AddListener(() => {
-            CraftRockPickAxe();
+            if (CraftRockPickAxe()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         IronPickAxeCraftButton.onClick.AddListener(() => {
-            CraftIronPickAxe();
+            if (CraftIronPickAxe()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         BombCraftButton.onClick.AddListener(() => {
-            CraftBomb();
+            if (CraftBomb()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         ShieldCraftButton.onClick.AddListener(() => {
-            CraftShield();
+            if (CraftShield()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
         EnchantShieldCraftButton.onClick.AddListener(() => {
-            EnchantShield();
+            if (EnchantShield()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
         });
 
         initButtonUI();
@@ -185,9 +308,9 @@ public class CraftMenuController : MonoBehaviour {
         return false;
     }
 
-    public void CraftSword() {
+    public bool CraftSword() {
 
-        if (!CheckHammer()) return;
+        if (!CheckHammer()) return false;
 
         List<Recipes> recipes = SwordCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
@@ -198,11 +321,13 @@ public class CraftMenuController : MonoBehaviour {
             inven.AddEquip(sword);
             SwordCraftButton.gameObject.SetActive(false);
             EnchantSwordCraftButton.gameObject.SetActive(true);
+            return true;
         }
+        else return false;
     }
 
-    public void EnchantSword() {
-        if (!CheckHammer()) return;
+    public bool EnchantSword() {
+        if (!CheckHammer()) return false;
         List<Recipes> recipes = EnchantSwordCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -211,13 +336,15 @@ public class CraftMenuController : MonoBehaviour {
             equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(sword);
             EnchantSwordCraftButton.gameObject.SetActive(false);
+            return true;
         }
+        else return false;
     }
 
-    public void CraftShield() {
-        if (!CheckHammer()) return;
+    public bool CraftShield() {
+        if (!CheckHammer()) return false;
         List<Recipes> recipes = ShieldCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
-        if(CheckResource(recipes, inven.items)) {
+        if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
             Equipment shield = itemDB.equipDB[CommonDefine.EQUIPMENT_SHIELD];
 
@@ -225,11 +352,13 @@ public class CraftMenuController : MonoBehaviour {
             inven.shield = true;
             ShieldCraftButton.gameObject.SetActive(false);
             EnchantShieldCraftButton.gameObject.SetActive(true);
+            return true;
         }
+        else return false;
     }
 
-    public void EnchantShield() {
-        if (!CheckHammer()) return;
+    public bool EnchantShield() {
+        if (!CheckHammer()) return false;
         List<Recipes> recipes = ShieldCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -239,11 +368,13 @@ public class CraftMenuController : MonoBehaviour {
             inven.enchantShield = true;
 
             EnchantShieldCraftButton.gameObject.SetActive(false);
+            return true;
         }
+        else return false;
     }
 
-    public void CraftBow() {
-        if (!CheckHammer()) return;
+    public bool CraftBow() {
+        if (!CheckHammer()) return false;
         List<Recipes> recipes = BowCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -253,37 +384,43 @@ public class CraftMenuController : MonoBehaviour {
             inven.AddEquip(bow);
             BowCraftButton.gameObject.SetActive(false);
             EnchantBowCraftButton.gameObject.SetActive(true);
+            return true;
         }
+        else return false;
     }
 
-    public void EnchantBow() {
-        if (!CheckHammer()) return;
+    public bool EnchantBow() {
+        if (!CheckHammer()) return false;
         List<Recipes> recipes = EnchantBowCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
-        if(CheckResource(recipes, inven.items)) {
+        if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
             Equipment bow = itemDB.equipDB[CommonDefine.EQUIPMENT_ENCHANTED_BOW];
             equipSlot.slot[CommonDefine.EQUIPMENT_BOW_SLOT_INDEX].equip = bow;
             equipSlot.slot[CommonDefine.EQUIPMENT_BOW_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(bow);
             EnchantBowCraftButton.gameObject.SetActive(false);
+            return true;
         }
+        else return false;
     }
 
-    public void CraftHammer() {
+    public bool CraftHammer() {
 
         List<Recipes> recipes = HammerCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
-        if(CheckResource(recipes, inven.items)) {
+        if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
             Equipment hammer = itemDB.equipDB[CommonDefine.EQUIPMENT_HAMMER];
             equipSlot.slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].equip = hammer;
             equipSlot.slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(hammer);
             HammerCraftButton.gameObject.SetActive(false);
+            return true;
         }
+        else return false;
     }
 
-    public void CraftWoodAxe() {
-        if (!CheckHammer()) return;
+    public bool CraftWoodAxe() {
+        if (!CheckHammer()) return false;
         List<Recipes> recipes = WoodAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -293,11 +430,13 @@ public class CraftMenuController : MonoBehaviour {
             inven.AddEquip(axe);
             WoodAxeCraftButton.gameObject.SetActive(false);
             RockAxeCraftButton.gameObject.SetActive(true);
+            return true;
         }
+        else return false;
     }
 
-    public void CraftRockAxe() {
-        if (!CheckHammer()) return;
+    public bool CraftRockAxe() {
+        if (!CheckHammer()) return false;
         List<Recipes> recipes = RockAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -307,11 +446,13 @@ public class CraftMenuController : MonoBehaviour {
             inven.AddEquip(axe);
             RockAxeCraftButton.gameObject.SetActive(false);
             IronAxeCraftButton.gameObject.SetActive(true);
+            return true;
         }
+        else return false;
     }
 
-    public void CraftIronAxe() {
-        if (!CheckHammer()) return;
+    public bool CraftIronAxe() {
+        if (!CheckHammer()) return false ;
         List<Recipes> recipes = IronAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -320,11 +461,13 @@ public class CraftMenuController : MonoBehaviour {
             equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(axe);
             IronAxeCraftButton.gameObject.SetActive(false);
+            return true;
         }
+        else return false;
     }
 
-    public void CraftWoodPickAxe() {
-        if (!CheckHammer()) return;
+    public bool CraftWoodPickAxe() {
+        if (!CheckHammer()) return false;
         List<Recipes> recipes = WoodPickAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -334,11 +477,13 @@ public class CraftMenuController : MonoBehaviour {
             inven.AddEquip(pickAxe);
             WoodPickAxeCraftButton.gameObject.SetActive(false);
             RockPickAxeCraftButton.gameObject.SetActive(true);
+            return true;
         }
+        else return false;
     }
 
-    public void CraftRockPickAxe() {
-        if (!CheckHammer()) return;
+    public bool CraftRockPickAxe() {
+        if (!CheckHammer()) return false;
         List<Recipes> recipes = RockPickAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -348,11 +493,13 @@ public class CraftMenuController : MonoBehaviour {
             inven.AddEquip(pickAxe);
             RockPickAxeCraftButton.gameObject.SetActive(false);
             IronPickAxeCraftButton.gameObject.SetActive(true);
+            return true;
         }
+        else return false;
     }
 
-    public void CraftIronPickAxe() {
-        if (!CheckHammer()) return;
+    public bool CraftIronPickAxe() {
+        if (!CheckHammer()) return false;
         List<Recipes> recipes = IronPickAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -361,11 +508,13 @@ public class CraftMenuController : MonoBehaviour {
             equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(pickAxe);
             IronPickAxeCraftButton.gameObject.SetActive(false);
+            return true;
         }
+        else return false;
     }
 
-    public void CraftBomb() {
-        if (!CheckHammer()) return;
+    public bool CraftBomb() {
+        if (!CheckHammer()) return false; 
         List<Recipes> recipes = BombCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
@@ -373,33 +522,41 @@ public class CraftMenuController : MonoBehaviour {
             equipSlot.slot[CommonDefine.EQUIPMENT_BOMB_SLOT_INDEX].equip = bomb;
             equipSlot.slot[CommonDefine.EQUIPMENT_BOMB_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(bomb);
+            return true;
         }
+        return false;
     }
 
 
-    public void ProcessWood() {
+    public bool ProcessWood() {
         List<Recipes> recipes = BranchToWoodButton.gameObject.GetComponent<CraftRecipe>().recipes;
-        if(CheckResource(recipes, inven.items)) {
+        if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
             Item wood = itemDB.itemDB[CommonDefine.RESOURCE_WOOD];
             inven.AddItem(wood);
+            return true;
         }
+        else return false;
     }
-    public void ProcessRock() {
+    public bool ProcessRock() {
         List<Recipes> recipes = StoneToRockButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
             Item rock = itemDB.itemDB[CommonDefine.RESOURCE_ROCK];
             inven.AddItem(rock);
+            return true;
         }
+        else return false;
     }
-    public void ProcessIron() {
+    public bool ProcessIron() {
         List<Recipes> recipes = IronOreToIronIngot.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
             Item iron = itemDB.itemDB[CommonDefine.RESOURCE_IRON_INGOT];
             inven.AddItem(iron);
+            return true;
         }
+        else return false;
     }
     public bool CheckResource(List<Recipes> recipes, List<Item> items) {
         int nameCheck = 0;

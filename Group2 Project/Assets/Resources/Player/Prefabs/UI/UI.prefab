@@ -8924,6 +8924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3553883058405469795}
   - component: {fileID: 3553883058405469724}
+  - component: {fileID: 6716085625156435459}
   m_Layer: 5
   m_Name: CraftTab
   m_TagString: Untagged
@@ -8967,6 +8968,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1510e2ae24b4154f9e0367721d1cece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSuccessSound: {fileID: 8300000, guid: cc1947aefa1d3224bb8a91690c5dc5bf, type: 3}
+  craftFailSound: {fileID: 8300000, guid: 1aabb9762e85796459dcb19812523494, type: 3}
   SwordCraftButton: {fileID: 3553883057188588068}
   EnchantSwordCraftButton: {fileID: 4487813615723472253}
   ShieldCraftButton: {fileID: 3553883057139261443}
@@ -8984,6 +8987,102 @@ MonoBehaviour:
   BranchToWoodButton: {fileID: 8273807407560590622}
   StoneToRockButton: {fileID: 315791332187325897}
   IronOreToIronIngot: {fileID: 5739402334945329664}
+--- !u!82 &6716085625156435459
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3553883058405469794}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3553883058466959704
 GameObject:
   m_ObjectHideFlags: 0
