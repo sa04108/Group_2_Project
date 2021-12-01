@@ -10,6 +10,9 @@ public class PickAxe : MonoBehaviour
 
     private void Start()
     {
+        CraftEquipmentSlot equipSlot;
+        equipSlot = CraftEquipmentSlot.instance;
+        Tier = equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].equip.equipTier;
         Player = GameObject.FindGameObjectWithTag("Player");
     }
 
