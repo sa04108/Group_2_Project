@@ -32,7 +32,7 @@ public class Golem_FSM : MonoBehaviour
 
     public UnityEngine.AI.NavMeshAgent navMeshAgent;
 
-    private int currentTarget;
+    public int currentTarget;
     private float distanceFromTarget;
     private float preHP;
     private float countRock = 0;
@@ -44,8 +44,14 @@ public class Golem_FSM : MonoBehaviour
     {
         animator = gameObject.GetComponent<Animator>();
         monsterStats = gameObject.GetComponent<MonsterStats>();
+        player = GameObject.Find("Player").gameObject;
+        pointA = GameObject.Find("p1").gameObject.transform;
+        pointB = GameObject.Find("p2").gameObject.transform;
+        pointC = GameObject.Find("p3").gameObject.transform;
+        pointD = GameObject.Find("p4").gameObject.transform;
+
         playerStatus = GameObject.Find("Player").GetComponent<PlayerStatus>();
-        audioSource = this.gameObject.GetComponent<AudioSource>();
+        //audioSource = this.gameObject.GetComponent<AudioSource>();
 
         pointA = GameObject.Find("p1").transform;
         pointB = GameObject.Find("p2").transform;
@@ -78,7 +84,6 @@ public class Golem_FSM : MonoBehaviour
         ray = new Ray(transform.position, checkDirection);
         if (Physics.Raycast(ray, out hit, maxDistanceToCheck))
         {
-
             if (hit.collider.gameObject == player)
             {
                 animator.SetBool("isPlayerVisible", true);
@@ -112,11 +117,11 @@ public class Golem_FSM : MonoBehaviour
         {
             navMeshAgent.SetDestination(player.transform.position);
             navMeshAgent.speed = 5;
-            audioSource.PlayOneShot(audioClip);
+            //audioSource.PlayOneShot(audioClip);
         }
         else if (currentDistance < 15 || currentDistance > 1)
         {
-            audioSource.PlayOneShot(golemSource);
+            //audioSource.PlayOneShot(golemSource);
         }
         else
         {
