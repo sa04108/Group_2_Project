@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
-
+using UnityEngine.UI;
 public class RedControl : MonoBehaviour
 {
 
@@ -60,6 +60,10 @@ public class RedControl : MonoBehaviour
         //DragonHP = 1000;
         isLook = true;
         nav.isStopped = true;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     // Update is called once per frame
