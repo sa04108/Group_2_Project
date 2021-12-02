@@ -97,7 +97,7 @@ public class Gathering : MonoBehaviour {
         PrefabItem.Clear();
     }
     IEnumerator Reproduction() {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(35.0f);
         col.enabled = true;
         Hp = MaxHp;
         gather.SetActive(true);

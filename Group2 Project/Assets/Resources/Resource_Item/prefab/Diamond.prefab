@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b6cd39ce920b04f99c0c306eb93576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 6
-  Hp: 6
+  MaxHp: 16
+  Hp: 16
   DestroyTime: 3
   col: {fileID: 6822668509195794000}
   HitEffect: {fileID: 204697647466844157, guid: 2ddc0b7b3d6485c46ab08fa2e56f80d7, type: 3}
