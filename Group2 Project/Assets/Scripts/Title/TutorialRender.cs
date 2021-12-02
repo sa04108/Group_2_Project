@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialRender : MonoBehaviour
 {
-    private static bool isFirstLoad = true;
-
+    private TutorialData tutorial;
     [System.Serializable]
     public class DataProperty
     {
@@ -23,17 +23,12 @@ public class TutorialRender : MonoBehaviour
 
     int currentPage;
 
-    private void Awake()
-    {
-        if (isFirstLoad)
-            isFirstLoad = false;
-        else
-            Destroy(gameObject);
-    }
-
     void Start()
     {
         UpdateUI();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        tutorial = TutorialData.instance;
     }
 
     void UpdateUI()
@@ -64,11 +59,14 @@ public class TutorialRender : MonoBehaviour
         currentPage++;
         if (currentPage == Data.Count)
         {
+            tutorial.PanelFisrtLoad[this.gameObject.GetComponent<TutorialFirstLoad>().SquenceNum] = true;
+            if (SceneManager.GetActiveScene().name != "Tent")
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked; //커서 위치 고정, 보이지 않게 한다.
+                AudioManager.instance.SetAlwaysShowCursor(false);
+            }
             this.gameObject.SetActive(false);
-
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked; //커서 위치 고정, 보이지 않게 한다.
-            AudioManager.instance.SetAlwaysShowCursor(false);
             return;
         }
         UpdateUI();
