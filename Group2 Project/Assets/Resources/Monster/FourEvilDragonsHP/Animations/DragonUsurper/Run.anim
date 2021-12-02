@@ -84838,17 +84838,24 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0
-    functionName: navStart
+  - time: 0.033333335
+    functionName: navSpeedUp
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 42a3c54569f97f042a0bfac004d7c1e5, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.033333335
-    functionName: navSpeedUp
+  - time: 0.33333334
+    functionName: PlayRedFootStep
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 42a3c54569f97f042a0bfac004d7c1e5, type: 3}
+    objectReferenceParameter: {fileID: 11500000, guid: a322bcebdaebeda47b3da37b1d92e0bf, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.6333333
+    functionName: PlayRedFootStep
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: a322bcebdaebeda47b3da37b1d92e0bf, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

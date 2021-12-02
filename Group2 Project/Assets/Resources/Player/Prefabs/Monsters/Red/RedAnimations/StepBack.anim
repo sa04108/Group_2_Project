@@ -80831,6 +80831,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: PlayRedStepBack
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: a322bcebdaebeda47b3da37b1d92e0bf, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.06666667
     functionName: ForceBack
     data: 

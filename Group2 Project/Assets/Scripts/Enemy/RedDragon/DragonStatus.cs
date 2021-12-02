@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DragonStatus : MonoBehaviour
 {
+    
     Animator animator;
 
     public GameObject Lwing;
@@ -30,6 +31,7 @@ public class DragonStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         DB = ItemData.instance;
@@ -40,6 +42,7 @@ public class DragonStatus : MonoBehaviour
         isWingInjureCount = 0;
         FlyPatternLeft = 2;
         isFly = false;
+        
     }
 
     // Update is called once per frame
@@ -182,6 +185,6 @@ public class DragonStatus : MonoBehaviour
         
     }
 
-
+    
 
 }
