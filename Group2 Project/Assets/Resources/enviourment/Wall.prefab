@@ -794,6 +794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2046600698249398535}
   - component: {fileID: 2594314921360894196}
+  - component: {fileID: 6093236892872589300}
   - component: {fileID: 1424775465}
   m_Layer: 0
   m_Name: Wall
@@ -834,6 +835,19 @@ MonoBehaviour:
   col: {fileID: 2737644989450226236}
   Wall: {fileID: 2737644988129028377}
   Wall_debris: {fileID: 5629159019535108511}
+--- !u!114 &6093236892872589300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182901744390848086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945c9b9de97698d48afd7e2753e1b180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wallnum: 0
 --- !u!54 &1424775465
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2051,14 +2065,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0deadf74929d634fb849ceff9e40353, type: 3}
---- !u!4 &5629159019535108510 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6305859187811061651, guid: e0deadf74929d634fb849ceff9e40353, type: 3}
-  m_PrefabInstance: {fileID: 1845389292479645197}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5629159019535108511 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6305859187811061650, guid: e0deadf74929d634fb849ceff9e40353, type: 3}
+  m_PrefabInstance: {fileID: 1845389292479645197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5629159019535108510 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6305859187811061651, guid: e0deadf74929d634fb849ceff9e40353, type: 3}
   m_PrefabInstance: {fileID: 1845389292479645197}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5629853694498514056

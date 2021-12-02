@@ -14,6 +14,12 @@ public class CollapsWall : MonoBehaviour
     [SerializeField]
     private GameObject Wall_debris;
 
+    private TutorialData tutorial;
+
+    private void Start()
+    {
+        tutorial = TutorialData.instance;
+    }
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name);
@@ -30,5 +36,7 @@ public class CollapsWall : MonoBehaviour
 
         Wall_debris.SetActive(true);
         Destroy(Wall_debris, DestroyTime);
+
+        tutorial.Wallcollaps[this.gameObject.GetComponent<Wall>().Wallnum] = true;
     }
 }

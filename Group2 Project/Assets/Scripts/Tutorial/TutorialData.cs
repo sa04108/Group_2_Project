@@ -7,6 +7,7 @@ public class TutorialData : MonoBehaviour
     public static TutorialData instance;
 
     public bool[] PanelFisrtLoad;
+    public bool[] Wallcollaps;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
