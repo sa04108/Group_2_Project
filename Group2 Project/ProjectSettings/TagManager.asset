@@ -24,6 +24,7 @@ TagManager:
   - Hammer
   - Pickaxe
   - Wing
+  - Tent
   layers:
   - Default
   - TransparentFX

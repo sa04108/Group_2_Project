@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMove : MonoBehaviour
 {
+    public static Vector3 lastPos = Vector3.zero;
+
     [SerializeField]
 
     public float gravity = 100f;
@@ -19,13 +22,16 @@ public class CharacterMove : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        characterController.enabled = false;
 
+        if (lastPos != Vector3.zero && SceneManager.GetActiveScene().name == "Scene")
+            transform.position = lastPos;
+
+        characterController.enabled = true;
     }
 
     void Update()
     {
-        
-
         if (characterController.isGrounded)
         {
             //ÁÂ¿ì·Î ¹æÇâÀ» ¹Ù²Û´Ù.
@@ -41,7 +47,6 @@ public class CharacterMove : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
 
         characterController.Move(Time.deltaTime * transform.TransformDirection(moveDirection) * speed);
-
     }
 
     void Run()
@@ -59,5 +64,15 @@ public class CharacterMove : MonoBehaviour
 
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Tent"))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            AudioManager.instance.SetAlwaysShowCursor(true);
+            lastPos = other.transform.position + new Vector3(0f, 10f, -5f);
+            SceneManager.LoadScene("Tent");
+        }
+    }
 }
