@@ -14,9 +14,8 @@ public class DestroyChestWall : MonoBehaviour
     }
     private void OnDestroy()
     {
-        //    obj = GameObject.Find("MBW");
-        //this.gameObject.SetActive(false);
-        wall.gameObject.SetActive(false);
+        //wall.gameObject.SetActive(false);
+        wall.GetComponent<ChestWall>().activeF();
 
     }
     // Update is called once per frame

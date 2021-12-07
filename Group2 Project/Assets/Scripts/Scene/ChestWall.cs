@@ -4,39 +4,54 @@ using UnityEngine;
 
 public class ChestWall : MonoBehaviour
 {
-    private Material mat;
-    public GameObject golem;
-    int hp;
 
-    public bool isDestroy = false;
+    public GameObject wall;
+    public float FadeTime = 0f;
+    Color Col;
+    Material mat;
+
     // Start is called before the first frame update
 
     private void Start()
     {
-        golem = GameObject.Find("HP_GOLEM");
-        hp = golem.GetComponent<MonsterStats>().HP;
-        mat = this.GetComponent<MeshRenderer>().material;
+        //Col = wall.GetComponent<MeshRenderer>().material.color;
+        //mat = wall.GetComponent<MeshRenderer>().material;
+        Col = wall.gameObject.GetComponent<MeshRenderer>().material.color;
+        //mat = wall.gameObject.GetComponent<MeshRenderer>().material;
+
+
     }
     void update()
     {
-        if (hp <= 0)
-        {
-            Debug.Log("startCo");
-            while (mat.color.a > 0)
-            {
-                Color Col = mat.color;
-                Col.a -= (Time.deltaTime);
-                mat.color = Col;
-                this.GetComponent<MeshRenderer>().material = mat;
-            }
-            Invoke("activeF", 1f);
-            //StartCoroutine(fade());
-        }
+
     }
 
-    void activeF()
+    public void activeF()
     {
-        this.gameObject.SetActive(false);
+       float time = 0f;
+
+        while (Col.a > 0f)
+        {
+            Debug.Log("check");
+
+            time += Time.deltaTime / FadeTime;
+            Col.a = Mathf.Lerp(1, 0, time);
+
+            wall.gameObject.GetComponent<MeshRenderer>().material.color = Col;
+        }
+
+        if (Col.a == 0)
+        {
+            Debug.Log("sa_wall");
+            wall.gameObject.SetActive(false);
+        }
+        //StartCoroutine(fade());
+
+    }
+
+    public void setActiveF()
+    {
+        wall.gameObject.SetActive(false);
     }
 
     //IEnumerator fade()
@@ -46,11 +61,11 @@ public class ChestWall : MonoBehaviour
     //        Color Col = mat.color;
     //        Col.a -= (Time.deltaTime);
     //        mat.color = Col;
-    //        wall.GetComponent<MeshRenderer>().material = mat;
+    //        this.GetComponent<MeshRenderer>().material = mat;
     //    }
     //    yield return new WaitForSeconds(2);
 
-    //    wall.gameObject.SetActive(false);
+    //    this.gameObject.SetActive(false);
     //}
 
 }
