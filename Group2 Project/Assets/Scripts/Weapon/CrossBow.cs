@@ -6,17 +6,27 @@ public class CrossBow : MonoBehaviour
 {
     public GameObject arrow;
 
+    const float delay = 0.35f;
+    bool isReady;
+
+    private void Start()
+    {
+        isReady = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Shoot();
+        if (Input.GetButtonUp("Fire1") && isReady)
+            StartCoroutine(Shoot());
     }
 
-    void Shoot()
+    IEnumerator Shoot()
     {
-        if (Input.GetButtonUp("Fire1"))
-        {
-            Destroy(Instantiate(arrow, transform.parent.position, Quaternion.LookRotation(Camera.main.transform.forward)), 1.0f);
-        }
+        Destroy(Instantiate(arrow, transform.parent.position, Quaternion.LookRotation(Camera.main.transform.forward)), 1.0f);
+        isReady = false;
+
+        yield return new WaitForSeconds(delay);
+        isReady = true;
     }
 }

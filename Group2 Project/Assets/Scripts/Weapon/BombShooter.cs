@@ -5,22 +5,27 @@ using UnityEngine;
 public class BombShooter : MonoBehaviour
 {
     public GameObject bomb;
-    private GameObject Player;
+
+    const float delay = 2.0f;
+    bool isReady;
 
     private void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
-    }
-    void Update()
-    {
-        Shoot();
+        isReady = true;
     }
 
-    void Shoot()
+    private void Update()
     {
-        if (Input.GetButtonUp("Fire1"))
-        {
-            Destroy(Instantiate(bomb, transform.parent.position, Quaternion.LookRotation(Camera.main.transform.forward)), 3.0f);
-        }
+        if (Input.GetButtonUp("Fire1") && isReady)
+            StartCoroutine(Shoot());
+    }
+
+    IEnumerator Shoot()
+    {
+        Destroy(Instantiate(bomb, transform.parent.position, Quaternion.LookRotation(Camera.main.transform.forward)), 3.0f);
+        isReady = false;
+
+        yield return new WaitForSeconds(delay);
+        isReady = true;
     }
 }
