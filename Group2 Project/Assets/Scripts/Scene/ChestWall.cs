@@ -35,7 +35,7 @@ public class ChestWall : MonoBehaviour
             Debug.Log("check");
 
             time += Time.deltaTime / FadeTime;
-            Col.a = Mathf.Lerp(1, 0, time);
+            Col.a = Mathf.Lerp(0, 1, time);
 
             wall.gameObject.GetComponent<MeshRenderer>().material.color = Col;
         }
