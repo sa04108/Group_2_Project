@@ -22,10 +22,10 @@ public class CharacterSound : MonoBehaviour
     void FootStepSound() {
         
         audio.clip = footstep[count];
-        count++;
-        if(count >= footstep.Length) {
-            count = 0;
-        }
         audio.Play();
+        count += 3;
+        if(count >= footstep.Length) {
+            count %= footstep.Length;
+        }
     }
 }
