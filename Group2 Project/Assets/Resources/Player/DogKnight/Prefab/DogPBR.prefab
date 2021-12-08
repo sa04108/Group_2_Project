@@ -1482,6 +1482,7 @@ GameObject:
   - component: {fileID: 676599011}
   - component: {fileID: 8488007621443274992}
   - component: {fileID: 116678258539788052}
+  - component: {fileID: 5997077824664246497}
   m_Layer: 9
   m_Name: DogPBR
   m_TagString: Player
@@ -1714,6 +1715,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5997077824664246497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8422892626600285392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae197ae9951458e4eaa72b5b2cb1e224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstep:
+  - {fileID: 8300000, guid: 26b5412a9ffd06a478cadb2293fe0078, type: 3}
+  - {fileID: 8300000, guid: 7b8c20c308ce62c4cbeea559c604f33b, type: 3}
+  - {fileID: 8300000, guid: 2682e44bdfb05d44d82bcfd86c7238be, type: 3}
+  - {fileID: 8300000, guid: 17df731f7274c3c4b9a06a95cadf2f4c, type: 3}
+  - {fileID: 8300000, guid: f801dc465e4b8e14a8f0228873c1f496, type: 3}
 --- !u!1 &8422892626600285394
 GameObject:
   m_ObjectHideFlags: 0
