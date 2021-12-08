@@ -24,6 +24,9 @@ public class CharacterMove : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         characterController.enabled = false;
 
+        if (SceneManager.GetActiveScene().name == "Boss")
+            lastPos = new Vector3(283.3f, 20.3f, 68.8f);
+
         if (lastPos != Vector3.zero && SceneManager.GetActiveScene().name == "Scene")
             transform.position = lastPos;
 
