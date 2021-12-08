@@ -280,6 +280,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 263663943687188165, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 850369103010282389, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: m_Text
+      value: "\uD568\uC815\uC744 \uBBF8\uB9AC \uBC1C\uACAC\uD558\uC5EC \uBB34\uB825\uD654
+        \uC2DC\uD0AC \uC218 \uC788\uC2B5\uB2C8\uB2E4"
+      objectReference: {fileID: 0}
     - target: {fileID: 3553883056599554831, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -440,6 +449,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3553883057813619428, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553883058071458507, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3553883058200978218, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -515,6 +532,59 @@ PrefabInstance:
     - target: {fileID: 3553883058405469794, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663533591609395154, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: m_Text
+      value: "\uD544\uC694\uD55C \uC790\uC6D0 : \uCCA0x10 \uB098\uBB34x10      \uBD88\uC548\uC815\uD55C
+        \uD575 x5"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554445491118850999, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c1fbbdc199c9e147bd12bb086bffb16, type: 3}
+    - target: {fileID: 6554445491118850999, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554445491118850999, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554445491118850999, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881390190069740387, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: m_Text
+      value: "\uB808\uC774\uB354\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210436982023882698, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: recipes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210436982023882698, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: recipes.Array.data[0].resourceName
+      value: "\uCCA0\uC7AC"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210436982023882698, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: recipes.Array.data[1].resourceName
+      value: "\uB098\uBB34"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210436982023882698, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: recipes.Array.data[2].resourceName
+      value: "\uBD88\uC548\uC815\uD55C \uD575"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210436982023882698, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: recipes.Array.data[0].resourceCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210436982023882698, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: recipes.Array.data[1].resourceCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210436982023882698, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
+      propertyPath: recipes.Array.data[2].resourceCount
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
