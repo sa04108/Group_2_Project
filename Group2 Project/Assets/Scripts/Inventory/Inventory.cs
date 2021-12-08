@@ -39,11 +39,23 @@ public class Inventory : MonoBehaviour
     public bool enchantShield = false;
 
 
+    public Item CloneItem(Item itemRef) {
+        Item _item = new Item();
+        _item.itemCount = itemRef.itemCount;
+        _item.itemImage = itemRef.itemImage;
+        _item.itemMaterial = itemRef.itemMaterial;
+        _item.itemModel = itemRef.itemModel;
+        _item.itemName = itemRef.itemName;
+        _item.itemType = itemRef.itemType;
+
+        return _item;
+    }
 
     public void AddEquip(Equipment _equip) {
         foreach(Equipment content in equipments) {
             if(_equip.equipType == content.equipType) {
                 equipments.Remove(content);
+               
                 equipments.Add(_equip);
                 return;
             }
@@ -65,6 +77,8 @@ public class Inventory : MonoBehaviour
         }
         return false;
     }
+
+
 
     public Equipment SearchEquipment(EQUIP_TYPE type) {
         foreach(Equipment equip in equipments){

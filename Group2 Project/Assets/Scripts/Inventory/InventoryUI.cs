@@ -41,8 +41,14 @@ public class InventoryUI : MonoBehaviour
             }
         }
         for(int i =0; i<inven.items.Count; i++) {
-            slots[i].item = inven.items[i];
+            slots[i].item = inven.CloneItem(inven.items[i]);
             slots[i].UpdateSlotUI();
+        }
+        for(int i = 0; i<slots.Length; i++) {
+            if(i >= inven.items.Count) {
+                slots[i].InitSlot();
+                slots[i].UpdateSlotUI();
+            }
         }
     }
   }
