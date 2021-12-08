@@ -16,18 +16,19 @@ public class Golem_FSM : MonoBehaviour
     private float currentDistance;
     private Vector3 checkDirection;
 
-    public Transform pointA;
-    public Transform pointB;
-    public Transform pointC;
-    public Transform pointD;
+    private Transform pointA;
+    private Transform pointB;
+    private Transform pointC;
+    private Transform pointD;
 
-    public GameObject player;
+    private GameObject player;
+
     public GameObject Rock;
     public GameObject Hand;
     public GameObject ShootRock;
 
-    public AudioClip audioClip;
-    public AudioClip golemSource;
+    //public AudioClip audioClip;
+    //public AudioClip golemSource;
 
 
     public UnityEngine.AI.NavMeshAgent navMeshAgent;

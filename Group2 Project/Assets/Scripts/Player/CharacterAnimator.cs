@@ -51,7 +51,7 @@ public class CharacterAnimator : MonoBehaviour
         // Debug.Log(playerHP);
         // Debug.Log(playerStatus.PlayerHP);
         //맞으면 실행
-        if (playerHP != playerStatus.PlayerHP)
+        if (playerHP > playerStatus.PlayerHP)
         {
             animator.SetBool("GetHit", true);
             PlaySound(0);

@@ -15,7 +15,7 @@ public class Golem_Rock : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.tag == "Ground")
+        if (coll.name == "Terrain")
         {
             Instantiate(DestRock, gameObject.transform.position, gameObject.transform.rotation);
         }
