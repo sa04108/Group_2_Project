@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675621b5ea6f9c447be7c8bcd80076aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WingHP: 80
+  WingHP: 50
   WingBroken: 0
   obj: {fileID: 0}
 --- !u!1 &925771834564299034
@@ -3831,7 +3831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675621b5ea6f9c447be7c8bcd80076aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WingHP: 80
+  WingHP: 50
   WingBroken: 0
   obj: {fileID: 0}
 --- !u!1 &925771834564484230

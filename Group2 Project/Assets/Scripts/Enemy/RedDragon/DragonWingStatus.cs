@@ -20,7 +20,7 @@ public class DragonWingStatus : MonoBehaviour
     void Start()
     {
         DB = ItemData.instance;
-        WingHP = 80;
+        WingHP = 50;
         dragonStatus = this.transform.root.gameObject.GetComponent<DragonStatus>();
         //날때만 true로 바꿔준다.
         GetComponent<BoxCollider>().enabled = false;
@@ -80,7 +80,7 @@ public class DragonWingStatus : MonoBehaviour
     public void WingColliderDisableAndReset()
     {
         GetComponent<BoxCollider>().enabled = false;
-        WingHP = 80;
+        WingHP = 50;
         WingBroken = false;
     }
 
