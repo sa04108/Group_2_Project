@@ -21,10 +21,12 @@ public class MonsterStats : MonoBehaviour
 
     HUD hud;
     ItemData DB;
+    CraftEquipmentSlot equipSlots;
     Esder esder;
 
     void Start()
     {
+        equipSlots = CraftEquipmentSlot.instance;
         hud = FindObjectOfType<HUD>();
         DB = ItemData.instance;
         HP = FullHp;
@@ -42,32 +44,33 @@ public class MonsterStats : MonoBehaviour
         if (coll.tag == "Arrow")//화살은 isAttack 판별 필요없음.
         {
             Destroy(coll);
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_BOW].damage + P_AttackPower;
+            WeaponPower = equipSlots.slot[CommonDefine.EQUIPMENT_BOW_SLOT_INDEX].equip.damage + P_AttackPower;
             HP -= WeaponPower;
             hud.RenewMonsterHPGauge(this);
             
         }
         else if (coll.tag == "Axe")
         {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_AXE].damage + P_AttackPower;
+            WeaponPower = equipSlots.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].equip.damage + P_AttackPower;
             HP -= WeaponPower;
             hud.RenewMonsterHPGauge(this);
         }
         else if (coll.tag == "Dagger")
         {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_SWORD].damage + P_AttackPower;
+            WeaponPower = equipSlots.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].equip.damage + P_AttackPower;
+            Debug.Log(WeaponPower);
             HP -= WeaponPower;
             hud.RenewMonsterHPGauge(this);
         }
         else if (coll.tag == "Hammer")
         {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_HAMMER].damage + P_AttackPower;
+            WeaponPower = equipSlots.slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].equip.damage + P_AttackPower;
             HP -= WeaponPower;
             hud.RenewMonsterHPGauge(this);
         }
         else if (coll.tag == "Pickaxe")
         {
-            WeaponPower = DB.equipDB[CommonDefine.EQUIPMENT_IRON_PICKAXE].damage + P_AttackPower;
+            WeaponPower = equipSlots.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].equip.damage + P_AttackPower;
             HP -= WeaponPower;
             hud.RenewMonsterHPGauge(this);
         }
