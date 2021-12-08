@@ -46,10 +46,6 @@ public class Golem_FSM : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         monsterStats = gameObject.GetComponent<MonsterStats>();
         player = GameObject.Find("Player").gameObject;
-        pointA = GameObject.Find("p1").gameObject.transform;
-        pointB = GameObject.Find("p2").gameObject.transform;
-        pointC = GameObject.Find("p3").gameObject.transform;
-        pointD = GameObject.Find("p4").gameObject.transform;
 
         playerStatus = GameObject.Find("Player").GetComponent<PlayerStatus>();
         //audioSource = this.gameObject.GetComponent<AudioSource>();
