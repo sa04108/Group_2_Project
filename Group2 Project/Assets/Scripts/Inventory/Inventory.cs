@@ -85,6 +85,18 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
+    public bool CheckItem(string itemName)
+    {
+        foreach (Item content in items)
+        {
+            if (itemName == content.itemName)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public bool IsFull() {
         if(items.Count >= SlotCnt) {
             return true;

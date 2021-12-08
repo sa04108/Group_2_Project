@@ -13,9 +13,20 @@ public class Trap : MonoBehaviour
     [SerializeField]
     private GameObject Fx;
     [SerializeField]
+    private GameObject Trapmanager;
+    [SerializeField]
     private AudioSource audioSource;
     [SerializeField]
     private AudioClip HitSound;
+
+    private void Start()
+    {
+        if(Trapmanager.GetComponent<TarpManager>().isRader)
+        {
+            col.enabled = false;
+            TrapImage.SetActive(true);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {

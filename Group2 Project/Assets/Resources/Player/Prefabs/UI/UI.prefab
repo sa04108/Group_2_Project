@@ -3348,12 +3348,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
-  - resourceName: "\uCCA0\uC7AC"
-    resourceCount: 10
   - resourceName: "\uBAA9\uC7AC"
     resourceCount: 10
-  - resourceName: "\uBD88\uC548\uC815\uD55C \uD575"
+  - resourceName: "\uCCA0\uC7AC"
     resourceCount: 10
+  - resourceName: "\uBD88\uC548\uC815\uD55C \uD575"
+    resourceCount: 5
 --- !u!1 &2989033503360783382
 GameObject:
   m_ObjectHideFlags: 0
@@ -10262,7 +10262,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\uD544\uC694\uD55C \uC790\uC6D0 : \uCCA0\uC7ACx10 \uBAA9\uC7ACx10     
-    \uBD88\uC548\uC815\uD55C \uD575 x10"
+    \uBD88\uC548\uC815\uD55C \uD575 x5"
 --- !u!1 &4292510644706433585
 GameObject:
   m_ObjectHideFlags: 0

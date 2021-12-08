@@ -536,7 +536,7 @@ PrefabInstance:
     - target: {fileID: 4663533591609395154, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
       propertyPath: m_Text
       value: "\uD544\uC694\uD55C \uC790\uC6D0 : \uCCA0\uC7ACx10 \uBAA9\uC7ACx10     
-        \uBD88\uC548\uC815\uD55C \uD575 x10"
+        \uBD88\uC548\uC815\uD55C \uD575 x5"
       objectReference: {fileID: 0}
     - target: {fileID: 6554445491118850999, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
       propertyPath: m_Sprite
@@ -564,11 +564,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9210436982023882698, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
       propertyPath: recipes.Array.data[0].resourceName
-      value: "\uCCA0\uC7AC"
+      value: "\uBAA9\uC7AC"
       objectReference: {fileID: 0}
     - target: {fileID: 9210436982023882698, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
       propertyPath: recipes.Array.data[1].resourceName
-      value: "\uBAA9\uC7AC"
+      value: "\uCCA0\uC7AC"
       objectReference: {fileID: 0}
     - target: {fileID: 9210436982023882698, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
       propertyPath: recipes.Array.data[2].resourceName
@@ -584,7 +584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9210436982023882698, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
       propertyPath: recipes.Array.data[2].resourceCount
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5582195c76f6b404fa3008ce7f1ff1c3, type: 3}
