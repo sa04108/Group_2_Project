@@ -72,7 +72,7 @@ public class CharacterAnimator : MonoBehaviour
             if (!isWalk)
             {
                 isWalk = true;
-                PlaySound(1);
+                //PlaySound(1);
                 Invoke("ResetWalk", 1.0f);
             }
         }
