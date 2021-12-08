@@ -112,6 +112,7 @@ public class BoarCtrl : MonoBehaviour
                 }
                 //보자마자 돌진
                 AttackHead.GetComponent<AttackArea>().isAttack = true;
+                LookPlayer();
             }
             else if (distance < 2.8f)
             {
