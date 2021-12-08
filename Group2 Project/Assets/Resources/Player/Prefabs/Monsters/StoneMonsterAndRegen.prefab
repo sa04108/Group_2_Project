@@ -166,10 +166,6 @@ PrefabInstance:
       propertyPath: PatrolPoint
       value: 
       objectReference: {fileID: 9134191709112097843}
-    - target: {fileID: 3417575866562186692, guid: 162b699e8972fea44b680f1854e60c04, type: 3}
-      propertyPath: targetOnSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 68380cda89c4fb14289f18789960d964, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 162b699e8972fea44b680f1854e60c04, type: 3}
 --- !u!4 &4415792912540619776 stripped

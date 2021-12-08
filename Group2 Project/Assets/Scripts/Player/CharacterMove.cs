@@ -70,7 +70,6 @@ public class CharacterMove : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            AudioManager.instance.SetAlwaysShowCursor(true);
             lastPos = other.transform.position + new Vector3(5f, 0f, -5f);
             SceneManager.LoadScene("Tent");
         }

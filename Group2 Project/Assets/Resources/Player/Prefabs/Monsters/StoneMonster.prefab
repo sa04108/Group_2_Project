@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 3417575866562186692}
   - component: {fileID: 6693308976774638464}
   - component: {fileID: 338462471243040156}
+  - component: {fileID: 6708990697272047333}
   m_Layer: 0
   m_Name: StoneMonster
   m_TagString: Untagged
@@ -411,6 +412,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6708990697272047333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755646104177140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268ecf58a3cde114eb05f15ab3784940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1855729412434242
 GameObject:
   m_ObjectHideFlags: 0

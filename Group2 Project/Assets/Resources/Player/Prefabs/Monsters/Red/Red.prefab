@@ -2356,6 +2356,7 @@ GameObject:
   - component: {fileID: 925771834564022822}
   - component: {fileID: 925771834569582552}
   - component: {fileID: 691170101192539164}
+  - component: {fileID: 7558034666240902495}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Untagged
@@ -2644,6 +2645,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7558034666240902495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925771834564334628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268ecf58a3cde114eb05f15ab3784940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &925771834564335076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,6 +2802,7 @@ GameObject:
   - component: {fileID: 378500428}
   - component: {fileID: 3903279474232293484}
   - component: {fileID: 7909421514835004649}
+  - component: {fileID: 2859506421613873004}
   m_Layer: 0
   m_Name: Red
   m_TagString: dragon
@@ -3069,6 +3083,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2859506421613873004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925771834564338528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268ecf58a3cde114eb05f15ab3784940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &925771834564338536
 GameObject:
   m_ObjectHideFlags: 0

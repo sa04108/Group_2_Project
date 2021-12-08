@@ -1,28 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class AudioManager : MonoBehaviour
+public class OptionManager : MonoBehaviour
 {
-    public static AudioManager instance;
-    private static bool isAlwaysShowCursor = true;
+    public GameObject optionPanel;
 
-    GameObject optionPanel;
     bool isOptionOn;
 
     // Start is called before the first frame update
     void Start()
     {
         isOptionOn = false;
-
-        if (instance)
-            Destroy(this);
-        else
-            instance = this;
-
-        DontDestroyOnLoad(gameObject);
-
-        optionPanel = transform.Find("Option Panel").gameObject;
     }
 
     // Update is called once per frame
@@ -46,25 +36,11 @@ public class AudioManager : MonoBehaviour
     public void HideOptionPanel()
     {
         isOptionOn = false;
-        if (!isAlwaysShowCursor)
+        if (SceneManager.GetActiveScene().name != "Tent")
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
         optionPanel.SetActive(false);
-    }
-
-    public void SetVolume(float vol)
-    {
-        AudioSource[] audioSource = FindObjectsOfType<AudioSource>();
-        foreach (var audio in audioSource)
-        {
-            audio.volume = vol / 2; // max 0.5
-        }
-    }
-
-    public void SetAlwaysShowCursor(bool val)
-    {
-        isAlwaysShowCursor = val;
     }
 }

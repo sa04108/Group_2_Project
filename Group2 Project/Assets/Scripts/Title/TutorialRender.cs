@@ -31,6 +31,12 @@ public class TutorialRender : MonoBehaviour
         tutorial = TutorialData.instance;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            gameObject.SetActive(false);
+    }
+
     void UpdateUI()
     {
         previousButton.interactable = currentPage > 0;
@@ -64,7 +70,6 @@ public class TutorialRender : MonoBehaviour
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked; //커서 위치 고정, 보이지 않게 한다.
-                AudioManager.instance.SetAlwaysShowCursor(false);
             }
             this.gameObject.SetActive(false);
             return;
