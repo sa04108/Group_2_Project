@@ -31,7 +31,8 @@ public class CharacterLootingSound : MonoBehaviour
     private IEnumerator playSound(AudioClip clip) {
         float length = clip.length;
 
-        audio.PlayOneShot(clip);
+        audio.clip = clip;
+        audio.Play();
         yield return new WaitForSeconds(length);
         Destroy(gameObject);
     }
