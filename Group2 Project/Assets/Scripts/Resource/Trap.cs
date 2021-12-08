@@ -34,7 +34,6 @@ public class Trap : MonoBehaviour
         {
             other.GetComponent<PlayerStatus>().PlayerHP -= Damage;
             Instantiate(Fx, this.transform.position, Quaternion.identity);
-            Destroy(Fx, 0.5f);
             Destroy(this.gameObject, 0.5f);
         }
     }
