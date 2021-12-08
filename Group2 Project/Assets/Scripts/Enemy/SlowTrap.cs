@@ -21,19 +21,23 @@ public class SlowTrap : MonoBehaviour
         //player.GetComponent<CharacterMove>().moveDirection.z -= 2 * vector.z;
     }
 
-    void OnTriggerStay() //진입중 속도 감속, 초당 5 피해
+    void OnTriggerStay(Collider other) //진입중 속도 감속, 초당 5 피해
     {
-
+        if (other.CompareTag("Player")) 
+        { 
         int i = Random.Range(0, 10);
-        player.GetComponent<CharacterMove>().speed = Mathf.Lerp(2, 5, i / 10);
+        other.GetComponent<CharacterMove>().speed = Mathf.Lerp(2, 5, i / 10);
 
-        player.GetComponent<PlayerStatus>().PlayerHP -= 5 * Time.deltaTime;
+        other.GetComponent<PlayerStatus>().PlayerHP -= 5 * Time.deltaTime;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        player.GetComponent<CharacterMove>().speed = 7f;
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<CharacterMove>().speed = 7f;
+        }
     }
-
 
 }
