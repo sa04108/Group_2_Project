@@ -27,10 +27,19 @@ public class PlayerStatus : MonoBehaviour
     public bool GameOver()
     {
         if (PlayerHP <= 0)
+        {
+            Invoke("backToTitle", 2f);
             return true;
+        }
         else
             return false;
     }
+
+    public void backToTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
 
     
 

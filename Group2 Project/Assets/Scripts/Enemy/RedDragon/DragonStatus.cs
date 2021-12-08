@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DragonStatus : MonoBehaviour
 {
@@ -86,7 +87,10 @@ public class DragonStatus : MonoBehaviour
         {
             isDie = true;
             animator.SetTrigger("isDie");
+            Invoke("backToTitle", 2f);
         }
+
+
 
 
         if (isWingInjureCount >= 2)//양쪽 날개 모두 파괴
@@ -101,6 +105,11 @@ public class DragonStatus : MonoBehaviour
         }
 
 
+    }
+
+    public void backToTitle()
+    {
+        SceneManager.LoadScene("Title");
     }
 
     public void WingColliderOn()
