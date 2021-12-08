@@ -24,7 +24,8 @@ public class BoarCtrl : MonoBehaviour
     Vector3 destination;
 
 
-
+    [SerializeField] AudioClip targetOnSound;
+    AudioSource audio;
 
 
     [Header("Monster Stats")]
@@ -61,6 +62,7 @@ public class BoarCtrl : MonoBehaviour
 
     void Start()
     {
+        audio = gameObject.GetComponent<AudioSource>();
 
         target = GameObject.Find("Player").transform;
         animator = GetComponent<Animator>();
@@ -92,6 +94,12 @@ public class BoarCtrl : MonoBehaviour
 
             if (distance <= 17.0f && distance >= 2.8f)
             {
+                //탐색 범위 안에 들어왔을때 닭 울음소리
+                if (isFindPlayer == false) {
+                    audio.clip = targetOnSound;
+                    audio.Play();
+                }
+
                 isFindPlayer = true;
                 nav.isStopped = false;
                 nav.SetDestination(target.position);
