@@ -87,7 +87,7 @@ public class DragonStatus : MonoBehaviour
         {
             isDie = true;
             animator.SetTrigger("isDie");
-            Invoke("backToTitle", 2f);
+            Invoke("GameClear", 2f);
         }
 
 
@@ -107,9 +107,9 @@ public class DragonStatus : MonoBehaviour
 
     }
 
-    public void backToTitle()
+    public void GameClear()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("GameClear");
     }
 
     public void WingColliderOn()
