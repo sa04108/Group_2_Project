@@ -80474,14 +80474,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.5
+  - time: 2.2
     functionName: offFire
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: d86b577c76c4c22439e125d0e4e7ba65, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.6666667
+  - time: 2.3666666
     functionName: isAttackEnd
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 42a3c54569f97f042a0bfac004d7c1e5, type: 3}
