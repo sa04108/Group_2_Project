@@ -30,21 +30,21 @@ public class ChestWall : MonoBehaviour
     {
        float time = 0f;
 
-        while (Col.a > 0f)
-        {
-            Debug.Log("check");
+        //while (Col.a > 0f)
+        //{
+        //    Debug.Log("check");
 
-            time += Time.deltaTime / FadeTime;
-            Col.a = Mathf.Lerp(0, 1, time);
+        //    time += Time.deltaTime / FadeTime;
+        //    Col.a = Mathf.Lerp(1, 0, time);
 
-            wall.gameObject.GetComponent<MeshRenderer>().material.color = Col;
-        }
+        //    wall.gameObject.GetComponent<MeshRenderer>().material.color = Col;
+        //}
 
-        if (Col.a == 0)
-        {
-            Debug.Log("sa_wall");
+        //if (Col.a == 0)
+        //{
+        //    Debug.Log("sa_wall");
             wall.gameObject.SetActive(false);
-        }
+        //}
         //StartCoroutine(fade());
 
     }
