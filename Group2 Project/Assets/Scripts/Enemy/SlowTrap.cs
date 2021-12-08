@@ -34,9 +34,13 @@ public class SlowTrap : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<CharacterMove>().speed = 7f;
+            if (Input.GetKey(KeyCode.LeftShift))
+                other.GetComponent<CharacterMove>().speed = 12f;
+            else 
+                other.GetComponent<CharacterMove>().speed = 7f;
         }
     }
 
