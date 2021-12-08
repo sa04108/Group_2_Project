@@ -116,7 +116,7 @@ MonoBehaviour:
     equipPrefab: {fileID: 3049961847687692922, guid: f1ba9d878edcb7c4090c9bfe8b8a002e, type: 3}
     equipImage: {fileID: 21300000, guid: 6f37379b61db42744832e151ec5171e3, type: 3}
     equipTier: 1
-    damage: 5
+    damage: 7
     loggingPower: 1
     miningPower: 1
     durability: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
     equipPrefab: {fileID: 3049961847687692922, guid: f1ba9d878edcb7c4090c9bfe8b8a002e, type: 3}
     equipImage: {fileID: 21300000, guid: 6f37379b61db42744832e151ec5171e3, type: 3}
     equipTier: 2
-    damage: 10
+    damage: 15
     loggingPower: 1
     miningPower: 1
     durability: 0
