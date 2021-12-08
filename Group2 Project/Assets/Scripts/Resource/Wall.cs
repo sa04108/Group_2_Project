@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Wall : MonoBehaviour
 {
@@ -9,10 +10,17 @@ public class Wall : MonoBehaviour
     private void Awake()
     {
         tutorial = TutorialData.instance;
-
-        if(tutorial.Wallcollaps[Wallnum])
+        try
         {
-            Destroy(this.gameObject);
+            if (tutorial.Wallcollaps[Wallnum])
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                return;
+            }
         }
+        catch (NullReferenceException) { };
     }
 }

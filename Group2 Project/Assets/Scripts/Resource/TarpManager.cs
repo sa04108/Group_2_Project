@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class TarpManager : MonoBehaviour
 {
@@ -10,9 +11,17 @@ public class TarpManager : MonoBehaviour
     private void Awake()
     {
         inventory = Inventory.instance;
-        if(inventory.CheckItem("레이더"))
+        try
         {
-            isRader = true;
+            if (inventory.CheckItem("레이더"))
+            {
+                isRader = true;
+            }
+            else
+            {
+                return;
+            }
         }
+        catch (NullReferenceException) { };
     }
 }

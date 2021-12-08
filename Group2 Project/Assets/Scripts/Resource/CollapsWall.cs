@@ -22,7 +22,6 @@ public class CollapsWall : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         if (other.transform.tag == "Bomb")
         {
             Destruction();
@@ -32,7 +31,7 @@ public class CollapsWall : MonoBehaviour
     {
         col.enabled = false;
 
-        Destroy(Wall);
+        Wall.SetActive(false);
 
         Wall_debris.SetActive(true);
         Destroy(Wall_debris, DestroyTime);

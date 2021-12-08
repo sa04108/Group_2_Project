@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class TutorialFirstLoad : MonoBehaviour
 {
@@ -11,10 +12,17 @@ public class TutorialFirstLoad : MonoBehaviour
     private void Awake()
     {
         tutorial = TutorialData.instance;
-
-        if(tutorial.PanelFisrtLoad[SquenceNum])
+        try
         {
-            Destroy(this.gameObject);
+            if (tutorial.PanelFisrtLoad[SquenceNum])
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                return;
+            }
         }
+        catch (NullReferenceException) { };
     }
 }
