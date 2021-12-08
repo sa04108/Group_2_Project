@@ -155,7 +155,7 @@ MonoBehaviour:
   item:
     itemType: 0
     itemName: "\uB3CC"
-    itemImage: {fileID: 21300008, guid: e919f8b19e6260d44b25ce176dd8ee66, type: 3}
+    itemImage: {fileID: 21300000, guid: 591341ba93acf66439b72c3202e0663e, type: 3}
     itemModel: {fileID: 4300000, guid: 26fb55e8ae34728499f6f45cd0527c73, type: 3}
     itemMaterial: {fileID: 2100000, guid: 37524ae4594222f4f8acd7b76234f79a, type: 2}
     itemCount: 1
