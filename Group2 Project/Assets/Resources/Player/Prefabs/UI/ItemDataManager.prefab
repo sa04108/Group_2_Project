@@ -113,6 +113,7 @@ MonoBehaviour:
     damage: 5
     loggingPower: 1
     miningPower: 1
+    durability: 0
   - equipType: 0
     equipName: "\uAC15\uD654\uB41C \uAC80"
     equipPrefab: {fileID: 3049961847687692922, guid: f1ba9d878edcb7c4090c9bfe8b8a002e, type: 3}
@@ -121,6 +122,7 @@ MonoBehaviour:
     damage: 10
     loggingPower: 1
     miningPower: 1
+    durability: 0
   - equipType: 1
     equipName: "\uC11D\uAD81"
     equipPrefab: {fileID: 3964628103033548847, guid: 2fe1d3485ffda5a4cbc964e1b05e09fb, type: 3}
@@ -129,6 +131,7 @@ MonoBehaviour:
     damage: 3
     loggingPower: 0
     miningPower: 0
+    durability: 0
   - equipType: 1
     equipName: "\uAC15\uD654\uB41C \uC11D\uAD81"
     equipPrefab: {fileID: 3964628103033548847, guid: 2fe1d3485ffda5a4cbc964e1b05e09fb, type: 3}
@@ -137,6 +140,7 @@ MonoBehaviour:
     damage: 6
     loggingPower: 0
     miningPower: 0
+    durability: 0
   - equipType: 2
     equipName: "\uB9DD\uCE58"
     equipPrefab: {fileID: 603216900152774235, guid: c43183d0af3fed842b810ec13e79b2b0, type: 3}
@@ -145,6 +149,7 @@ MonoBehaviour:
     damage: 1
     loggingPower: 1
     miningPower: 1
+    durability: 0
   - equipType: 3
     equipName: "\uB098\uBB34 \uB3C4\uB07C"
     equipPrefab: {fileID: 6375668711436595517, guid: d77da9c093d2e8348b18673d0f31e41d, type: 3}
@@ -153,6 +158,7 @@ MonoBehaviour:
     damage: 1
     loggingPower: 5
     miningPower: 1
+    durability: 0
   - equipType: 3
     equipName: "\uB3CC \uB3C4\uB07C"
     equipPrefab: {fileID: 6375668711436595517, guid: d77da9c093d2e8348b18673d0f31e41d, type: 3}
@@ -161,6 +167,7 @@ MonoBehaviour:
     damage: 1
     loggingPower: 10
     miningPower: 1
+    durability: 0
   - equipType: 3
     equipName: "\uCCA0 \uB3C4\uB07C"
     equipPrefab: {fileID: 6375668711436595517, guid: d77da9c093d2e8348b18673d0f31e41d, type: 3}
@@ -169,6 +176,7 @@ MonoBehaviour:
     damage: 1
     loggingPower: 15
     miningPower: 1
+    durability: 0
   - equipType: 4
     equipName: "\uB098\uBB34 \uACE1\uAD2D\uC774"
     equipPrefab: {fileID: 5409580506501253632, guid: c4b0d687e132c8145aa2fc3002c7fca3, type: 3}
@@ -177,6 +185,7 @@ MonoBehaviour:
     damage: 1
     loggingPower: 1
     miningPower: 5
+    durability: 1
   - equipType: 4
     equipName: "\uB3CC \uACE1\uAD2D\uC774"
     equipPrefab: {fileID: 5409580506501253632, guid: c4b0d687e132c8145aa2fc3002c7fca3, type: 3}
@@ -185,6 +194,7 @@ MonoBehaviour:
     damage: 1
     loggingPower: 1
     miningPower: 10
+    durability: 1
   - equipType: 4
     equipName: "\uCCA0 \uACE1\uAD2D\uC774"
     equipPrefab: {fileID: 5409580506501253632, guid: c4b0d687e132c8145aa2fc3002c7fca3, type: 3}
@@ -193,6 +203,7 @@ MonoBehaviour:
     damage: 1
     loggingPower: 1
     miningPower: 15
+    durability: 1
   - equipType: 5
     equipName: "\uD3ED\uD0C4"
     equipPrefab: {fileID: 8808487279671788651, guid: bd78ae9039dc8274586386f33e446866, type: 3}
@@ -201,6 +212,7 @@ MonoBehaviour:
     damage: 20
     loggingPower: 20
     miningPower: 20
+    durability: 3
   - equipType: 6
     equipName: "\uBC29\uD328"
     equipPrefab: {fileID: 3497437527442245570, guid: 9eed9d92cf565a340bed09335ffe57e2, type: 3}
@@ -209,6 +221,7 @@ MonoBehaviour:
     damage: 0
     loggingPower: 0
     miningPower: 0
+    durability: 1
   - equipType: 6
     equipName: "\uAC15\uD654\uB41C \uBC29\uD328"
     equipPrefab: {fileID: 3497437527442245570, guid: 9eed9d92cf565a340bed09335ffe57e2, type: 3}
@@ -217,6 +230,7 @@ MonoBehaviour:
     damage: 0
     loggingPower: 0
     miningPower: 0
+    durability: 1
   fieldItemPrefab: {fileID: 7436326173788290965, guid: a2a9d15eb75b4694aafc8573479324e3, type: 3}
   pos:
   - {x: 61.01, y: 5, z: 39.04}

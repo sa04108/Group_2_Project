@@ -16,9 +16,6 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
-   //public delegate void OnSlotCountChange(int val);
-   //public OnSlotCountChange onSlotCountChange;
-
     public delegate void OnChangeItem();
     public OnChangeItem onChangeItem;
 
@@ -40,6 +37,9 @@ public class Inventory : MonoBehaviour
     public List<Equipment> equipments = new List<Equipment>();
     public bool shield = false;
     public bool enchantShield = false;
+
+
+
     public void AddEquip(Equipment _equip) {
         foreach(Equipment content in equipments) {
             if(_equip.equipType == content.equipType) {
@@ -92,4 +92,5 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
+    
 }

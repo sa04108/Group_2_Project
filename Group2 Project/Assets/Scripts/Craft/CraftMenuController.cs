@@ -246,7 +246,8 @@ public class CraftMenuController : MonoBehaviour {
             EnchantShieldCraftButton.gameObject.SetActive(true);
         }
         else if (inven.SearchEquipment(EQUIP_TYPE.SHIELD).equipTier == 2) {
-            EnchantBowCraftButton.gameObject.SetActive(false);
+            ShieldCraftButton.gameObject.SetActive(false);
+            EnchantShieldCraftButton.gameObject.SetActive(false);
         }
         //Ȱ
         if (inven.SearchEquipment(EQUIP_TYPE.BOW) == null) {
@@ -327,7 +328,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = SwordCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment sword = itemDB.equipDB[CommonDefine.EQUIPMENT_SWORD];
+            Equipment sword = itemDB.CloneEquip(CommonDefine.EQUIPMENT_SWORD);
             equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].equip = sword;
             equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(sword);
@@ -343,7 +344,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = EnchantSwordCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment sword = itemDB.equipDB[CommonDefine.EQUIPMENT_ENCHANTED_SWORD];
+            Equipment sword = itemDB.CloneEquip(CommonDefine.EQUIPMENT_ENCHANTED_SWORD);
             equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].equip = sword;
             equipSlot.slot[CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(sword);
@@ -358,7 +359,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = ShieldCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment shield = itemDB.equipDB[CommonDefine.EQUIPMENT_SHIELD];
+            Equipment shield = itemDB.CloneEquip(CommonDefine.EQUIPMENT_SHIELD);
 
             inven.AddEquip(shield);
             inven.shield = true;
@@ -374,7 +375,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = ShieldCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment enchantShield = itemDB.equipDB[CommonDefine.EQUIPMENT_ENCHANTED_SHIELD];
+            Equipment enchantShield = itemDB.CloneEquip(CommonDefine.EQUIPMENT_ENCHANTED_SHIELD);
 
             inven.AddEquip(enchantShield);
             inven.enchantShield = true;
@@ -390,7 +391,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = BowCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment bow = itemDB.equipDB[CommonDefine.EQUIPMENT_BOW];
+            Equipment bow = itemDB.CloneEquip(CommonDefine.EQUIPMENT_BOW);
             equipSlot.slot[CommonDefine.EQUIPMENT_BOW_SLOT_INDEX].equip = bow;
             equipSlot.slot[CommonDefine.EQUIPMENT_BOW_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(bow);
@@ -406,7 +407,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = EnchantBowCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment bow = itemDB.equipDB[CommonDefine.EQUIPMENT_ENCHANTED_BOW];
+            Equipment bow = itemDB.CloneEquip(CommonDefine.EQUIPMENT_ENCHANTED_BOW);
             equipSlot.slot[CommonDefine.EQUIPMENT_BOW_SLOT_INDEX].equip = bow;
             equipSlot.slot[CommonDefine.EQUIPMENT_BOW_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(bow);
@@ -421,7 +422,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = HammerCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment hammer = itemDB.equipDB[CommonDefine.EQUIPMENT_HAMMER];
+            Equipment hammer = itemDB.CloneEquip(CommonDefine.EQUIPMENT_HAMMER);
             equipSlot.slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].equip = hammer;
             equipSlot.slot[CommonDefine.EQUIPMENT_HAMMER_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(hammer);
@@ -436,7 +437,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = WoodAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment axe = itemDB.equipDB[CommonDefine.EQUIPMENT_WOOD_AXE];
+            Equipment axe = itemDB.CloneEquip(CommonDefine.EQUIPMENT_WOOD_AXE);
             equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].equip = axe;
             equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(axe);
@@ -452,7 +453,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = RockAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment axe = itemDB.equipDB[CommonDefine.EQUIPMENT_ROCK_AXE];
+            Equipment axe = itemDB.CloneEquip(CommonDefine.EQUIPMENT_ROCK_AXE);
             equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].equip = axe;
             equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(axe);
@@ -468,7 +469,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = IronAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment axe = itemDB.equipDB[CommonDefine.EQUIPMENT_IRON_AXE];
+            Equipment axe = itemDB.CloneEquip(CommonDefine.EQUIPMENT_IRON_AXE);
             equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].equip = axe;
             equipSlot.slot[CommonDefine.EQUIPMENT_AXE_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(axe);
@@ -483,7 +484,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = WoodPickAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment pickAxe = itemDB.equipDB[CommonDefine.EQUIPMENT_WOOD_PICKAXE];
+            Equipment pickAxe = itemDB.CloneEquip(CommonDefine.EQUIPMENT_WOOD_PICKAXE);
             equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].equip = pickAxe;
             equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(pickAxe);
@@ -499,7 +500,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = RockPickAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment pickAxe = itemDB.equipDB[CommonDefine.EQUIPMENT_ROCK_PICKAXE];
+            Equipment pickAxe = itemDB.CloneEquip(CommonDefine.EQUIPMENT_ROCK_PICKAXE);
             equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].equip = pickAxe;
             equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(pickAxe);
@@ -515,7 +516,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = IronPickAxeCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment pickAxe = itemDB.equipDB[CommonDefine.EQUIPMENT_IRON_PICKAXE];
+            Equipment pickAxe = itemDB.CloneEquip(CommonDefine.EQUIPMENT_IRON_PICKAXE);
             equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].equip = pickAxe;
             equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(pickAxe);
@@ -530,7 +531,7 @@ public class CraftMenuController : MonoBehaviour {
         List<Recipes> recipes = BombCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
         if (CheckResource(recipes, inven.items)) {
             CraftObject(recipes, inven.items);
-            Equipment bomb = itemDB.equipDB[CommonDefine.EQUIPMENT_BOMB];
+            Equipment bomb = itemDB.CloneEquip(CommonDefine.EQUIPMENT_BOMB);
             equipSlot.slot[CommonDefine.EQUIPMENT_BOMB_SLOT_INDEX].equip = bomb;
             equipSlot.slot[CommonDefine.EQUIPMENT_BOMB_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(bomb);

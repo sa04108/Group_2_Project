@@ -17,7 +17,16 @@ public class EquipmentSlot : MonoBehaviour
     }
 
     public void UpdateSlotUI() {
-        gameObject.GetComponent<Image>().sprite = equip.equipImage;
+        if (equip != null) {
+            gameObject.GetComponent<Image>().sprite = equip.equipImage;
+        }
+       
         isActive = true;
+    }
+
+    public void InitSlot() {
+        equip = null;
+        gameObject.GetComponent<Image>().sprite = null;
+        isActive = false;
     }
 }

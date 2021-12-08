@@ -39,7 +39,9 @@ public class CharacterEquip : MonoBehaviour
     }
 
     void Update() {
-
+        if(currentEquipObject == null) {
+            currentEquipment = -1;
+        }
 
         //1¹ø½½·Ô °Ë
         if (Input.GetKeyDown(KeyCode.Alpha1) && currentEquipment != CommonDefine.EQUIPMENT_SWORD_SLOT_INDEX) {

@@ -35,6 +35,23 @@ public class ItemData : MonoBehaviour
         return _item;
     }
 
+    public Equipment CloneEquip(int index) {
+        Equipment equipRef = equipDB[index];
+        Equipment _equip = new Equipment();
+
+        _equip.equipImage = equipRef.equipImage;
+        _equip.equipName = equipRef.equipName;
+        _equip.equipPrefab = equipRef.equipPrefab;
+        _equip.equipTier = equipRef.equipTier;
+        _equip.equipType = equipRef.equipType;
+        _equip.damage = equipRef.damage;
+        _equip.durability = equipRef.durability;
+        _equip.loggingPower = equipRef.loggingPower;
+        _equip.miningPower = equipRef.miningPower;
+
+        return _equip;
+    }
+
     private void Start() {
 
         // GameObject go = Instantiate(fieldItemPrefab, new Vector3 (266f, 21f, 70f), Quaternion.identity);
