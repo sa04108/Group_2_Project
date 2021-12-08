@@ -104,6 +104,12 @@ MonoBehaviour:
     itemModel: {fileID: 4300000, guid: 11e0aa3611e3840ecb8a4f54e9b9634d, type: 3}
     itemMaterial: {fileID: 2100000, guid: 6b051bc964265438b9edf8fb79c57ccb, type: 2}
     itemCount: 1
+  - itemType: 0
+    itemName: "\uB808\uC774\uB354"
+    itemImage: {fileID: 21300000, guid: 7c1fbbdc199c9e147bd12bb086bffb16, type: 3}
+    itemModel: {fileID: 4300000, guid: 553e50808e75e6f4f81fa9e7f764dae7, type: 3}
+    itemMaterial: {fileID: 2100000, guid: dcf75c517c824165bd6a13fcb244a7e9, type: 2}
+    itemCount: 1
   equipDB:
   - equipType: 0
     equipName: "\uB3CC \uAC80"

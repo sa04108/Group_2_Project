@@ -35,7 +35,8 @@ public class CraftMenuController : MonoBehaviour {
     public Button WoodPickAxeCraftButton;
     public Button RockPickAxeCraftButton;
     public Button IronPickAxeCraftButton;
-
+    //레이더 버튼
+    public Button RadarCraftButton;
 
     //가공 버튼
     public Button BranchToWoodButton;
@@ -120,6 +121,16 @@ public class CraftMenuController : MonoBehaviour {
         });
         HammerCraftButton.onClick.AddListener(() => {
             if (CraftHammer()) {
+                audioSource.clip = craftSuccessSound;
+                audioSource.Play();
+            }
+            else {
+                audioSource.clip = craftFailSound;
+                audioSource.Play();
+            }
+        });
+        RadarCraftButton.onClick.AddListener(() => {
+            if (CraftRadar()) {
                 audioSource.clip = craftSuccessSound;
                 audioSource.Play();
             }
@@ -310,6 +321,8 @@ public class CraftMenuController : MonoBehaviour {
             RockPickAxeCraftButton.gameObject.SetActive(false);
             IronPickAxeCraftButton.gameObject.SetActive(false);
         }
+        //레이더
+           
     }
 
     public bool CheckHammer() {
@@ -521,6 +534,18 @@ public class CraftMenuController : MonoBehaviour {
             equipSlot.slot[CommonDefine.EQUIPMENT_PICKAXE_SLOT_INDEX].UpdateSlotUI();
             inven.AddEquip(pickAxe);
             IronPickAxeCraftButton.gameObject.SetActive(false);
+            return true;
+        }
+        else return false;
+    }
+
+    public bool CraftRadar() {
+        List<Recipes> recipes = RadarCraftButton.gameObject.GetComponent<CraftRecipe>().recipes;
+        if (CheckResource(recipes, inven.items)) {
+            CraftObject(recipes, inven.items);
+            Item radar = itemDB.CloneItem(CommonDefine.ITEM_RADAR);
+
+            inven.AddItem(radar);
             return true;
         }
         else return false;

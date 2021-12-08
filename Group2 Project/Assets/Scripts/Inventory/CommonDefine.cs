@@ -47,6 +47,8 @@ public class CommonDefine {
 
     //포션
     public static int ITEM_HEAL_POTION = 9;
+    //레이더
+    public static int ITEM_RADAR = 10;
 
 }
 

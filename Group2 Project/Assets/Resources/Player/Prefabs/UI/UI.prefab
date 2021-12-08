@@ -714,7 +714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1974430783890649164
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3348,10 +3348,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
+  - resourceName: "\uCCA0\uC7AC"
+    resourceCount: 10
   - resourceName: "\uBAA9\uC7AC"
-    resourceCount: 1
-  - resourceName: "\uC11D\uC7AC"
-    resourceCount: 1
+    resourceCount: 10
+  - resourceName: "\uBD88\uC548\uC815\uD55C \uD575"
+    resourceCount: 10
 --- !u!1 &2989033503360783382
 GameObject:
   m_ObjectHideFlags: 0
@@ -8208,7 +8210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3553883058071458500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9159,7 +9161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3553883058405469795
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9212,6 +9214,7 @@ MonoBehaviour:
   WoodPickAxeCraftButton: {fileID: 3553883057807427300}
   RockPickAxeCraftButton: {fileID: 8763911080726671943}
   IronPickAxeCraftButton: {fileID: 6481182836315641782}
+  RadarCraftButton: {fileID: 6186593936426091088}
   BranchToWoodButton: {fileID: 8273807407560590622}
   StoneToRockButton: {fileID: 315791332187325897}
   IronOreToIronIngot: {fileID: 5739402334945329664}
@@ -10258,8 +10261,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD544\uC694\uD55C \uC790\uC6D0 : \uCCA0x10 \uB098\uBB34x10      \uBD88\uC548\uC815\uD55C
-    \uD575 x5"
+  m_Text: "\uD544\uC694\uD55C \uC790\uC6D0 : \uCCA0\uC7ACx10 \uBAA9\uC7ACx10     
+    \uBD88\uC548\uC815\uD55C \uD575 x10"
 --- !u!1 &4292510644706433585
 GameObject:
   m_ObjectHideFlags: 0
