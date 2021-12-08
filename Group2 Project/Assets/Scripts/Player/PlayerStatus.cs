@@ -37,6 +37,10 @@ public class PlayerStatus : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "dropItem") 
         {
+            GameObject soundPrefab = Instantiate(Resources.Load("SoundSourcePrefab", typeof(GameObject)) as GameObject);
+
+            soundPrefab.GetComponent<CharacterLootingSound>().InitPrefab(other.tag);
+
             DropItem dropItems = other.GetComponent<DropItem>();
 
             if (Inventory.instance.AddItem(dropItems.GetItem())) 
@@ -56,6 +60,10 @@ public class PlayerStatus : MonoBehaviour
         }
         if (other.tag == "Portion")
         {
+            GameObject soundPrefab = Instantiate(Resources.Load("SoundSourcePrefab", typeof(GameObject)) as GameObject);
+
+            soundPrefab.GetComponent<CharacterLootingSound>().InitPrefab(other.tag);
+
             PlayerHP = PlayerHP + 100;
             if (PlayerHP >= 100)
             {
