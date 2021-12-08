@@ -42,7 +42,7 @@ public class AttackArea : MonoBehaviour
                     if (blockedDamage < 0) blockedDamage = 0;
                     playerStatus.PlayerHP -= blockedDamage;
                 }
-                Debug.Log(playerStatus.PlayerHP);
+                
             }
 
         }
