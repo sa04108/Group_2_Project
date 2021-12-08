@@ -36,7 +36,7 @@ public class OptionManager : MonoBehaviour
     public void HideOptionPanel()
     {
         isOptionOn = false;
-        if (SceneManager.GetActiveScene().name != "Tent")
+        if (SceneManager.GetActiveScene().name == "Scene" || SceneManager.GetActiveScene().name == "Boss")
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;

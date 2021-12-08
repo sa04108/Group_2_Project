@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7436326173788290959}
   - component: {fileID: 5236618768436571305}
   m_Layer: 0
-  m_Name: Branch
+  m_Name: branch
   m_TagString: dropItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

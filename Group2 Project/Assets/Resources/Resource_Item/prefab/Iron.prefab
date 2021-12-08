@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1658982310731770315}
   - component: {fileID: 3368354762969577144}
   - component: {fileID: 3272934907379529847}
+  - component: {fileID: 6337062265277641108}
   m_Layer: 0
   m_Name: Iron
   m_TagString: Iron
@@ -167,6 +168,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6337062265277641108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2701541144460115528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268ecf58a3cde114eb05f15ab3784940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2092566332888418083
 PrefabInstance:
   m_ObjectHideFlags: 0

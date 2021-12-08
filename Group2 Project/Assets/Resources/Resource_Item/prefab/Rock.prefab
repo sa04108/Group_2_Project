@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8386350745378970013}
   - component: {fileID: 7910129681465538684}
   - component: {fileID: 3278585198296375786}
+  - component: {fileID: 7153749394809514052}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Rock
@@ -167,6 +168,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7153749394809514052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8386350745378969987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268ecf58a3cde114eb05f15ab3784940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8386350744746570147
 PrefabInstance:
   m_ObjectHideFlags: 0
