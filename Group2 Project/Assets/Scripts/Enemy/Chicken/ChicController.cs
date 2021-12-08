@@ -24,6 +24,7 @@ public class ChicController : MonoBehaviour
 
     AudioSource audio;
     [SerializeField] AudioClip targetOnSound;
+    [SerializeField] AudioClip deathSound;
 
 
     [Header("Monster Stats")]
@@ -151,6 +152,9 @@ public class ChicController : MonoBehaviour
         {
             if (isAlive == true)
             {
+                audio.clip = deathSound;
+                audio.Play();
+
                 Invoke("StoneDrop", 1.7f);
                 transform.parent.gameObject.GetComponent<ErasePatrol>().EraseThis();
                 //animator.SetTrigger("Dead");

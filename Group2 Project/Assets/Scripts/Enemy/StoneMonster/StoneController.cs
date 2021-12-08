@@ -25,6 +25,7 @@ public class StoneController : MonoBehaviour
 
 
     [SerializeField] AudioClip targetOnSound;
+    [SerializeField] AudioClip deathSound;
     AudioSource audio;
 
 
@@ -144,6 +145,8 @@ public class StoneController : MonoBehaviour
         {
             if (isAlive == true)
             {
+                audio.clip = deathSound;
+                audio.Play();
                 animator.SetTrigger("Dead");
                 isAlive = false;
                 Invoke("itemDrop", 1.7f);

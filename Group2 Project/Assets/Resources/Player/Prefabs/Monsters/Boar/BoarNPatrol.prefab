@@ -414,6 +414,7 @@ MonoBehaviour:
   canJump: 0
   isFindPlayer: 0
   targetOnSound: {fileID: 8300000, guid: 8e6ac73d1c944ce4a8e6670e7bb786f1, type: 3}
+  deathSound: {fileID: 8300000, guid: 15bbb11647fe468459f30238e4123df1, type: 3}
   points: []
   PatrolPoint: {fileID: 4249812580214849718}
   nextIdx: 1
@@ -459,7 +460,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 5.491394
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -495,7 +496,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

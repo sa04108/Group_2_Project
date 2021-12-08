@@ -25,6 +25,7 @@ public class BoarCtrl : MonoBehaviour
 
 
     [SerializeField] AudioClip targetOnSound;
+    [SerializeField] AudioClip deathSound;
     AudioSource audio;
 
 
@@ -164,6 +165,8 @@ public class BoarCtrl : MonoBehaviour
         {
             if (isAlive == true)
             {
+                audio.clip = deathSound;
+                audio.Play();
                 animator.SetTrigger("Die");
                 isAlive = false;
                 Invoke("itemDrop", 1.7f);
