@@ -22,7 +22,8 @@ public class ChicController : MonoBehaviour
     NavMeshAgent nav;
     Vector3 destination;
 
-
+    AudioSource audio;
+    [SerializeField] AudioClip targetOnSound;
 
 
     [Header("Monster Stats")]
@@ -57,6 +58,7 @@ public class ChicController : MonoBehaviour
 
     void Start()
     {
+        audio = gameObject.GetComponent<AudioSource>();
         target = GameObject.Find("Player").transform;
         //animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -89,6 +91,12 @@ public class ChicController : MonoBehaviour
 
             if (distance <= 10.0f && distance >= 2.5f)
             {
+                //탐색 범위 안에 들어왔을때 닭 울음소리
+                if (isFindPlayer == false) {
+                    audio.clip = targetOnSound;
+                    audio.Play();
+                }
+
                 isFindPlayer = true;
                 nav.isStopped = false;
                 nav.SetDestination(target.position);

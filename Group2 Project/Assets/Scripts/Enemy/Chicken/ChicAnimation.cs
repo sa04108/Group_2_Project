@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChicAnimation : MonoBehaviour
 {
 
-
     Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -34,7 +33,6 @@ public class ChicAnimation : MonoBehaviour
     public void Attack()
     {
         animator.SetTrigger("Attack");
-
     }
     public void idle()
     {
