@@ -7,10 +7,12 @@ public class AttackArea : MonoBehaviour
     public bool isAttack = false;
     public int AttackPower = 2;
     GameObject HitThePlayer;
+    Inventory inven;
 
     // Start is called before the first frame update
     void Start()
     {
+        inven = Inventory.instance;
         isAttack = false;
         AttackPower = 2;
     }
@@ -27,8 +29,20 @@ public class AttackArea : MonoBehaviour
         {
             if (isAttack == true)
             {
+                Equipment shield = inven.SearchEquipment(EQUIP_TYPE.SHIELD);
+
                 PlayerStatus playerStatus = GameObject.Find("Player").GetComponent<PlayerStatus>();
-                playerStatus.PlayerHP -= AttackPower;
+                
+                if (shield == null) {
+                    playerStatus.PlayerHP -= AttackPower;
+                }
+                else {
+                    int blockedDamage = AttackPower - shield.damage;
+                   
+                    if (blockedDamage < 0) blockedDamage = 0;
+                    playerStatus.PlayerHP -= blockedDamage;
+                }
+                Debug.Log(playerStatus.PlayerHP);
             }
 
         }
