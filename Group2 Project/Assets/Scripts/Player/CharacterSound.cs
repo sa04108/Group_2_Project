@@ -27,6 +27,5 @@ public class CharacterSound : MonoBehaviour
             count = 0;
         }
         audio.Play();
-        Debug.Log("Footstep");
     }
 }
